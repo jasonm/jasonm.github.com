@@ -4,7 +4,7 @@
 
 url: http://jasonm.github.com
 title: Jason Morrison
-subtitle: Programmer, traveller
+subtitle: Programmer, traveler
 author: Jason Morrison
 simple_search: http://google.com/search
 description:
@@ -64,13 +64,13 @@ default_asides: [asides/recent_posts.html, asides/github.html, asides/delicious.
 
 # Github repositories
 github_user: jasonm
-github_repo_count: 0
+github_repo_count: 10
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
 twitter_user: jayunit
-twitter_tweet_count: 4
+twitter_tweet_count: 10
 twitter_show_replies: false
 twitter_follow_button: true
 twitter_show_follower_count: false
