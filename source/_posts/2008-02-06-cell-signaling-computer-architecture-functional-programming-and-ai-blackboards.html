@@ -1,0 +1,59 @@
+--- 
+layout: post
+title: Cell signaling, computer architecture, functional programming, and AI blackboards
+tags: 
+- Blog
+- computer science
+- synthetic biology
+status: publish
+type: post
+published: true
+meta: {}
+
+---
+<p>While thinking about synthetic biology, I find it useful to identify analogues of biological systems in a discipline I am already familiar with, computer science.  This helps me better understand the new concept and can also raise questions about the new system that already have discussions around them in the CS world.  Of course, the fidelity of such metaphors is not 100%, so I have to take care to ground such discourses with actual biology, but it&#8217;s been great for brainstorming so far.</p>
+
+
+	<p>Here are a few such metaphors.</p>
+
+
+	<h3>Computer Architecture</h3>
+
+
+	<p>One challenge in building <a href="http://people.csail.mit.edu/tk/sa3.pdf">composable biological systems</a> for effective <a href="http://syntheticbiology.org/Abstraction_hierarchy.html">abstraction hierarchies</a> is cell signaling crosstalk.  One issue at play is a possible shortage of signal carriers; if you need ten different processes to occur at the same time and to act orthogonally, you will need ten signal carriers.  Much as CPUs have a finite number of registers and data buses have finite width, there are only so many standardized signal carriers that standardized parts currently accept.  Certainly, more carriers could be designed, but there may be ways around this.  In computer architecture, the register shortage can be addressed by temporarily saving register data into memory, and the bus issue can be addressed with a <a href="http://en.wikipedia.org/wiki/Time-division_multiplexing">stateful multiplexing approach</a>.  Perhaps stateful biological systems such as the <a href="http://en.wikipedia.org/wiki/Repressilator">repressilator</a> or a <a href="http://parts.mit.edu/igem07/index.php/Peking_Push-on-push-off">push-on push-off switch</a> have something to offer here.</p>
+
+
+	<h3>Functional Programming</h3>
+
+
+	<p>The other, more subtle, crosstalk issue is that of unintended side effects.  When considering engineered biological devices, there may be side effects outside of the well-characterized and intended inputs and outputs, so the abstractions leak &#8211; figuratively and literally.  These issues are also present in highly parallel computing environments when a shared resource such as a location in memory is operated upon by many processes.  One must take care to ensure that the processes cooperate to ensure that they do not tread upon one another.  There are many paradigms for approaching concurrent software, and it is becoming increasingly apparent that a system of threads, locks, and mutexes quickly gets difficult, if not impossible, to keep track of.  Interesting discussions of other approaches:</p>
+
+
+	<ul>
+	<li><a href="http://video.google.com/videoplay?docid=5442492239822665187">Software Transactional Memory</a> (video)</li>
+		<li><a href="http://research.microsoft.com/%7Esimonpj/papers/stm/beautiful.pdf">Beautiful Concurrency</a> (PDF) is also about <span class="caps">STM</span></li>
+		<li><a href="http://lamp.epfl.ch/~phaller/doc/haller07actorsunify.pdf">Actors that Unify Threads and Events</a> (PDF)</li>
+		<li><a href="http://lambda-the-ultimate.org/node/2269">Simon Peyton Jones&#8217; talk on nested data parallelism</a></li>
+		<li><a href="http://www.cs.princeton.edu/~dpw/popl/06/Tim-POPL.ppt">The Next Mainstream Programming Language: A Game Developer&#8217;s Perspective</a> (PPT), particularly pages 49-56</li>
+	</ul>
+
+
+	<p>A key element in many of these approaches to concurrency is a lack of shared state and, by association, lack of side effects.  Since intracellular signaling systems are inherently parallel,  two operations may only be reliably executed in tandem if they have minimal-to-no side effects (or, more realistically, minimal, orthogonal, well-characterized effects).  My point here is not to imply that there is a concurrent programming paradigm that can be transferred to synthetic biology to solve the side effect issue.  I mean to illustrate that, as we engineer larger systems, it will be crucial to minimize unknown side effects of synthetic biology constructs with high-quality characterization.</p>
+
+
+	<p>I realize that I am first suggesting stateful systems, immediately followed by a call for referential transparency (the property of being without formal side effects), often conflated with statelessness.  It&#8217;s important to remember that, taken as an abstract concept, referentially transparent (side-effect free) operations can maintain internal state, so long as that state does not leak out of the operation, be it a computation or intracellular signalling pathway.</p>
+
+
+	<p>Also, something on my <span class="caps">TODO</span> list is to check out cell-free systems, and consider their applicability to the crosstalk issue:</p>
+
+
+	<ul>
+	<li><a href="http://openwetware.org/wiki/IGEM:IMPERIAL/2007/CFS">Imperial College&#8217;s iGEM 2007 work on Cell-Free Systems</a></li>
+		<li><a href="http://www.nature.com/msb/journal/v2/n1/full/msb4100099.html">Construction of an in vitro bistable circuit from synthetic transcriptional switches</a></li>
+	</ul>
+
+
+	<h3>AI Blackboards</h3>
+
+
+	<p>Lastly, it also occurred to me that <a href="http://en.wikipedia.org/wiki/Signal_transduction">intracellular signaling systems</a> are similar to the artificial intelligence <a href="http://en.wikipedia.org/wiki/Blackboard_system">blackboard architecture</a> and, as such, it could be useful as a thought model.  I&#8217;ve not pursues this idea very much, although it appears that some folks have made the same connection in the context of modeling: <a href="http://arxiv.org/abs/cs.MA/0211029">Modelling intracellular signalling networks using behaviour-based systems and the blackboard architecture</a>.</p>

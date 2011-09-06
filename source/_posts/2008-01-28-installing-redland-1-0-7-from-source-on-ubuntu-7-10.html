@@ -1,0 +1,61 @@
+--- 
+layout: post
+title: Installing redland-1.0.7 from source on Ubuntu 7.10
+tags: 
+- Blog
+- rdf redland ruby ubuntu
+status: publish
+type: post
+published: true
+meta: {}
+
+---
+<p>The Ubuntu packages for the <a href="http://www.librdf.org">Redland</a> RDF libraries seem to have an issue, at least for the Ruby bindings (see <a href="https://bugs.launchpad.net/ubuntu/+source/redland-bindings/+bug/102845">Ruby objects to cyclic dependency</a> about the &#8220;cyclic include detected&#8221; issue), so I installed it from source.</p>
+
+
+	<p>In case I need to do this again (or someone else does), here are the steps I took for installing Redland on Ubuntu 7.10:</p>
+
+
+1. Get the <span class="caps">GNU MP</span> Bignum library:
+<code>sudo apt-get install libgmp3-dev</code>
+
+2. Make or go to a scratch directory
+<code>cd ~
+mkdir redland
+cd redland</code>
+
+3. Get redland 1.0.7 and unpack
+<code>wget http://download.librdf .org/source/redland-1.0.7.tar.gz
+tar xvfz redland-1.0.7.tar.gz
+cd redland-1.0.7</code>
+
+4. Build raptor first
+<code>cd raptor
+./configure &#38;&#38; make &#38;&#38; make check &#38;&#38; sudo make install
+cd ..</code>
+
+4. Then build rasqal
+<div style="margin-left: 25px;">
+<strong><span class="caps">NOTE</span>:</strong> If you get &#8220;Can&#8217;t locate <span class="caps">XML</span>/DOM.pm in @INC &#8221; during make check, then:
+<code>sudo apt-get install libxml-dom-perl </code>
+</div>
+
+<code>cd rasqal
+./configure &#38;&#38; make &#38;&#38; make check &#38;&#38; sudo make install
+cd ..</code>
+
+5. Build redland
+<code># We are back in the main redland-1.0.7 directory
+./configure &#38;&#38; make &#38;&#38; make check &#38;&#38; sudo make install</code>
+
+6. Get and build redland-bindings
+<code>cd ..
+wget http://download.librdf.org/source/redland-bindings-1.0.7.1.tar.gz
+tar xvfz redland-bindings-1.0.7.1.tar.gz
+cd redland-bindings-1.0.7.1
+./configure &#38;&#38; make &#38;&#38; make check &#38;&#38; sudo make install</code>
+
+7. Build the language-specific bindings you would like
+<code>cd ruby
+make &#38;&#38; make check &#38;&#38; sudo make install
+cd ..</code>

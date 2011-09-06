@@ -1,0 +1,31 @@
+--- 
+layout: post
+title: Mephisto to WordPress
+tags: 
+- Blog
+- mephisto
+- wordpress
+status: publish
+type: post
+published: true
+meta: 
+  _edit_lock: "1212791441"
+  _edit_last: "2"
+---
+An easy way to import a Mephisto blog into WordPress is by using a <a href="http://schwuk.com/articles/2008/03/25/thy-will-be-done-m2wppy-is-released">Python script for extracting a WordPress-friendly WXR file from Mephisto</a> (which can be imported via the WordPress web admin interface), which eventually worked like a charm.  I had to modify it to use MySQL, and to look at a different date field for publication (my Mephisto install was returning Null in the field m2wp.py was looking at).
+<ol>
+	<li>Go grab <a href="http://schwuk.com/articles/2008/03/25/thy-will-be-done-m2wppy-is-released">m2wp.py</a>.</li>
+	<li>Download <a href="http://wptest.jayunit.net/wp-content/uploads/2008/04/m2wp-mysql.diff">m2wp-mysql.diff</a>. (Update 6/6/08: fixed the missing trailing newline)</li>
+	<li>Run <code>patch m2wp.py m2wp-mysql.py.diff -o m2wp-mysql.py</code>.</li>
+	<li>Now you can run <code>python m2wp.py -h</code> and you're off and running!</li>
+</ol>
+A less effective method is to transform Mephisto's Atom feed into RSS, and import that into WordPress.  This is a pain, because the feed does not contain comments, but here is how I did it before I discovered <code>m2wp.py</code>:
+<ol>
+	<li>Get the <a href="http://sourceforge.net/projects/xmlstar/">XMLStarlet command line XML toolkit</a>.</li>
+	<li><code>wget http://atom.geekhood.net/atom2rss.xsl</code></li>
+	<li><code>wget http://mymephistoblog.com/feed/atom.xml</code></li>
+	<li><code>xml tr atom2rss.xsl atom.xml &gt; rss.xml</code></li>
+	<li>Go to <a href="http://mywordpressblog.com/wp-admin/admin.php?import=rss">http://mywordpressblog.com/wp-admin/admin.php?import=rss</a></li>
+	<li>Import your rss.xml</li>
+	<li>Pull comments over by hand.</li>
+</ol>
