@@ -15,7 +15,7 @@ philosophy of building businesses on the web.
 
 Most recently I'm enjoying Amy Hoy's no-bullshit advice for stacking the deck in
 your favor and building sustainable web businesses in
-[her 30x500 product launch class](http://30x500.com/) and Eric Ries' highly
+[her 30x500 product launch class](http://unicornfree.com/30x500/) and Eric Ries' highly
 articulate distillation of his experience in his book
 ["The Lean Startup"](http://theleanstartup.com/).
 
