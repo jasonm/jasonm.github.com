@@ -28,7 +28,7 @@ part of startup culture.
 
 But if you get past the Hollywooding and the Silicon Valley adulation, there
 were gems of solid advice, grounded in experience, on hiring (Paul English of
-kayak), data-driven product development (Naveen Selvadurai of foursquare),
+Kayak), data-driven product development (Naveen Selvadurai of foursquare),
 optimizing your life for personal growth (Drew Houston of Dropbox), identifying
 underlying social and technological shifts that enable new products (Charlie
 Cheever of Quora, Patrick Collison of Stripe), negotiation (Alex Polvi of
