@@ -13,9 +13,10 @@ Boston web firm [thoughtbot](http://thoughtbot.com/).  I agree with much of what
 is written in the [thoughtbot playbook](http://playbook.thoughtbot.com/) on the
 philosophy of building businesses on the web.
 
-Most recently I'm enjoying Amy Hoy's no-bullshit realistic advice in
+Most recently I'm enjoying Amy Hoy's no-bullshit advice for stacking the deck in
+your favor and building sustainable web businesses in
 [her 30x500 product launch class](http://30x500.com/) and Eric Ries' highly
-articulate and applicable distillation of his experience in his book
+articulate distillation of his experience in his book
 ["The Lean Startup"](http://theleanstartup.com/).
 
 With thoughtbot, I've also designed and delivered
