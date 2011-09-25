@@ -254,7 +254,7 @@ differentiated.  You can always get money if you are making something great.
 
 > You have to have a vision, you have to be able to execute that vision.
 
-Nathan shared a 2008 pitch deck for AirBnb (then AirBed&amp;Breakfast) - the
+Nathan shared a 2008 pitch deck for Airbnb (then AirBed&amp;Breakfast) - the
 first time this deck had ever seen the light of day.
 Tiffany Kosolcharoen posted [photos of the slides on her blog](http://tiffanyk.com/post/10611384492/honored-nathanblec-shared-original-airbnb).
 
@@ -276,7 +276,7 @@ They found that the initial asking rates were a little too high, so they asked
 their listers (after a few drinks) to lower their prices.  Things clicked, and
 soon they had handled $250,000 in bookings of which they collected 10%.
 
-Fast-forward to the YC W09 Demo Day, and although at that point AirBnb has
+Fast-forward to the YC W09 Demo Day, and although at that point Airbnb has
 already accepted Sequoia investment, they had prepared a Demo Day deck.  Gone
 was the hand-wavy top-down projection and partnership hopefulness, replaced with
 a quarter million dollars of demonstrable traction, a tight initial market
