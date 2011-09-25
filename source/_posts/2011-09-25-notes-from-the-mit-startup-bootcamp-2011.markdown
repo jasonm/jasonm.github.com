@@ -14,7 +14,7 @@ a variety of startup successes.
 The event hashtag [#sb2011](http://twitter.com/#!/search/%23sb2011) is a stream
 of reactions and pull-quotes from the event - mixed here and there with
 excited anticipation for
-[a dance fesetival in Goa](http://twitter.com/SunburnFestival).
+[a dance festival in Goa](http://twitter.com/SunburnFestival).
 
 Ten speakers presented a variety of viewpoints, insight, and food for thought.
 
