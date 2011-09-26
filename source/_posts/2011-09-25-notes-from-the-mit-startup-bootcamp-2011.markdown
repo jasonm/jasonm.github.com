@@ -46,7 +46,7 @@ Paul spoke on recruiting three kinds of recruiting: companies recruiting new hir
 companies recruiting investors, and job-seekers recruiting companies.
 
 When you're recruiting, look for success, regardless of the kind.  In fact, look
-for a diversity of success. Paul once hired an olympic rower. and a chess
+for a diversity of success. Paul once hired an olympic rower, and a chess
 grandmaster, and couldn't be happier with these decisions.  Find people who
 operate at the top levels of excellence.
 
