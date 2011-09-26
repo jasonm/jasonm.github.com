@@ -6,6 +6,10 @@ comments: true
 categories: 
 ---
 
+<p style="background-color: #ffa; padding: 1em; border: 1px solid #cc9;">If you'd like to talk with other people who
+made it to this event, check out the
+<a href="http://news.ycombinator.com/item?id=3036926">Hacker News discussion thread</a>.</p>
+
 Yesterday, September 24 2011, I had the pleasure of attending MIT's 2011
 [Startup Bootcamp](http://startupbootcamp.mit.edu/). In its third year, Startup
 Bootcamp brought an inspiring and thoughful collection of speakers who have had
