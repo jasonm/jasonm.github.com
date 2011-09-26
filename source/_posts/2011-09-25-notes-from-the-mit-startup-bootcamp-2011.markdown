@@ -42,7 +42,7 @@ disruptive theme of our time by learning to code (Patrick Collison of Stripe).
 
 > Recruit a diversity of success.
 
-Paul spoke on recruiting three kinds of recruiting: companies recruiting new hires,
+Paul spoke on three kinds of recruiting: companies recruiting new hires,
 companies recruiting investors, and job-seekers recruiting companies.
 
 When you're recruiting, look for success, regardless of the kind.  In fact, look
