@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Hitting the road!"
-date: 2011-10-30 22:07
+date: 2011-11-11 09:00
 comments: true
 categories: travel
 ---
