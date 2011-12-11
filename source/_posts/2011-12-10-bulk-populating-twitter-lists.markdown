@@ -31,7 +31,7 @@ I collected a large number of Twitter usernames recently from conference website
 
 6. Add the screen names to the list.
 
-   Replace the list slug, your screen name, and the comma separated list of screennames that will go into the list with your own values:
+   Replace the list slug, your screen name, and the comma separated list of screen names that will go into the list with your own values:
 
        $ twurl -X POST
                -d "slug=sweet-songs&owner_screen_name=jayunit&screen_name=donkeysong,brian,gabe5000"
@@ -39,4 +39,4 @@ I collected a large number of Twitter usernames recently from conference website
 
 And you're done!  Go check out your list.
 
-This could be wrapped up in a Twitter-authed app, which I'll leave as an exercise.
+This could be wrapped up into a Twitter-authed app, which I'll leave as an exercise.
