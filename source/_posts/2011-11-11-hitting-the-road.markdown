@@ -39,8 +39,6 @@ Then, on November 28, IAH-ORD-DEL.
 
 ## Closing thoughts
 
-And now, an enjoyable literary quote!
-
 > Journeys are the midwives of thought. Few places are more conducive to internal
 > conversations than a moving plane, ship or train. There is an almost quaint
 > correlation between what is in front of our eyes and the thoughts we are able
