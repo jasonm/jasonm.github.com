@@ -1,5 +1,9 @@
 // This File is imported last, and will override other styles in the cascade
 // Add styles here to make changes without digging in too much
+html {
+  background: #eee url('/images/line-tile.png') top left;
+}
+
 body {
   > header {
     background: #333 url('/images/jason-header.png') no-repeat;
