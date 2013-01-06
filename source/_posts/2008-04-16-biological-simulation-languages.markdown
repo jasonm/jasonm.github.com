@@ -1,0 +1,15 @@
+--- 
+layout: post
+title: Biological Simulation Languages
+tags: 
+- Blog
+status: publish
+type: post
+published: true
+---
+
+From the "publishing old drafts for kicks" department, some interesting notes on Biological Simulation Languages:
+
+* [*SPim*: Efficient, Correct Simulation of Biological Processes in the Stochastic Pi-calculus](http://lambda-the-ultimate.org/node/2447)
+* [The little b language: shared models built from reusable parts](http://lambda-the-ultimate.org/node/2671)
+* [BioComputing resources from Luca Cardelli](http://lucacardelli.name/BioComputing.htm)
