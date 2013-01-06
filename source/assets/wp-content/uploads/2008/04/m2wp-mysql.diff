@@ -1,0 +1,21 @@
+21c21
+< import psycopg2
+---
+> import MySQLdb
+102c102
+<         linkpath = data[11].strftime('%Y/%m/%d')
+---
+>         linkpath = data[10].strftime('%Y/%m/%d')
+108c108
+<                             data[11].strftime('%a, %d %b %Y %H:%M%S +0000'))
+---
+>                             data[10].strftime('%a, %d %b %Y %H:%M%S +0000'))
+207a208
+>         self.opts = options
+214,215c215,216
+<             connection = psycopg2.connect(self.dsn)
+<         except(psycopg2.OperationalError):
+---
+>             connection = MySQLdb.connect(db=self.opts.database, user=self.opts.username, passwd=self.opts.password, host=self.opts.server)
+>         except(MySQLdb.OperationalError):
+
