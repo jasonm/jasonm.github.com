@@ -8,8 +8,8 @@ categories: development, papernaut
 
 {% img right /assets/papernaut/astronaut.png 150 150 %}
 
-If you regularly read scholarly papers, you likely use a [reference
-manager](http://en.wikipedia.org/wiki/Reference_management_software) to
+If you regularly read scholarly papers, you likely use a
+[reference manager](http://en.wikipedia.org/wiki/Reference_management_software) to
 maintain your personal library.  [Papernaut](http://www.papernautapp.com)
 connects to your library to find online coverage and discussion of your papers
 in blogs, forums, and mainstream media.  My hope is that these discussions can
