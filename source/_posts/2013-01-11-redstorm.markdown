@@ -1,0 +1,67 @@
+---
+layout: post
+title: "RedStorm: Distributed Computation in Ruby"
+date: 2013-01-11 17:43
+comments: true
+categories: development
+---
+
+On December 11, 2012 I gave a talk at [Boston.rb](http://bostonrb.org) about
+writing distributed realtime computations in Ruby using
+[Storm](https://github.com/nathanmarz/storm) by Nathan Marz and
+[RedStorm](https://github.com/colinsurprenant/redstorm) by Colin Surprenant.
+
+There is a [video of the talk on the Boston.rb website](http://bostonrb.org/presentations/redstorm-distributed-realtime-computation-in-ruby),
+and [the slides are posted online](http://jayunit.net/redstorm-talk).
+
+Basically, Storm provides a framework for building streaming/realtime
+computations (like log analysis, for example) and distributed RPC for running
+large adhoc computations on a cluster.  RedStorm is a JRuby-based adapter for
+writing these computations and assembling them into topologies (workflows) in
+Ruby.
+
+Here are the recommended resources from my talk:
+
+Getting started
+---------------
+
+* [storm](http://storm-project.net/) is the main project.
+* [RedStorm](https://github.com/colinsurprenant/redstorm) is the JRuby adapter for Storm.
+* [storm-starter](https://github.com/nathanmarz/storm-starter) is a collection of examples in Storm.
+* [redstorm examples](https://github.com/colinsurprenant/redstorm/tree/master/examples) is a similar collection in RedStorm.
+
+Related software tools
+----------------------
+
+* [storm-contrib](https://github.com/nathanmarz/storm-contrib) provides integration with many third-party tools like communicating with queues, service buses, and databases.
+* [storm-deploy](https://github.com/nathanmarz/storm-deploy) "makes it dead-simple to deploy Storm clusters on AWS."
+* [storm-mesos](https://github.com/nathanmarz/storm-mesos) provides integration with Apache Mesos for cluster resource management.
+
+Documentation
+-------------
+* [Storm wiki](https://github.com/nathanmarz/storm/wiki) has about 40,000 words of excellent documentation.
+* The [storm-user Google group](https://groups.google.com/group/storm-user) will cover any questions that the docs don't.
+
+Talks
+-----
+
+Two excellent talks by Storm author Nathan Marz:
+
+* At the [Philadelphia Emerging Technologies for the Enterprise](http://phillyemergingtech.com/2012), ["Storm: Distributed and fault-tolerant realtime computation"](http://vimeo.com/40972420) gives a more extended introduction to Storm.  April 2012.
+
+* At [Strange Loop](https://thestrangeloop.com/), [Runaway complexity in Big Data](http://www.infoq.com/presentations/Complexity-Big-Data) discussed "Common sources of complexity in data systems and a design for a fundamentally better data system".  October 2012.
+
+Book
+----
+
+* [Big Data](http://manning.com/marz/) is an early access book by Nathan Marz which covers "Principles and best practices of scalable realtime data systems"
+
+Other ESP/CEP resources
+-----------------------
+
+Storm lives in a space that's often referred to as ESP ("Event Stream Processing") or CEP ("Complex Event Processing"):
+
+* [Wikipedia: Event Stream Processing](http://en.wikipedia.org/wiki/Event_stream_processing)
+* [Event Stream Processor Matrix](http://blog.sematext.com/2011/09/26/event-stream-processor-matrix/)
+* [Quora: Are there any open-source CEP tools?](http://www.quora.com/Complex-Event-Processing-CEP/Are-there-any-open-source-CEP-tools)
+* [Ilya Grigorik's "StreamSQL: Event Processing with Esper"](http://www.igvita.com/2011/05/27/streamsql-event-processing-with-esper/)
