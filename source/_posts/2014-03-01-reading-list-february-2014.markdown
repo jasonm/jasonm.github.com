@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Reading List: February"
+title: "Reading List: February 2014"
 date: 2014-03-02 22:07
 comments: true
 categories: reading-list
@@ -32,7 +32,7 @@ Meteor
 
 ### What did I read?
 
-* Read the [ Discover Meteor ](http://book.discovermeteor.com) book.
+* Read the [Discover Meteor](http://book.discovermeteor.com) book.
 * Watched the [RealtimeConf 2012 talk](http://2012.realtimeconf.com/video/matt-debergalis).
 * Listened to the [JavascriptJabber podcast episode on Meteor](http://javascriptjabber.com/076-jsj-meteor-js-with-marcus-phillips-and-fred-zirdung/).
 * Understood more about Deps from the [Programming in the Reactive Style with Meteor JS slides](http://www.slideshare.net/fitc_slideshare/meteor-reactivestyle).
@@ -79,13 +79,13 @@ parts (DDP).
   minimongo does, seems like a preferable situation in many cases.  How
   might you introduce DDP to an existing rich-client application without
   rewriting it in Meteor?
-* How do you build for reliability atop DDP and RPC?  E.g. ensuring all
-  RPC endpoints are idempotent.  How does DDP navigate timeout/retry/backoff?
+* How do you build for reliability atop DDP and RPC?  (E.g. ensuring all
+  RPC endpoints are idempotent.)  How does DDP navigate timeout/retry/backoff?
   See [Andrew Wilcox](http://awwx.ws)'s
-  [ meteor-offline-data ](https://github.com/awwx/meteor-offline-data) work.
+  [meteor-offline-data](https://github.com/awwx/meteor-offline-data) work.
 * How does operational transform (OT) fit in?
-  Compare to the [ Derby ](https://github.com/codeparty/derby) framework and
-  its [ Racer ](https://github.com/codeparty/racer) library, which uses
+  Compare to the [Derby](https://github.com/codeparty/derby) framework and
+  its [Racer](https://github.com/codeparty/racer) library, which uses
   [ShareJS](http://sharejs.org/) for OT:
 
   * OT is one approach to conflict resolution.  I assume there are many.  What
@@ -256,21 +256,21 @@ Links from an hour-ish of searching about building trading simulations:
   * [PyAlgoTrade](http://gbeced.github.io/pyalgotrade/)
   * [Interactive Brokers' toolset](https://www.interactivebrokers.com/en/?f=tws&p1=papertrader) - Quantopian is privately testing IB API integration, so that's promising
 
-Closing Thoughts
-================
-
-There was only one time previously when I was this organized about my reading.
-Two summers ago, on vacation in Germany during [a year abroad](http://jayunit.net/2012/12/31/a-year-of-travel/), I had plenty of
-leisure time to fill.  I decided to schedule a few hours each day of German
-language lessons on [Duolingo](https://www.duolingo.com/), reading about
-biotechnology, and reading about education technology, taking notes the whole
-way.  It felt immensely productive, but I was't able to keep up with it when
-we started traveling again.
+Retrospective
+=============
 
 The pace for this month was quite high, but I enjoyed keeping up with it.
 I've found it helpful to schedule reading nights on my calendar to try
 and block some time off for paying attention.
 
+I could not read some of the FRP papers for lack of understanding of
+some foundational functional programming concepts (applicatives, monoids),
+so I will read on those next month.
+
+I wish I had done more hands-on programming with these new tools.
+
 The part I have enjoyed the most is discussing these ideas with others.
 I'd like to try small reading groups or journal clubs around some of my
 future readings.
+
+Next, onto [March reading: including Clojure, FP concepts, and core.async](https://github.com/jasonm/reading-list/wiki/2014-March).
