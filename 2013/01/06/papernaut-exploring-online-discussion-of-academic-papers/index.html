@@ -7,6 +7,39 @@
   <meta charset="utf-8">
   <title>Papernaut: Exploring online discussion of academic papers - Jason Morrison</title>
   <meta name="author" content="Jason Morrison">
+
+  
+  <meta name="description" content="
+
+  
+  
+    
+      Papernaut: Exploring online discussion of academic papers
+    
+    
+      
+        
+
+
+
+
+
+
+
+
+  
+
+
+
+        
+      
+    
+  
+
+
+
+
+If...">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -15,22 +48,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-
-  <link rel="canonical" href="http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/"/>
-  <link href="/favicon.png" rel="shortcut icon" />
+  <link rel="canonical" href="http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers">
+  <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <link href="/atom.xml" rel="alternate" title="Jason Morrison" type="application/atom+xml">
   <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
   <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <link href="/atom.xml" rel="alternate" title="Jason Morrison" type="application/atom+xml"/>
   <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
 <link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
 
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6754843-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
 </head>
 
-<body  >
-  <header><hgroup>
+<body   >
+  <header role="banner"><hgroup>
   <h1><a href="/">Jason Morrison</a></h1>
   
     <h2>Make stuff.</h2>
@@ -38,16 +85,18 @@
 </hgroup>
 
 </header>
-  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <nav role="navigation"><ul class="subscription" data-subscription="rss">
   <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
   
 </ul>
+  
 <form action="http://google.com/search" method="get">
-  <fieldset role="site-search">
+  <fieldset role="search">
     <input type="hidden" name="q" value="site:jasonm.github.com" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
+  
 <ul role=main-navigation>
   <li><a href="/">Blog</a></li>
   <li><a href="/blog/archives">Archives</a></li>
@@ -61,14 +110,18 @@
   <div id="main">
     <div id="content">
       <div>
-<article class="hentry">
+<article class="hentry" role="article">
   
   <header>
     
-      <h1 class="entry-title">Papernaut: Exploring Online Discussion of Academic Papers</h1>
+      <h1 class="entry-title">Papernaut: Exploring online discussion of academic papers</h1>
     
     
       <p class="meta">
+        
+
+
+
 
 
 
@@ -77,8 +130,9 @@
   
 
 
-
-<time datetime="2013-01-06T09:00:00-08:00" pubdate  data-updated="true" >Jan 6<span>th</span>, 2013</time></p>
+<time datetime="2013-01-06T09:00:00-08:00" pubdate data-updated="true"></time>
+        
+      </p>
     
   </header>
 
@@ -93,7 +147,7 @@ in blogs, forums, and mainstream media.  My hope is that these discussions can
 provide broader perspective on research and, in some cases, be the spark that
 starts a new collaboration.</p>
 
-<p>Here&#8217;s a very quick video demo. We start with a <a href="http://zotero.org">Zotero</a>
+<p>Here's a very quick video demo. We start with a <a href="http://zotero.org">Zotero</a>
 library that includes a paper from Science on the
 <a href="http://www.sciencemag.org/content/336/6079/348.short">effect of pesticides on honey bees</a>.
 We then connect to Papernaut, and find several discussions and articles,
@@ -102,8 +156,8 @@ including one in <a href="http://www.guardian.co.uk/science/grrlscientist/2012/m
 <iframe width="560" height="349" src="http://www.youtube.com/embed/ACw3iLLsSXw?rel=0" frameborder="0" allowfullscreen></iframe>
 
 
-<p>I&#8217;ve been working on Papernaut in my spare time for a few months, and I&#8217;m happy
-to say that it&#8217;s now open source.  The project comes in two parts, and the
+<p>I've been working on Papernaut in my spare time for a few months, and I'm happy
+to say that it's now open source.  The project comes in two parts, and the
 source is on GitHub:</p>
 
 <ul>
@@ -117,8 +171,8 @@ article is a technical overview of the moving parts and how they interact.</p>
 
 <h2>Overview: A simple example</h2>
 
-<p>Let&#8217;s walk through a simplified example.  Say I have only one paper in my
-reference manager &#8211; that paper from earlier, about the effect of pesticides on
+<p>Let's walk through a simplified example.  Say I have only one paper in my
+reference manager -- that paper from earlier, about the effect of pesticides on
 honey bees:</p>
 
 <p>Henry, M., Beguin, M., Requier, F., Rollin, O., Odoux, J., Aupinel, P., Aptel,
@@ -126,14 +180,14 @@ J., Tchamitchian, S., &amp; Decourtye, A. (2012).
 <a href="http://www.sciencemag.org/content/336/6079/348.short">A Common Pesticide Decreases Foraging Success and Survival in Honey Bees.</a>
 <em>Science</em>, 336 (6079), 348-350 DOI:<a href="http://dx.doi.org/10.1126/science.1215039">10.1126/science.1215039</a></p>
 
-<p>Let&#8217;s also say that the engine is crawling content from only one source feed,
+<p>Let's also say that the engine is crawling content from only one source feed,
 <a href="http://researchblogging.org">ResearchBlogging.org</a>.
 Among many other content items, that source feed contains a
 <a href="https://researchblogging.org/post-search/list?advanced=true&amp;post_title=&amp;journal=&amp;blog_blogger_name=GrrlScientist&amp;tags=&amp;tag_id=&amp;search_text=&amp;from_date=05%2F08%2F2012&amp;to_date=05%2F08%2F2012&amp;send=Search">relevant entry</a>,
 whose <a href="http://www.guardian.co.uk/science/grrlscientist/2012/may/08/1">content page is on The Guardian</a>.</p>
 
-<p>We&#8217;ll look at how the engine crawls and indexes this source feed.  Then,
-we&#8217;ll see how the frontend pulls the paper from my reference manager and
+<p>We'll look at how the engine crawls and indexes this source feed.  Then,
+we'll see how the frontend pulls the paper from my reference manager and
 asks the engine for relevant discussions.</p>
 
 <h2>Papernaut-engine: Loading content and identifying papers</h2>
@@ -243,7 +297,7 @@ API:</p>
 
 <p>There are several useful standardized identifiers here - DOI, URL, and ISSN.</p>
 
-<p>So, continuing with our example from above, I&#8217;ll next start the Zotero
+<p>So, continuing with our example from above, I'll next start the Zotero
 translation server and identify the pages:</p>
 
 <pre><code>[engine] ~/dev/zotero/translation-server/build/run_translation-server.sh &amp;
@@ -271,7 +325,7 @@ Now, the <code>Page</code> entries we previously crawled:</p>
 
 <p>Two of the four pages were identified (<code>7531</code> and <code>7533</code>), and both of those
 pages received two identifiers apiece.  This means that the Guardian <code>Discussion</code>
-actually referenced two different papers, not just the one we&#8217;re interested in.</p>
+actually referenced two different papers, not just the one we're interested in.</p>
 
 <p>Now that there is a link between the paper in question and this discussion page,
 we are ready to visit the frontend.</p>
@@ -299,7 +353,7 @@ file.  Papers and their identifiers are then extracted with the
 class.</p>
 
 <p>Many papers will have multiple identifiers, and the frontend attempts to clean and validate
-your papers&#8217; identifiers as best it can in an attempt to find the best matches.</p>
+your papers' identifiers as best it can in an attempt to find the best matches.</p>
 
 <p>Once your papers are loaded into the frontend, it
 <a href="https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/lib/discussion.rb">issues requests to the <code>papernaut-engine</code> query API</a>
@@ -319,9 +373,9 @@ which take a type/value form:</p>
 
 
 <p>So, in our example video above, we authenticate via Zotero and authorize
-Papernaut&#8217;s API access via OAuth.  The frontend extracts our library of papers
+Papernaut's API access via OAuth.  The frontend extracts our library of papers
 from Zotero and stores their <code>Identifier</code>s locally.  It issues requests to the
-engine&#8217;s query API for matching discussions, and displays those to the end
+engine's query API for matching discussions, and displays those to the end
 user:</p>
 
 <p><img src="/assets/papernaut/frontend-screenshot.png" alt="" /></p>
@@ -339,26 +393,26 @@ that goes into further detail.</p>
 
 <h2>Next steps</h2>
 
-<p>I&#8217;m excited to see what kinds of results people get with Papernaut,
-but it&#8217;s still very early software.  I look forward to making a variety
+<p>I'm excited to see what kinds of results people get with Papernaut,
+but it's still very early software.  I look forward to making a variety
 of improvements.</p>
 
-<p>I&#8217;d really like to add a bulk request API endpoint to the engine, so that the
+<p>I'd really like to add a bulk request API endpoint to the engine, so that the
 frontend can discover discussions in a single HTTP request, rather that one
-request per paper. That&#8217;s a big performance hit, and the user experience right
+request per paper. That's a big performance hit, and the user experience right
 now for large libraries is that the frontend just hangs for a while.</p>
 
-<p>On the engine side, I&#8217;d like to do a better job of culling false positives in
-the matching engine, and of contributing to Zotero&#8217;s translators to improve the
+<p>On the engine side, I'd like to do a better job of culling false positives in
+the matching engine, and of contributing to Zotero's translators to improve the
 match rate.  I think the primary issue there is that the translator-server
 actually only runs a subset of all the Zotero translators, as some declare that
 they only work inside a real browser context
-(<a href="http://www.zotero.org/support/dev/translators">see &#8220;browserSupport&#8221;</a>).</p>
+(<a href="http://www.zotero.org/support/dev/translators">see "browserSupport"</a>).</p>
 
-<p>I&#8217;d like to get a larger sample set of BibTeX files to try, as there are
+<p>I'd like to get a larger sample set of BibTeX files to try, as there are
 probably edge cases and assumptions in the importer waiting to be hit.</p>
 
-<p>I&#8217;d also like to background some of the tasks in the frontend&#8217;s import process;
+<p>I'd also like to background some of the tasks in the frontend's import process;
 validating DOIs is a big one there.  Ideally, the whole library import would be
 backgrounded, and the user interface would be notified when the import is
 complete.</p>
@@ -368,10 +422,10 @@ different identifiers for the same paper - say a DOI and a PMID.  I also have
 an experimental branch that cross-references papers with the
 <a href="http://help.crossref.org/#author_title_query">crossref.org API</a>,
 which yields more complete information.  Ideally that would happen in the engine.
-I&#8217;ve also seen some library management and import tools that use Google Scholar
+I've also seen some library management and import tools that use Google Scholar
 to improve matching and identification.</p>
 
-<p>After that, I&#8217;d like loaders to run semi-continuously instead of manually, and
+<p>After that, I'd like loaders to run semi-continuously instead of manually, and
 to have more robust infrastructure around paper identification.</p>
 
 <p>In the long term, it would be interesting to try and bring the discussion
@@ -380,7 +434,7 @@ I provide the engine query API separately from the frontend.</p>
 
 <h2>Conclusion</h2>
 
-<p>I&#8217;m most interested in hearing feedback from people.  Is this useful to you?
+<p>I'm most interested in hearing feedback from people.  Is this useful to you?
 If you use a reference manager,
 <a href="http://www.papernautapp.com">give Papernaut a spin</a>
 and <a href="mailto:jason.p.morrison@gmail.com">let me know</a> how it goes.</p>
@@ -400,11 +454,13 @@ and <a href="mailto:jason.p.morrison@gmail.com">let me know</a> how it goes.</p>
 
 
 
+
+
+
   
 
 
-
-<time datetime="2013-01-06T09:00:00-08:00" pubdate  data-updated="true" >Jan 6<span>th</span>, 2013</time>
+<time datetime="2013-01-06T09:00:00-08:00" pubdate data-updated="true"></time>
       
 
 <span class="categories">
@@ -418,38 +474,35 @@ and <a href="mailto:jason.p.morrison@gmail.com">let me know</a> how it goes.</p>
     
       <div class="sharing">
   
-  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/" data-via="jayunit" data-counturl="http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/" data-via="jayunit" data-counturl="http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/" >Tweet</a>
   
   
   <div class="g-plusone" data-size="medium"></div>
   
+  
 </div>
 
     
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/2012/12/31/a-year-of-travel/" title="Previous Post: A year of travel">&laquo; A year of travel</a>
+      
+      
+        <a class="basic-alignment right" href="/2013/01/09/clahub-easy-contributor-agreements-on-github/" title="Next Post: CLAHub: Easy contributor agreements on GitHub">CLAHub: Easy contributor agreements on GitHub &raquo;</a>
+      
+    </p>
   </footer>
 </article>
 
   <section>
     <h1>Comments</h1>
-    <div id="disqus_thread"><div id="disqus_thread"></div>
-<script type="text/javascript">
-  var disqus_shortname = 'jayunit';
-  var disqus_identifier = 'http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/';
-  var disqus_url = 'http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/';
-  //var disqus_developer = 1;
-  (function() {
-    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-  })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
 </div>
   </section>
 
 </div>
 
-<aside role=sidebar>
+<aside class="sidebar">
   
     <section>
   <h1>Recent Posts</h1>
@@ -479,15 +532,15 @@ and <a href="mailto:jason.p.morrison@gmail.com">let me know</a> how it goes.</p>
 </section>
 
 <section>
-  <h1>Github Repos</h1>
+  <h1>GitHub Repos</h1>
   <ul id="gh_repos">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   
-  <a href="https://github.com/jasonm">@jasonm</a> on Github
+  <a href="https://github.com/jasonm">@jasonm</a> on GitHub
   
   <script type="text/javascript">
-    $.domReady(function(){
+    $(document).ready(function(){
         if (!window.jXHR){
             var jxhr = document.createElement('script');
             jxhr.type = 'text/javascript';
@@ -511,7 +564,7 @@ and <a href="mailto:jason.p.morrison@gmail.com">let me know</a> how it goes.</p>
 <section>
   <h1>Latest Tweets</h1>
   <ul id="tweets">
-    <li class="loading">Status updating&#8230;</li>
+    <li class="loading">Status updating...</li>
   </ul>
   <script type="text/javascript">
     $.domReady(function(){
@@ -526,34 +579,40 @@ and <a href="mailto:jason.p.morrison@gmail.com">let me know</a> how it goes.</p>
 
 
 
-
   
 </aside>
 
 
     </div>
   </div>
-  <footer><p>
+  <footer role="contentinfo"><p>
   Copyright &copy; 2014 - Jason Morrison -
   <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
 </p>
 
 </footer>
   
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-6754843-1']);
-    _gaq.push(['_trackPageview']);
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+<script type="text/javascript">
+      var disqus_shortname = 'jayunit';
+      
+        
+        // var disqus_developer = 1;
+        var disqus_identifier = 'http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/';
+        var disqus_url = 'http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/';
+        var disqus_script = 'embed.js';
+      
+    (function () {
+      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    }());
+</script>
 
 
-  
+
+
+
   <script type="text/javascript">
     (function() {
       var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
@@ -563,16 +622,19 @@ and <a href="mailto:jason.p.morrison@gmail.com">let me know</a> how it goes.</p>
   </script>
 
 
-  
+
   <script type="text/javascript">
     (function(){
       var twitterWidgets = document.createElement('script');
       twitterWidgets.type = 'text/javascript';
       twitterWidgets.async = true;
-      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      twitterWidgets.src = '//platform.twitter.com/widgets.js';
       document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
     })();
   </script>
+
+
+
 
 
 </body>
