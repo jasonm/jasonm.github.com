@@ -1,116 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
 
-<!DOCTYPE html>
-<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
-<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
-<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Papernaut: Exploring Online Discussion of Academic Papers - Jason Morrison</title>
-  <meta name="author" content="Jason Morrison">
-
-  
-  <meta name="description" content="If you regularly read scholarly papers, you likely use a
-reference manager to
-maintain your personal library. Papernaut
-connects to your library to &hellip;">
-  
-
-  <!-- http://t.co/dKP3o1e -->
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title><![CDATA[Category: Development, | Jason Morrison]]></title>
+  <link href="http://jayunit.net/blog/categories/development/atom.xml" rel="self"/>
+  <link href="http://jayunit.net/"/>
+  <updated>2014-03-02T22:53:57-08:00</updated>
+  <id>http://jayunit.net/</id>
+  <author>
+    <name><![CDATA[Jason Morrison]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
 
   
-  <link rel="canonical" href="http://jayunit.net/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers">
-  <link href="/favicon.png" rel="icon">
-  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
-  <link href="/atom.xml" rel="alternate" title="Jason Morrison" type="application/atom+xml">
-  <script src="/javascripts/modernizr-2.0.js"></script>
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script>!window.jQuery && document.write(unescape('%3Cscript src="./javascripts/libs/jquery.min.js"%3E%3C/script%3E'))</script>
-  <script src="/javascripts/octopress.js" type="text/javascript"></script>
-  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
-<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+  <entry>
+    <title type="html"><![CDATA[CLAHub: Easy Contributor Agreements on GitHub]]></title>
+    <link href="http://jayunit.net/2013/01/09/clahub-easy-contributor-agreements-on-github/"/>
+    <updated>2013-01-09T17:22:00-08:00</updated>
+    <id>http://jayunit.net/2013/01/09/clahub-easy-contributor-agreements-on-github</id>
+    <content type="html"><![CDATA[<p><img class="right" src="/assets/clahub/clipboard.png" width="150" height="150"></p>
 
-  
-  <script type="text/javascript">
-    var _gaq = _gaq || [];
-    _gaq.push(['_setAccount', 'UA-6754843-1']);
-    _gaq.push(['_trackPageview']);
+<p><a href="http://clahub.herokuapp.com">CLAHub</a> is a small side project I cooked up a few
+months ago, and just got around to open-sourcing.  The goal is to remove the
+friction of <a href="http://en.wikipedia.org/wiki/Contributor_License_Agreement">Contributor License Agreements</a>
+for contributors and maintainers alike.  It&rsquo;s not done yet, but I&rsquo;m curious to
+hear what people think.</p>
 
-    (function() {
-      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-    })();
-  </script>
+<h2>What is it?</h2>
 
+<p>The general idea with CLAs is this: contributors grant the maintainer a license
+to distribute the their code, and state that they&rsquo;re legally able to do so.  A
+fair number of projects have a CLA in place, including
+<a href="http://jquery.github.com/cla.html">jQuery</a>,
+<a href="http://nodejs.org/cla.html">Node.js</a>,
+<a href="https://www.djangoproject.com/foundation/cla/">Django</a>, and
+<a href="http://wiki.opscode.com/display/chef/How+to+Contribute">Chef</a>.  In the best
+cases the CLA is signed via electronic signature, like
+<a href="http://nodejs.org/cla.html">Node.js does with a Google Form</a>.  In the worst
+cases you have to print, sign, and fax the agreement.  In all cases,
+maintainers are responsible for cross-referencing contributions and signatures
+to make sure all contributions have a corresponding signature.</p>
 
-</head>
+<p>With <a href="http://clahub.herokuapp.com">CLAHub</a> and an open source project on GitHub
+you can:</p>
 
-<body   >
-  <header role="banner"><hgroup>
-  <h1><a href="/">Jason Morrison</a></h1>
-  
-    <h2>Make stuff.</h2>
-  
-</hgroup>
-
-</header>
-  <nav role="navigation"><ul class="subscription" data-subscription="rss">
-  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
-  
-</ul>
-  
-<form action="http://google.com/search" method="get">
-  <fieldset role="search">
-    <input type="hidden" name="q" value="site:jayunit.net" />
-    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
-  </fieldset>
-</form>
-  
-<ul role=main-navigation>
-  <li><a href="/">Blog</a></li>
-  <li><a href="/blog/archives">Archives</a></li>
-  <li><a href="/about">About Me</a></li>
-  <li><a href="http://twitter.com/jayunit">Twitter</a></li>
-  <li><a href="http://github.com/jasonm">GitHub</a></li>
-  <li><a href="mailto:jason.p.morrison@gmail.com">Email</a></li>
+<ul>
+<li>Sign in with GitHub and create a CLA for your project.</li>
+<li>Ask contributors to sign in with GitHub to electronically sign the CLA.</li>
+<li>See on each pull request whether the contributors have all signed your CLA.
+This uses the handy <a href="https://github.com/blog/1227-commit-status-api">Commit Status API</a>,
+similar to what CI tools do.</li>
 </ul>
 
-</nav>
-  <div id="main">
-    <div id="content">
-      <div>
-<article class="hentry" role="article">
+
+<p><a href="http://clahub.herokuapp.com/">Here&rsquo;s the app</a>.  There&rsquo;s a little slideshow on
+the frontpage to see how it works.  And <a href="https://github.com/jasonm/clahub">here&rsquo;s the source on GitHub</a>.</p>
+
+<h2>Learn more about CLAs</h2>
+
+<p>Here&rsquo;s some more background on CLAs:</p>
+
+<ul>
+<li><a href="http://jacobian.org/writing/contributor-license-agreements/"><em>Contributor License Agreements</em></a> by Jacob Kaplan-Moss.</li>
+<li><a href="http://www.groklaw.net/article.php?story=20110524120303815"><em>A CLA By Any Other Name</em></a> on Groklaw.</li>
+</ul>
+
+
+<p>Want to choose a CLA?  <a href="http://www.harmonyagreements.org/">Project Harmony</a> is a web tool that helps you quickly select a CLA.</p>
+
+<h2>Feedback</h2>
+
+<p>There&rsquo;s more that needs to be done, but the core of the app works.
+The <a href="https://github.com/jasonm/clahub/issues">next steps are in GitHub issues</a>.</p>
+
+<p>Do you use a CLA for your project(s)?  Would this encourage you to add a CLA if
+you don&rsquo;t have one already?  (That&rsquo;s not really my goal &ndash; just to reduce
+friction where CLAs are already valuable.)  If you have a CLA, would you use
+something like this to reduce the barrier to entry and your overhead?  What
+kinds of features would be useful?</p>
+]]></content>
+  </entry>
   
-  <header>
-    
-      <h1 class="entry-title">Papernaut: Exploring Online Discussion of Academic Papers</h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-06T09:00:00-08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-<div class="entry-content"><p><img class="right" src="/assets/papernaut/astronaut.png" width="150" height="150"></p>
+  <entry>
+    <title type="html"><![CDATA[Papernaut: Exploring Online Discussion of Academic Papers]]></title>
+    <link href="http://jayunit.net/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/"/>
+    <updated>2013-01-06T09:00:00-08:00</updated>
+    <id>http://jayunit.net/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers</id>
+    <content type="html"><![CDATA[<p><img class="right" src="/assets/papernaut/astronaut.png" width="150" height="150"></p>
 
 <p>If you regularly read scholarly papers, you likely use a
 <a href="http://en.wikipedia.org/wiki/Reference_management_software">reference manager</a> to
@@ -326,7 +302,7 @@ file.  Papers and their identifiers are then extracted with the
 class.</p>
 
 <p>Many papers will have multiple identifiers, and the frontend attempts to clean and validate
-your papers&#8217; identifiers as best it can in an attempt to find the best matches.</p>
+your papers' identifiers as best it can in an attempt to find the best matches.</p>
 
 <p>Once your papers are loaded into the frontend, it
 <a href="https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/lib/discussion.rb">issues requests to the <code>papernaut-engine</code> query API</a>
@@ -411,179 +387,7 @@ I provide the engine query API separately from the frontend.</p>
 If you use a reference manager,
 <a href="http://www.papernautapp.com">give Papernaut a spin</a>
 and <a href="mailto:jason.p.morrison@gmail.com">let me know</a> how it goes.</p>
-</div>
-
-
-  <footer>
-    <p class="meta">
-      
+]]></content>
+  </entry>
   
-
-<span class="byline author vcard">Posted by <span class="fn">Jason Morrison</span></span>
-
-      
-
-
-
-
-
-
-
-
-  
-
-
-<time datetime="2013-01-06T09:00:00-08:00" pubdate data-updated="true">Jan 6<span>th</span>, 2013</time>
-      
-
-<span class="categories">
-  
-    <a class='category' href='/blog/categories/development/'>development,</a>, <a class='category' href='/blog/categories/papernaut/'>papernaut</a>
-  
-</span>
-
-
-    </p>
-    
-      <div class="sharing">
-  
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jayunit.net/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/" data-via="jayunit" data-counturl="http://jayunit.net/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/" >Tweet</a>
-  
-  
-  
-</div>
-
-    
-    <p class="meta">
-      
-        <a class="basic-alignment left" href="/2012/12/31/a-year-of-travel/" title="Previous Post: A year of travel">&laquo; A year of travel</a>
-      
-      
-        <a class="basic-alignment right" href="/2013/01/09/clahub-easy-contributor-agreements-on-github/" title="Next Post: CLAHub: Easy contributor agreements on GitHub">CLAHub: Easy contributor agreements on GitHub &raquo;</a>
-      
-    </p>
-  </footer>
-</article>
-
-  <section>
-    <h1>Comments</h1>
-    <div id="disqus_thread" aria-live="polite"><noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-</div>
-  </section>
-
-</div>
-
-<aside class="sidebar">
-  
-    <section>
-  <h1>Recent Posts</h1>
-  <ul id="recent_posts">
-    
-      <li class="post">
-        <a href="/2014/03/02/reading-list-february-2014/">Reading List: February 2014</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/01/11/redstorm/">RedStorm: Distributed Computation in Ruby</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/01/09/clahub-easy-contributor-agreements-on-github/">CLAHub: Easy Contributor Agreements on GitHub</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/">Papernaut: Exploring Online Discussion of Academic Papers</a>
-      </li>
-    
-      <li class="post">
-        <a href="/2012/12/31/a-year-of-travel/">A Year of Travel</a>
-      </li>
-    
-  </ul>
-</section>
-
-<section>
-  <h1>GitHub Repos</h1>
-  <ul id="gh_repos">
-    <li class="loading">Status updating...</li>
-  </ul>
-  
-  <a href="https://github.com/jasonm">@jasonm</a> on GitHub
-  
-  <script type="text/javascript">
-    $(document).ready(function(){
-        if (!window.jXHR){
-            var jxhr = document.createElement('script');
-            jxhr.type = 'text/javascript';
-            jxhr.src = '/javascripts/libs/jXHR.js';
-            var s = document.getElementsByTagName('script')[0];
-            s.parentNode.insertBefore(jxhr, s);
-        }
-
-        github.showRepos({
-            user: 'jasonm',
-            count: 10,
-            skip_forks: true,
-            target: '#gh_repos'
-        });
-    });
-  </script>
-  <script src="/javascripts/github.js" type="text/javascript"> </script>
-</section>
-
-
-
-
-
-  
-</aside>
-
-
-    </div>
-  </div>
-  <footer role="contentinfo"><p>
-  Copyright &copy; 2014 - Jason Morrison -
-  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
-</p>
-
-</footer>
-  
-
-<script type="text/javascript">
-      var disqus_shortname = 'jayunit';
-      
-        
-        // var disqus_developer = 1;
-        var disqus_identifier = 'http://jayunit.net/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/';
-        var disqus_url = 'http://jayunit.net/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/';
-        var disqus_script = 'embed.js';
-      
-    (function () {
-      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-      dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    }());
-</script>
-
-
-
-
-
-
-
-  <script type="text/javascript">
-    (function(){
-      var twitterWidgets = document.createElement('script');
-      twitterWidgets.type = 'text/javascript';
-      twitterWidgets.async = true;
-      twitterWidgets.src = '//platform.twitter.com/widgets.js';
-      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
-    })();
-  </script>
-
-
-
-
-
-</body>
-</html>
+</feed>

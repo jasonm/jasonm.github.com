@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Rails, | Jason Morrison]]></title>
+  <link href="http://jayunit.net/blog/categories/rails/atom.xml" rel="self"/>
+  <link href="http://jayunit.net/"/>
+  <updated>2014-03-02T22:53:57-08:00</updated>
+  <id>http://jayunit.net/</id>
+  <author>
+    <name><![CDATA[Jason Morrison]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[Backbone.js Video Q&amp;A]]></title>
+    <link href="http://jayunit.net/2011/10/24/backbone-js-video-q-and-a/"/>
+    <updated>2011-10-24T21:24:00-07:00</updated>
+    <id>http://jayunit.net/2011/10/24/backbone-js-video-q-and-a</id>
+    <content type="html"><![CDATA[<p>On Friday, October 14th, I hosted a two hour live Q&amp;A chat for purchasers of the thoughtbot <a href="http://workshops.thoughtbot.com/backbone-js-on-rails">Backbone.js on Rails eBook</a>, which I am co-authoring. We invited people who have purchased the book to submit questions ahead of time, and then join me in chat for a discussion.</p>
+
+<p>I&rsquo;m pleased that we are offering the recording and notes as a free resources. You can <a href="http://workshops.thoughtbot.com/pages/backbone-js-on-rails-qa-live-chat-1">download the Backbone.js on Rails live Q&amp;A chat audio and notes</a> over on the thoughtbot Workshops site.</p>
+]]></content>
+  </entry>
+  
+</feed>

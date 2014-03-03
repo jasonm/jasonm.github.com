@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Category: Clahub | Jason Morrison]]></title>
+  <link href="http://jayunit.net/blog/categories/clahub/atom.xml" rel="self"/>
+  <link href="http://jayunit.net/"/>
+  <updated>2014-03-02T22:53:57-08:00</updated>
+  <id>http://jayunit.net/</id>
+  <author>
+    <name><![CDATA[Jason Morrison]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[CLAHub: Easy Contributor Agreements on GitHub]]></title>
+    <link href="http://jayunit.net/2013/01/09/clahub-easy-contributor-agreements-on-github/"/>
+    <updated>2013-01-09T17:22:00-08:00</updated>
+    <id>http://jayunit.net/2013/01/09/clahub-easy-contributor-agreements-on-github</id>
+    <content type="html"><![CDATA[<p><img class="right" src="/assets/clahub/clipboard.png" width="150" height="150"></p>
+
+<p><a href="http://clahub.herokuapp.com">CLAHub</a> is a small side project I cooked up a few
+months ago, and just got around to open-sourcing.  The goal is to remove the
+friction of <a href="http://en.wikipedia.org/wiki/Contributor_License_Agreement">Contributor License Agreements</a>
+for contributors and maintainers alike.  It&rsquo;s not done yet, but I&rsquo;m curious to
+hear what people think.</p>
+
+<h2>What is it?</h2>
+
+<p>The general idea with CLAs is this: contributors grant the maintainer a license
+to distribute the their code, and state that they&rsquo;re legally able to do so.  A
+fair number of projects have a CLA in place, including
+<a href="http://jquery.github.com/cla.html">jQuery</a>,
+<a href="http://nodejs.org/cla.html">Node.js</a>,
+<a href="https://www.djangoproject.com/foundation/cla/">Django</a>, and
+<a href="http://wiki.opscode.com/display/chef/How+to+Contribute">Chef</a>.  In the best
+cases the CLA is signed via electronic signature, like
+<a href="http://nodejs.org/cla.html">Node.js does with a Google Form</a>.  In the worst
+cases you have to print, sign, and fax the agreement.  In all cases,
+maintainers are responsible for cross-referencing contributions and signatures
+to make sure all contributions have a corresponding signature.</p>
+
+<p>With <a href="http://clahub.herokuapp.com">CLAHub</a> and an open source project on GitHub
+you can:</p>
+
+<ul>
+<li>Sign in with GitHub and create a CLA for your project.</li>
+<li>Ask contributors to sign in with GitHub to electronically sign the CLA.</li>
+<li>See on each pull request whether the contributors have all signed your CLA.
+This uses the handy <a href="https://github.com/blog/1227-commit-status-api">Commit Status API</a>,
+similar to what CI tools do.</li>
+</ul>
+
+
+<p><a href="http://clahub.herokuapp.com/">Here&rsquo;s the app</a>.  There&rsquo;s a little slideshow on
+the frontpage to see how it works.  And <a href="https://github.com/jasonm/clahub">here&rsquo;s the source on GitHub</a>.</p>
+
+<h2>Learn more about CLAs</h2>
+
+<p>Here&rsquo;s some more background on CLAs:</p>
+
+<ul>
+<li><a href="http://jacobian.org/writing/contributor-license-agreements/"><em>Contributor License Agreements</em></a> by Jacob Kaplan-Moss.</li>
+<li><a href="http://www.groklaw.net/article.php?story=20110524120303815"><em>A CLA By Any Other Name</em></a> on Groklaw.</li>
+</ul>
+
+
+<p>Want to choose a CLA?  <a href="http://www.harmonyagreements.org/">Project Harmony</a> is a web tool that helps you quickly select a CLA.</p>
+
+<h2>Feedback</h2>
+
+<p>There&rsquo;s more that needs to be done, but the core of the app works.
+The <a href="https://github.com/jasonm/clahub/issues">next steps are in GitHub issues</a>.</p>
+
+<p>Do you use a CLA for your project(s)?  Would this encourage you to add a CLA if
+you don&rsquo;t have one already?  (That&rsquo;s not really my goal &ndash; just to reduce
+friction where CLAs are already valuable.)  If you have a CLA, would you use
+something like this to reduce the barrier to entry and your overhead?  What
+kinds of features would be useful?</p>
+]]></content>
+  </entry>
+  
+</feed>

@@ -5,43 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Notes from KRTconf 2011 - Jason Morrison</title>
+  <title>Notes From KRTconf 2011 - Jason Morrison</title>
   <meta name="author" content="Jason Morrison">
 
   
-  <meta name="description" content="
-
-  
-  
-    
-      Notes from KRTconf 2011
-    
-    
-      
-        
-
-
-
-
-
-
-
-
-  
-
-
-
-        
-      
-    
-  
-
-
-Header here with a text
-
-Blockquote
-
-S...">
+  <meta name="description" content="Header here with a text Blockquote Sunday night Met Matt and Sim, writing Word Wars, an AIR mobile game, sells best in Nook
+store surprisingly! &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -50,7 +19,7 @@ S...">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://jasonm.github.com/wip-posts/2011-11-08-notes-from-krtconf-2011.html">
+  <link rel="canonical" href="http://jayunit.net/wip-posts/2011-11-08-notes-from-krtconf-2011.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Jason Morrison" type="application/atom+xml">
@@ -94,7 +63,7 @@ S...">
   
 <form action="http://google.com/search" method="get">
   <fieldset role="search">
-    <input type="hidden" name="q" value="site:jasonm.github.com" />
+    <input type="hidden" name="q" value="site:jayunit.net" />
     <input class="search" type="text" name="q" results="0" placeholder="Search"/>
   </fieldset>
 </form>
@@ -116,7 +85,7 @@ S...">
   
   <header>
     
-      <h1 class="entry-title">Notes from KRTconf 2011</h1>
+      <h1 class="entry-title">Notes From KRTconf 2011</h1>
     
     
       <p class="meta">
@@ -132,7 +101,7 @@ S...">
   
 
 
-<time datetime="2011-11-08T15:08:00-08:00" pubdate data-updated="true"></time>
+<time datetime="2011-11-08T15:08:00-08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2011</time>
         
       </p>
     
@@ -151,31 +120,31 @@ store surprisingly!</p>
 <p>Guillermo socket.io author/maintainer
 Paul from Pachube</p>
 
-<p>Sim says a challenge is building the RESTful backend on node - it's great for
-async but not great for simple restful -- for that, Rails/Django is easier, so
-it's still a PITA to build a full JS stack</p>
+<p>Sim says a challenge is building the RESTful backend on node &ndash; it&rsquo;s great for
+async but not great for simple restful &mdash; for that, Rails/Django is easier, so
+it&rsquo;s still a PITA to build a full JS stack</p>
 
-<p>Guillermo ...well, see Monday talk, but generally challenges are websockets over
-3G - negotiatinng buffering, even doing it at all, some networks block it.
+<p>Guillermo &hellip;well, see Monday talk, but generally challenges are websockets over
+3G &ndash; negotiatinng buffering, even doing it at all, some networks block it.
 Feature detection works for devices but not on e.g. intermediate proxies.
-Also, starting with a slow-but-safe implementation and then negotiating up isn't
-necessarily a good approah, since often it's an application's initial data
-payload which is heaviest, so you're possibly compromising network speed at the
+Also, starting with a slow-but-safe implementation and then negotiating up isn&rsquo;t
+necessarily a good approah, since often it&rsquo;s an application&rsquo;s initial data
+payload which is heaviest, so you&rsquo;re possibly compromising network speed at the
 most critical time.</p>
 
-<p>Paul at Pachube - talk to him about science and instruments.  (Later, I did
-this, he's less in touch with the bizdev side and, though he'd love to see more
-scientific instruments...)</p>
+<p>Paul at Pachube &ndash; talk to him about science and instruments.  (Later, I did
+this, he&rsquo;s less in touch with the bizdev side and, though he&rsquo;d love to see more
+scientific instruments&hellip;)</p>
 
 <h3>Monday morning</h3>
 
 <p>Breakfast chat</p>
 
 <p>Now.js, transitive.io is similar
-"Eight fallacies of distributed computing"
-BISOSH (?) - XMPP over HTTP
-buddycloud - federated  social networking on XMPP
-Julien - superfeedr - interesting approach of correlating feed info to reduce
+&ldquo;Eight fallacies of distributed computing&rdquo;
+BISOSH (?) &ndash; XMPP over HTTP
+buddycloud &ndash; federated  social networking on XMPP
+Julien &ndash; superfeedr &ndash; interesting approach of correlating feed info to reduce
 polling latency.  E.g. in a news org, when a post comes up in a topic feed, look
 at the author, then update the corresponding author feed.</p>
 
@@ -189,7 +158,7 @@ tesing.  Also, Astro @ buddycloud says testing network protocols is hard.</p>
 <p>Outline:
 * Client-to-server is not enough.
 * Realtime is push
-* Feeds and HTTP: a reality check
+* Feeds and <a href="HTTP:">HTTP:</a> a reality check
 * What happends next</p>
 
 <p>Q: What can we push?  HTML (dirty but ubiquitious), API info (rich but
@@ -198,18 +167,18 @@ unstandard), RSS/ATOM (ugh XML but widely available and rich enough)</p>
 <p>PSHB is pragmatic, but not perfect.  There are 3 participants: Publishers, Hubs,
 and Subscribers.</p>
 
-<p>Demo 1: Tumblr (P) -> superfeedr (H) -> Google reader (S)
-Demo 2: Rebuilding feeds: "Track", a "mention" feed at superfeedr. Like Google alerts.
-* Publish something about "krtconf", see it come up.
+<p>Demo 1: Tumblr (P) &ndash;> superfeedr (H) &ndash;> Google reader (S)
+Demo 2: Rebuilding feeds: &ldquo;Track&rdquo;, a &ldquo;mention&rdquo; feed at superfeedr. Like Google alerts.
+* Publish something about &ldquo;krtconf&rdquo;, see it come up.
 Demo 3: msgboy.com: Browser extension, push data to end user.  Cool: as an
 extension, it sees your browsing activity, and can extract/identify feeds to
 auto-subscribe you to content of interest.</p>
 
-<h4>Khris Loux - Turning Realtime into Real Revenue</h4>
+<h4>Khris Loux &ndash; Turning Realtime into Real Revenue</h4>
 
 <p>vvvvvvvvvvvvvvvvvvvvvvvvvvvv
 TODO: NEXT HERE
-^<sup>^<sup>^<sup>^<sup>^<sup>^<sup>^<sup>^<sup>^<sup>^<sup>^<sup>^<sup>^<sup>^^</sup></sup></sup></sup></sup></sup></sup></sup></sup></sup></sup></sup></sup></p>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^</p>
 
 <h3>Mon night</h3>
 
@@ -217,7 +186,7 @@ TODO: NEXT HERE
 
 <p>Games at Ground Kontrol</p>
 
-<p>Idea: Conferences are to build community.  What makes a community?  Is "KRT" a
+<p>Idea: Conferences are to build community.  What makes a community?  Is &ldquo;KRT&rdquo; a
 community?  Versus e.g. Node, Ruby?</p>
 </div>
 
@@ -241,24 +210,16 @@ community?  Versus e.g. Node, Ruby?</p>
   
 
 
-<time datetime="2011-11-08T15:08:00-08:00" pubdate data-updated="true"></time>
+<time datetime="2011-11-08T15:08:00-08:00" pubdate data-updated="true">Nov 8<span>th</span>, 2011</time>
       
-
-<span class="categories">
-  
-    Liquid error: undefined method `sort!' for "conference, node.js, realtime, javascript, ruby":String
-  
-</span>
 
 
     </p>
     
       <div class="sharing">
   
-  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jasonm.github.com/wip-posts/2011-11-08-notes-from-krtconf-2011.html" data-via="jayunit" data-counturl="http://jasonm.github.com/wip-posts/2011-11-08-notes-from-krtconf-2011.html" >Tweet</a>
+  <a href="//twitter.com/share" class="twitter-share-button" data-url="http://jayunit.net/wip-posts/2011-11-08-notes-from-krtconf-2011.html" data-via="jayunit" data-counturl="http://jayunit.net/wip-posts/2011-11-08-notes-from-krtconf-2011.html" >Tweet</a>
   
-  
-  <div class="g-plusone" data-size="medium"></div>
   
   
 </div>
@@ -294,15 +255,15 @@ community?  Versus e.g. Node, Ruby?</p>
       </li>
     
       <li class="post">
-        <a href="/2013/01/09/clahub-easy-contributor-agreements-on-github/">CLAHub: Easy contributor agreements on GitHub</a>
+        <a href="/2013/01/09/clahub-easy-contributor-agreements-on-github/">CLAHub: Easy Contributor Agreements on GitHub</a>
       </li>
     
       <li class="post">
-        <a href="/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/">Papernaut: Exploring online discussion of academic papers</a>
+        <a href="/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/">Papernaut: Exploring Online Discussion of Academic Papers</a>
       </li>
     
       <li class="post">
-        <a href="/2012/12/31/a-year-of-travel/">A year of travel</a>
+        <a href="/2012/12/31/a-year-of-travel/">A Year of Travel</a>
       </li>
     
   </ul>
@@ -338,21 +299,6 @@ community?  Versus e.g. Node, Ruby?</p>
 </section>
 
 
-<section>
-  <h1>Latest Tweets</h1>
-  <ul id="tweets">
-    <li class="loading">Status updating...</li>
-  </ul>
-  <script type="text/javascript">
-    $.domReady(function(){
-      getTwitterFeed("jayunit", 10, false);
-    });
-  </script>
-  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
-  
-    <a href="http://twitter.com/jayunit" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @jayunit</a>
-  
-</section>
 
 
 
@@ -375,8 +321,8 @@ community?  Versus e.g. Node, Ruby?</p>
       
         
         // var disqus_developer = 1;
-        var disqus_identifier = 'http://jasonm.github.com/wip-posts/2011-11-08-notes-from-krtconf-2011.html';
-        var disqus_url = 'http://jasonm.github.com/wip-posts/2011-11-08-notes-from-krtconf-2011.html';
+        var disqus_identifier = 'http://jayunit.net/wip-posts/2011-11-08-notes-from-krtconf-2011.html';
+        var disqus_url = 'http://jayunit.net/wip-posts/2011-11-08-notes-from-krtconf-2011.html';
         var disqus_script = 'embed.js';
       
     (function () {
@@ -389,14 +335,6 @@ community?  Versus e.g. Node, Ruby?</p>
 
 
 
-
-  <script type="text/javascript">
-    (function() {
-      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
-      script.src = 'https://apis.google.com/js/plusone.js';
-      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
-    })();
-  </script>
 
 
 
