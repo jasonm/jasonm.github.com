@@ -1,1 +1,1813 @@
-My Octopress Page is coming soon &hellip;
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Jason Morrison</title>
+  <meta name="author" content="Jason Morrison">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://jasonm.github.com/index.html"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jason Morrison" type="application/atom+xml"/>
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Jason Morrison</a></h1>
+  
+    <h2>Make stuff.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:jasonm.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About Me</a></li>
+  <li><a href="http://twitter.com/jayunit">Twitter</a></li>
+  <li><a href="http://github.com/jasonm">GitHub</a></li>
+  <li><a href="mailto:jason.p.morrison@gmail.com">Email</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div class="blog-index">
+
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2014/03/02/reading-list-february-2014/">Reading List: February 2014</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2014-03-02T22:07:00-08:00" pubdate  data-updated="true" >Mar 2<span>nd</span>, 2014</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>I am maintaining a reading list:</p>
+
+<p><a href="http://jayunit.net/reading-list">http://jayunit.net/reading-list</a></p>
+
+<p>I&#8217;m choosing a theme per month, with several works on the theme.
+I&#8217;ll try to collect notes at the end of each month about what I read and wrote,
+what I thought, and how I might revisit that theme in the future.</p>
+
+<p>Take &#8220;reading&#8221; loosely - presentations and podcasts definitely count.</p>
+
+<h1>What did I complete in February?</h1>
+
+<p>My high level goals for February were to:</p>
+
+<ul>
+<li>Read about <a href="https://www.meteor.com/">Meteor</a>,
+<a href="http://www.haskell.org/haskellwiki/Functional_Reactive_Programming">FRP</a>,
+and <a href="http://facebook.github.io/react/">React</a>.</li>
+<li>Do some toy projects with these.</li>
+<li>Skim a finance book.</li>
+</ul>
+
+
+<h2>Meteor</h2>
+
+<h3>What did I read?</h3>
+
+<ul>
+<li>Read the <a href="http://book.discovermeteor.com">Discover Meteor</a> book.</li>
+<li>Watched the <a href="http://2012.realtimeconf.com/video/matt-debergalis">RealtimeConf 2012 talk</a>.</li>
+<li>Listened to the <a href="http://javascriptjabber.com/076-jsj-meteor-js-with-marcus-phillips-and-fred-zirdung/">JavascriptJabber podcast episode on Meteor</a>.</li>
+<li>Understood more about Deps from the <a href="http://www.slideshare.net/fitc_slideshare/meteor-reactivestyle">Programming in the Reactive Style with Meteor JS slides</a>.</li>
+<li>Went to a <a href="https://www.meteor.com/blog/2014/02/14/pete-hunt-talks-facebook-react">Meteor Devshop talk</a>
+about <a href="http://facebook.github.io/react/">React</a> and <a href="https://github.com/benjamn/react-meteor">react-meteor</a>.</li>
+<li>Built a <a href="https://github.com/jasonm/toy-meteor-chat">toy chat app in Meteor</a>.</li>
+</ul>
+
+
+<h3>Thoughts:</h3>
+
+<p>Lots of interesting ideas, but I&#8217;m not sure I&#8217;ll use Meteor.  Maybe I&#8217;ll use
+parts (DDP).</p>
+
+<ul>
+<li>Isomorphic (same code for the client and server) is interesting.  I would have to
+build a large app to see demonstrated advantages, but can imagine.</li>
+<li>Seems to work best when all used together, but no reason you couldn&#8217;t
+extract e.g. DDP or Deps and use in an existing application.  (Right?)</li>
+<li>There are three places to get packages -
+<a href="http://docs.meteor.com/#usingpackages">core</a>,
+<a href="https://atmosphere.meteor.com/">Atmosphere</a>, and,
+<a href="http://meteorhacks.com/complete-npm-integration-for-meteor.html">as of June 2013, NPM</a>.
+It&#8217;s nice that they bless a small set of core packages as a stdlib of sorts,
+although I don&#8217;t understand the need for Atmosphere and NPM to be separate.</li>
+<li><p>The <a href="http://docs.meteor.com/#deps">Deps</a> module, especially <code>Deps.autorun</code>,
+is a particularly elegant approach to automatic dependency registration that
+avoids the need for static analysis.  The clever part relies
+JavaScript&#8217;s single-threaded nature, and tracks the current computation
+as <code>Deps.currentComputation</code>.</p>
+
+<ul>
+<li>At first I thought this could break down if you depend on a boolean
+expression <code>a() &amp;&amp; b()</code>.  If <code>a()</code> returns <code>false</code>, the language
+short-circuits evaluation so that <code>b()</code> is never invoked, so the
+dependency is not registered.  However, once <code>a()</code> returns <code>true</code>, <code>b()</code>
+will get run and the dependency is registered correctly.  There must
+be some shortcomings?  External data is a clear example, but that is
+covered by the more explicit <code>Deps.Dependency</code> facilities.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Questions:</h3>
+
+<ul>
+<li>What effect does DDP and the use of a document storage model inform data
+modeling?  How would you build a system like DDP atop a relational model?
+One system I work on uses multiple steps of data mapping (SQL -> Python
+objects -> JSON -> Backbone models and back).  This seems like unnecessary
+layers of complexity, and replicating a datastore into the client, like
+minimongo does, seems like a preferable situation in many cases.  How
+might you introduce DDP to an existing rich-client application without
+rewriting it in Meteor?</li>
+<li>How do you build for reliability atop DDP and RPC?  (E.g. ensuring all
+RPC endpoints are idempotent.)  How does DDP navigate timeout/retry/backoff?
+See <a href="http://awwx.ws">Andrew Wilcox</a>&#8217;s
+<a href="https://github.com/awwx/meteor-offline-data">meteor-offline-data</a> work.</li>
+<li><p>How does operational transform (OT) fit in?
+Compare to the <a href="https://github.com/codeparty/derby">Derby</a> framework and
+its <a href="https://github.com/codeparty/racer">Racer</a> library, which uses
+<a href="http://sharejs.org/">ShareJS</a> for OT:</p>
+
+<ul>
+<li>OT is one approach to conflict resolution.  I assume there are many.  What
+are the tradeoffs?</li>
+<li><p>What other conflict resolution approaches exist?  Maybe some in
+the <a href="http://thinkdistributed.io/blog/2013/08/28/causality.html">thinkdistributed.io Causality episode</a>.</p>
+
+<blockquote><p>The correctness problems of OT led to introduction of transformationless post-OT schemes, such as WOOT, Logoot and Causal Trees (CT). &#8220;Post-OT&#8221; schemes decompose the document into atomic operations, but they workaround the need to transform operations by employing a combination of unique symbol identifiers, vector timestamps and/or tombstones.</p>
+
+<p>http://en.wikipedia.org/wiki/Operational_transformation</p></blockquote></li>
+<li><p>If you use OT, can you use tree-structured data?
+Is the scope of OT limited to a document?  Can you coordinate operations across
+documents?</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h3>What would I study about this next?</h3>
+
+<ul>
+<li>How does the very new (documented February 27)
+<a href="https://github.com/meteor/meteor/wiki/Using-Blaze">Blaze rendering system</a>
+compare to React?</li>
+<li>How well does Meteor play with other libraries?  I recall seeing a
+&#8220;modularized&#8221; version of Meteor where some parts were available a la carte.
+What does it look like to involve something like Backbone for models?  React
+for DOM computation?</li>
+<li>What is the multi-server story (for performance and for availability)?  I
+think that the <a href="https://www.meteor.com/blog/2014/02/24/meteor-071-oplog-support-for-complex-queries-meteor-developer-accounts">new oplog work</a>
+is supposed to support this.</li>
+<li><a href="https://trello.com/c/Gf6YxFp2/42-sql-support">SQL bindings</a></li>
+</ul>
+
+
+<h2>Functional Reactive Programming (FRP)</h2>
+
+<h3>What did I read?</h3>
+
+<ul>
+<li>Read <a href="http://conal.net/fran/tutorial.htm">Composing Reactive Animations</a> as
+an introduction to the concepts.</li>
+<li>Read <a href="http://conal.net/papers/icfp97/icfp97.pdf">Functional Reactive Animation</a>
+
+<ul>
+<li>Read somewhat thoroughly.  General ideas of facts / behaviors over
+implementation is nice.  I learned about the idea of using integration
+to determine a value at a point in time rather than continual
+time-chunked evaluation, refreshed some of my Haskell notation,
+and thought about the general idea of declaring behaviors and letting
+the implementation handle optimizations and discretization.</li>
+</ul>
+</li>
+<li>Skimmed <a href="http://conal.net/papers/push-pull-frp/push-pull-frp.pdf">Push-Pull Functional Reactive Programming</a>
+
+<ul>
+<li>I started this, but got bogged down in notation and FP/Haskell concepts.  I
+should revisit this after reviewing Monads/Monoids/Applicatives in
+March, probably from learnyouahaskell.com.</li>
+</ul>
+</li>
+<li>Listened to the <a href="http://javascriptjabber.com/061-jsj-functional-reactive-programming-with-juha-paananen-and-joe-fiorini/">JavascriptJabber podcast episode on Functional Reactive Programming</a></li>
+</ul>
+
+
+<p>There are a bunch more resources <a href="https://github.com/jasonm/reading-list/wiki/2014-February">in my 2014-February reading-list page</a>
+that I collected but didn&#8217;t get to.</p>
+
+<h3>Thoughts:</h3>
+
+<p>Seems like a solid theoretical underpinning for complex dataflow apps.</p>
+
+<p>FRP concepts (behaviors) have similarities to promises - they represent an
+abstraction of a value.  Promises represent a future value.  Behaviors
+represent a value which may vary continuously over time, they are functions of
+time.</p>
+
+<p>From reading the papers, I also learned a more general concept - that of a
+paper separately introducing formal semantics from a specific implementation.
+I haven&#8217;t read enough CS papers to know how typical this is.</p>
+
+<p>That reminds me of a <a href="http://thinkdistributed.io">thinkdistributed.io</a>
+podcast on Raft (a consensus algorithm) which was designed for
+understandability, seemingly a novel goal in CS research.  The result is a
+large number of (attempted) implementations, because the theory was so
+approachable.  Does the Raft paper propose a formal semantics?  See in
+May/June.</p>
+
+<h3>Questions:</h3>
+
+<p>I&#8217;d like to try out https://github.com/baconjs/bacon.js and read about
+underlying ideas.</p>
+
+<h3>If I were to study further/return to this, what would I look at?</h3>
+
+<p>I didn&#8217;t get to read too much about FRP.  I would like to try some of
+the JS implementations to build some small dataflow applications.
+I&#8217;d like to build some medium-sized React.js apps and compare that
+experience to the FRP libraries.</p>
+
+<h1>React.js</h1>
+
+<h3>What did I read?</h3>
+
+<p>First, I read about React from other people:</p>
+
+<ul>
+<li>Read many of <a href="http://swannodette.github.io/2013/12/17/the-future-of-javascript-mvcs/">David Nolen&#8217;s articles about Om and React</a> (seriously just go read David&#8217;s entire blog, it&#8217;s the inspiration for so much of my reading this year)</li>
+<li>Grasped a key idea in React with <a href="http://www.lispcast.com/react-another-level-of-indirection">Eric Normand&#8217;s &#8220;React: Another Level of Indirection&#8221;</a></li>
+<li>Finally got the big picture from <a href="http://2013.jsconf.eu/speakers/pete-hunt-react-rethinking-best-practices.html">Pete Hunt&#8217;s &#8220;React: Rethinking Best Practices&#8221;</a> talk</li>
+<li>Read about React&#8217;s <a href="http://calendar.perfplanet.com/2013/diff/">fast tree-diff algorithm</a> which underpins its virtual DOM implementation</li>
+<li>Read a (biased? :) comparison by Pete Hunt of <a href="http://skulbuny.com/2013/10/31/react-vs-angular/">React vs Angular</a></li>
+<li>Read about <a href="http://joelburget.com/backbone-to-react/">Khan Academy engineers&#8217; experience of adopting React</a></li>
+<li>Listened to <a href="http://javascriptjabber.com/073-jsj-react-with-pete-hunt-and-jordan-walke/">the JavascriptJabber podcasts episode on React</a></li>
+</ul>
+
+
+<p>Then I react the docs themselves:</p>
+
+<ul>
+<li>Read the <a href="http://facebook.github.io/react/docs/tutorial.html">React tutorial</a></li>
+<li>Read the <a href="http://facebook.github.io/react/docs/getting-started.html">React guides</a></li>
+</ul>
+
+
+<p>And aimed to get my hands dirty:</p>
+
+<ul>
+<li>Reviewed my friend <a href="http://brandontilley.com/2014/02/24/creating-chrome-extensions-with-react.html">Brandon Tilley&#8217;s article on Creating Chrome Extensions with React</a></li>
+<li>Went to a <a href="https://www.meteor.com/blog/2014/02/14/pete-hunt-talks-facebook-react">Meteor Devshop talk</a>
+about <a href="http://facebook.github.io/react/">React</a> and <a href="https://github.com/benjamn/react-meteor">react-meteor</a>.</li>
+<li>Wrote a <a href="https://github.com/jasonm/toy-viewport-splitter">negligible amount of code</a></li>
+</ul>
+
+
+<h3>Thoughts:</h3>
+
+<p>Looks good, I want to do more with it.</p>
+
+<p>The design of React is very appealing; using functional composition, cohering
+templates with view logic, implementing synthetic DOM events atop delegation,
+and providing an <a href="http://msdn.microsoft.com/en-us/library/windows/desktop/ff684178">immediate mode atop the DOM&#8217;s retained mode</a>
+Not sure on the JSX syntax, but I think I&#8217;ll like it as soon as I install
+<a href="https://github.com/mxw/vim-jsx">vim-jsx</a>.</p>
+
+<h3>If I were to study further/return to this, what would I look at?</h3>
+
+<ul>
+<li>Build something more substantial with React</li>
+<li><a href="https://github.com/swannodette/om">Om</a>, a CLJS wrapper atop React enjoying
+advantages from immutable data structures and presumably other CLJS
+fanciness</li>
+<li>What does <a href="https://groups.google.com/forum/#!msg/clojure/XQ4wuUc0bCk/vpCxosZvbyMJ">this discussion</a> mean by &#8220;UI as value&#8221;?</li>
+</ul>
+
+
+<h3>People:</h3>
+
+<p>https://twitter.com/sgrove
+https://twitter.com/floydophone
+https://twitter.com/swannodette</p>
+
+<h2>Finance</h2>
+
+<p>On my friend <a href="https://twitter.com/100ideas">Mac Cowell</a>&#8217;s recommendation, I
+skimmed some of <a href="http://www.amazon.com/Little-Still-Market-Books-Profits/dp/0470624159">The Little Blue Book That Still Beats the Market</a>.
+I maintain a healthy level of skepticism, but underneath the &#8220;wow it&#8217;s pure
+magic!&#8221; skin appears to be a proxy for value investing that identifies
+underpriced companies.  Time will tell if broad dissemination of this
+valuation strategy will correct the underpricing, or if it holds.</p>
+
+<p>I&#8217;d like to, as an exercise, build a software implementation of this strategy
+and backtest it.  I&#8217;d also like to understand if there is affordable
+historical market information that avoids
+<a href="http://en.wikipedia.org/wiki/Survivorship_bias">survivorship bias</a>, and to understand what
+other <a href="http://seekingalpha.com/article/363901-the-perils-of-backtesting-technical-strategies">backtesting blind spots</a>
+I may have.</p>
+
+<p>I&#8217;ll follow this up (also on Mac&#8217;s recommendation) with Graham and Zweig&#8217;s
+<a href="http://www.amazon.com/The-Intelligent-Investor-Definitive-Investing/dp/0060555661">The Intelligent Investor</a>,
+maybe in March or April.</p>
+
+<p>Links from an hour-ish of searching about building trading simulations:</p>
+
+<ul>
+<li>Data sources:
+
+<ul>
+<li><a href="http://stackoverflow.com/questions/5774218/algorithmic-trading-simulator-benchmark-data">StackOverflow: &#8220;algorithmic trading simulator/benchmark data&#8221;</a>
+
+<ul>
+<li><a href="https://market-archive.appspot.com/">Market Archive</a> - no idea of
+trustworthiness</li>
+<li><a href="http://quant.caltech.edu/historical-stock-data.html">Caltech Quantitative Finance Group</a></li>
+</ul>
+</li>
+<li><a href="http://en.wikipedia.org/wiki/Survivorship_bias">Survivorship bias</a></li>
+</ul>
+</li>
+<li>Tools:
+
+<ul>
+<li><a href="https://www.quantopian.com">Quantopian</a>
+
+<ul>
+<li><a href="https://www.quantopian.com/posts/using-the-fetcher-with-quandl">Can I use fundamental data in Quantopian?</a></li>
+</ul>
+</li>
+<li><a href="http://gbeced.github.io/pyalgotrade/">PyAlgoTrade</a></li>
+<li><a href="https://www.interactivebrokers.com/en/?f=tws&amp;p1=papertrader">Interactive Brokers&#8217; toolset</a> - Quantopian is privately testing IB API integration, so that&#8217;s promising</li>
+</ul>
+</li>
+</ul>
+
+
+<h1>Retrospective</h1>
+
+<p>The pace for this month was quite high, but I enjoyed keeping up with it.
+I&#8217;ve found it helpful to schedule reading nights on my calendar to try
+and block some time off for paying attention.</p>
+
+<p>I could not read some of the FRP papers for lack of understanding of
+some foundational functional programming concepts (applicatives, monoids),
+so I will read on those next month.</p>
+
+<p>I wish I had done more hands-on programming with these new tools.</p>
+
+<p>The part I have enjoyed the most is discussing these ideas with others.
+I&#8217;d like to try small reading groups or journal clubs around some of my
+future readings.</p>
+
+<p>Next, onto <a href="https://github.com/jasonm/reading-list/wiki/2014-March">March reading: including Clojure, FP concepts, and core.async</a>.</p>
+</div>
+  
+  
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/01/11/redstorm/">RedStorm: Distributed Computation in Ruby</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-01-11T17:43:00-08:00" pubdate  data-updated="true" >Jan 11<span>th</span>, 2013</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On December 11, 2012 I gave a talk at <a href="http://bostonrb.org">Boston.rb</a> about
+writing distributed realtime computations in Ruby using
+<a href="https://github.com/nathanmarz/storm">Storm</a> by Nathan Marz and
+<a href="https://github.com/colinsurprenant/redstorm">RedStorm</a> by Colin Surprenant.</p>
+
+<p>There is a <a href="http://bostonrb.org/presentations/redstorm-distributed-realtime-computation-in-ruby">video of the talk on the Boston.rb website</a>,
+and <a href="http://jayunit.net/redstorm-talk">the slides are posted online</a>.</p>
+
+<p>Basically, Storm provides a framework for building streaming/realtime
+computations (like log analysis, for example) and distributed RPC for running
+large adhoc computations on a cluster.  RedStorm is a JRuby-based adapter for
+writing these computations and assembling them into topologies (workflows) in
+Ruby.</p>
+
+<p>Here are the recommended resources from my talk:</p>
+
+<h2>Getting started</h2>
+
+<ul>
+<li><a href="http://storm-project.net/">storm</a> is the main project.</li>
+<li><a href="https://github.com/colinsurprenant/redstorm">RedStorm</a> is the JRuby adapter for Storm.</li>
+<li><a href="https://github.com/nathanmarz/storm-starter">storm-starter</a> is a collection of examples in Storm.</li>
+<li><a href="https://github.com/colinsurprenant/redstorm/tree/master/examples">redstorm examples</a> is a similar collection in RedStorm.</li>
+</ul>
+
+
+<h2>Related software tools</h2>
+
+<ul>
+<li><a href="https://github.com/nathanmarz/storm-contrib">storm-contrib</a> provides integration with many third-party tools like communicating with queues, service buses, and databases.</li>
+<li><a href="https://github.com/nathanmarz/storm-deploy">storm-deploy</a> &#8220;makes it dead-simple to deploy Storm clusters on AWS.&#8221;</li>
+<li><a href="https://github.com/nathanmarz/storm-mesos">storm-mesos</a> provides integration with Apache Mesos for cluster resource management.</li>
+</ul>
+
+
+<h2>Documentation</h2>
+
+<ul>
+<li><a href="https://github.com/nathanmarz/storm/wiki">Storm wiki</a> has about 40,000 words of excellent documentation.</li>
+<li>The <a href="https://groups.google.com/group/storm-user">storm-user Google group</a> will cover any questions that the docs don&#8217;t.</li>
+</ul>
+
+
+<h2>Talks</h2>
+
+<p>Two excellent talks by Storm author Nathan Marz:</p>
+
+<ul>
+<li><p>At the <a href="http://phillyemergingtech.com/2012">Philadelphia Emerging Technologies for the Enterprise</a>, <a href="http://vimeo.com/40972420">&#8220;Storm: Distributed and fault-tolerant realtime computation&#8221;</a> gives a more extended introduction to Storm.  April 2012.</p></li>
+<li><p>At <a href="https://thestrangeloop.com/">Strange Loop</a>, <a href="http://www.infoq.com/presentations/Complexity-Big-Data">Runaway complexity in Big Data</a> discussed &#8220;Common sources of complexity in data systems and a design for a fundamentally better data system&#8221;.  October 2012.</p></li>
+</ul>
+
+
+<h2>Book</h2>
+
+<ul>
+<li><a href="http://manning.com/marz/">Big Data</a> is an early access book by Nathan Marz which covers &#8220;Principles and best practices of scalable realtime data systems&#8221;</li>
+</ul>
+
+
+<h2>Other ESP/CEP resources</h2>
+
+<p>Storm lives in a space that&#8217;s often referred to as ESP (&#8220;Event Stream Processing&#8221;) or CEP (&#8220;Complex Event Processing&#8221;):</p>
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/Event_stream_processing">Wikipedia: Event Stream Processing</a></li>
+<li><a href="http://blog.sematext.com/2011/09/26/event-stream-processor-matrix/">Event Stream Processor Matrix</a></li>
+<li><a href="http://www.quora.com/Complex-Event-Processing-CEP/Are-there-any-open-source-CEP-tools">Quora: Are there any open-source CEP tools?</a></li>
+<li><a href="http://www.igvita.com/2011/05/27/streamsql-event-processing-with-esper/">Ilya Grigorik&#8217;s &#8220;StreamSQL: Event Processing with Esper&#8221;</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/01/09/clahub-easy-contributor-agreements-on-github/">CLAHub: Easy Contributor Agreements on GitHub</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-01-09T17:22:00-08:00" pubdate  data-updated="true" >Jan 9<span>th</span>, 2013</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class='right ' src='/assets/clahub/clipboard.png' width='150' height='150' alt='' title=''></p>
+
+<p><a href="http://clahub.herokuapp.com">CLAHub</a> is a small side project I cooked up a few
+months ago, and just got around to open-sourcing.  The goal is to remove the
+friction of <a href="http://en.wikipedia.org/wiki/Contributor_License_Agreement">Contributor License Agreements</a>
+for contributors and maintainers alike.  It&#8217;s not done yet, but I&#8217;m curious to
+hear what people think.</p>
+
+<h2>What is it?</h2>
+
+<p>The general idea with CLAs is this: contributors grant the maintainer a license
+to distribute the their code, and state that they&#8217;re legally able to do so.  A
+fair number of projects have a CLA in place, including
+<a href="http://jquery.github.com/cla.html">jQuery</a>,
+<a href="http://nodejs.org/cla.html">Node.js</a>,
+<a href="https://www.djangoproject.com/foundation/cla/">Django</a>, and
+<a href="http://wiki.opscode.com/display/chef/How+to+Contribute">Chef</a>.  In the best
+cases the CLA is signed via electronic signature, like
+<a href="http://nodejs.org/cla.html">Node.js does with a Google Form</a>.  In the worst
+cases you have to print, sign, and fax the agreement.  In all cases,
+maintainers are responsible for cross-referencing contributions and signatures
+to make sure all contributions have a corresponding signature.</p>
+
+<p>With <a href="http://clahub.herokuapp.com">CLAHub</a> and an open source project on GitHub
+you can:</p>
+
+<ul>
+<li>Sign in with GitHub and create a CLA for your project.</li>
+<li>Ask contributors to sign in with GitHub to electronically sign the CLA.</li>
+<li>See on each pull request whether the contributors have all signed your CLA.
+This uses the handy <a href="https://github.com/blog/1227-commit-status-api">Commit Status API</a>,
+similar to what CI tools do.</li>
+</ul>
+
+
+<p><a href="http://clahub.herokuapp.com/">Here&#8217;s the app</a>.  There&#8217;s a little slideshow on
+the frontpage to see how it works.  And <a href="https://github.com/jasonm/clahub">here&#8217;s the source on GitHub</a>.</p>
+
+<h2>Learn more about CLAs</h2>
+
+<p>Here&#8217;s some more background on CLAs:</p>
+
+<ul>
+<li><a href="http://jacobian.org/writing/contributor-license-agreements/"><em>Contributor License Agreements</em></a> by Jacob Kaplan-Moss.</li>
+<li><a href="http://www.groklaw.net/article.php?story=20110524120303815"><em>A CLA By Any Other Name</em></a> on Groklaw.</li>
+</ul>
+
+
+<p>Want to choose a CLA?  <a href="http://www.harmonyagreements.org/">Project Harmony</a> is a web tool that helps you quickly select a CLA.</p>
+
+<h2>Feedback</h2>
+
+<p>There&#8217;s more that needs to be done, but the core of the app works.
+The <a href="https://github.com/jasonm/clahub/issues">next steps are in GitHub issues</a>.</p>
+
+<p>Do you use a CLA for your project(s)?  Would this encourage you to add a CLA if
+you don&#8217;t have one already?  (That&#8217;s not really my goal - just to reduce
+friction where CLAs are already valuable.)  If you have a CLA, would you use
+something like this to reduce the barrier to entry and your overhead?  What
+kinds of features would be useful?</p>
+</div>
+  
+  
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/">Papernaut: Exploring Online Discussion of Academic Papers</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2013-01-06T09:00:00-08:00" pubdate  data-updated="true" >Jan 6<span>th</span>, 2013</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><p><img class='right ' src='/assets/papernaut/astronaut.png' width='150' height='150' alt='' title=''></p>
+
+<p>If you regularly read scholarly papers, you likely use a
+<a href="http://en.wikipedia.org/wiki/Reference_management_software">reference manager</a> to
+maintain your personal library.  <a href="http://www.papernautapp.com">Papernaut</a>
+connects to your library to find online coverage and discussion of your papers
+in blogs, forums, and mainstream media.  My hope is that these discussions can
+provide broader perspective on research and, in some cases, be the spark that
+starts a new collaboration.</p>
+
+<p>Here&#8217;s a very quick video demo. We start with a <a href="http://zotero.org">Zotero</a>
+library that includes a paper from Science on the
+<a href="http://www.sciencemag.org/content/336/6079/348.short">effect of pesticides on honey bees</a>.
+We then connect to Papernaut, and find several discussions and articles,
+including one in <a href="http://www.guardian.co.uk/science/grrlscientist/2012/may/08/1">The Guardian</a>:</p>
+
+<iframe width="560" height="349" src="http://www.youtube.com/embed/ACw3iLLsSXw?rel=0" frameborder="0" allowfullscreen></iframe>
+
+
+<p>I&#8217;ve been working on Papernaut in my spare time for a few months, and I&#8217;m happy
+to say that it&#8217;s now open source.  The project comes in two parts, and the
+source is on GitHub:</p>
+
+<ul>
+<li><a href="https://github.com/jasonm/papernaut-frontend">Papernaut-frontend</a> is the web frontend.</li>
+<li><a href="https://github.com/jasonm/papernaut-engine">Papernaut-engine</a> is the feed crawler and matching backend.</li>
+</ul>
+
+
+<p>If you are interested in how the application is put together, the rest of this
+article is a technical overview of the moving parts and how they interact.</p>
+
+<h2>Overview: A simple example</h2>
+
+<p>Let&#8217;s walk through a simplified example.  Say I have only one paper in my
+reference manager &#8211; that paper from earlier, about the effect of pesticides on
+honey bees:</p>
+
+<p>Henry, M., Beguin, M., Requier, F., Rollin, O., Odoux, J., Aupinel, P., Aptel,
+J., Tchamitchian, S., &amp; Decourtye, A. (2012).
+<a href="http://www.sciencemag.org/content/336/6079/348.short">A Common Pesticide Decreases Foraging Success and Survival in Honey Bees.</a>
+<em>Science</em>, 336 (6079), 348-350 DOI:<a href="http://dx.doi.org/10.1126/science.1215039">10.1126/science.1215039</a></p>
+
+<p>Let&#8217;s also say that the engine is crawling content from only one source feed,
+<a href="http://researchblogging.org">ResearchBlogging.org</a>.
+Among many other content items, that source feed contains a
+<a href="https://researchblogging.org/post-search/list?advanced=true&amp;post_title=&amp;journal=&amp;blog_blogger_name=GrrlScientist&amp;tags=&amp;tag_id=&amp;search_text=&amp;from_date=05%2F08%2F2012&amp;to_date=05%2F08%2F2012&amp;send=Search">relevant entry</a>,
+whose <a href="http://www.guardian.co.uk/science/grrlscientist/2012/may/08/1">content page is on The Guardian</a>.</p>
+
+<p>We&#8217;ll look at how the engine crawls and indexes this source feed.  Then,
+we&#8217;ll see how the frontend pulls the paper from my reference manager and
+asks the engine for relevant discussions.</p>
+
+<h2>Papernaut-engine: Loading content and identifying papers</h2>
+
+<p>The goal of the engine is to produce a collection of <code>Discussion</code> records, each
+of which links to several <code>Identifier</code> records, representing journal papers
+that are referenced from the <code>Discussion</code>.  In our example, the <code>Discussion</code> is
+the article in The Guardian, and the relevant <code>Identifier</code> is
+<code>DOI:10.1126/science.1215039</code>.  There are also intermediate objects, <code>Page</code> and
+<code>Link</code> which connect <code>Discussion</code>s to <code>Identifier</code>s.</p>
+
+<p>The engine consists of two main parts: loaders (which are Ruby classes), and the
+query API (a Rails app).  For loading, it also depends on an external running instance
+of the <a href="https://github.com/zotero/translation-server">Zotero translation-server</a>.</p>
+
+<p><img src="/assets/papernaut/diagram-engine.png" alt="" /></p>
+
+<h3>Loading content by crawling feeds</h3>
+
+<p>The loaders load discussion candidates from feeds and archives, extract
+outbound links, and store these in the database.</p>
+
+<p>In the first step, I invoke the <a href="researchblogging.org">ResearchBlogging.org</a>
+loader to crawl and index the most recent 100 pages of their archives:</p>
+
+<pre><code>[engine] rails runner "Loaders::ResearchbloggingWebLoader.new(100).load"
+</code></pre>
+
+<p>This will load a large number of <code>Discussion</code> entries into the database, with
+zero or more <code>Page</code> entries for each <code>Discussion</code>, corresponding to outbound
+links.</p>
+
+<p>At this point, the engine database contains the <code>Discussion</code>:</p>
+
+<pre><code>#&lt;Discussion id: 3424,
+             url: "http://www.guardian.co.uk/science/grrlscientist/2012/may/08/1",
+             title: " Bee deaths linked to common pesticides | video | G...", ...&gt;
+</code></pre>
+
+<p>and the linked <code>Page</code> entries:</p>
+
+<pre><code>[#&lt;Page id: 7531, url: "http://dx.doi.org/10.1126/science.1215039", ... &gt;,
+ #&lt;Page id: 7532, url: "http://pubget.com/doi/10.1126/science.1215039", ... &gt;,
+ #&lt;Page id: 7533, url: "http://dx.doi.org/10.1126/science.1215025", ... &gt;,
+ #&lt;Page id: 7534, url: "http://pubget.com/doi/10.1126/science.1215025", ... &gt;]
+</code></pre>
+
+<h3>Identifying papers via the Zotero translation-server</h3>
+
+<p>The engine determines which outbound links (or <code>Page</code>s) are academic papers by
+issuing calls to the
+<a href="https://github.com/zotero/translation-server">Zotero translation-server</a> HTTP API.
+The translation-server is a third-party project from open-source reference
+manager <a href="http://www.zotero.org/">Zotero</a>. It examines a given URL and, if
+that page contains an academic paper, it returns common publication identifiers such as
+<a href="http://en.wikipedia.org/wiki/Digital_object_identifier">DOI</a> or
+<a href="http://en.wikipedia.org/wiki/PubMed#PubMed_identifier">PMID</a>.</p>
+
+<p>The translation-server wraps the
+<a href="https://github.com/zotero/translators">Zotero translators</a>,
+a set of JavaScript scripts that do the heavy lifting of parsing a webpage and
+attempting to identify it as one or more academic publications.  These
+translators are
+<a href="https://github.com/zotero/translators/issues">maintained by the community</a>,
+keeping them fairly up-to-date with publishers.  The translation-server uses
+<a href="https://developer.mozilla.org/en-US/docs/XULRunner">XULRunner</a> to run these
+scripts in a Gecko environment, and makes them available through a simple HTTP
+API:</p>
+
+<pre><code>[~] ~/dev/zotero/translation-server/build/run_translation-server.sh &amp;
+    zotero(3)(+0000000): HTTP server listening on *:1969
+
+[~] curl -d '{"url":"http://www.sciencemag.org/content/336/6079/348.short","sessionid":"abc123"}' \
+     --header "Content-Type: application/json" \
+     http://localhost:1969/web | jsonpp
+
+    [
+      {
+        "itemType": "journalArticle",
+        "creators": [
+          { "firstName": "M.", "lastName": "Henry", "creatorType": "author" },
+          { "firstName": "M.", "lastName": "Beguin", "creatorType": "author" },
+          { "firstName": "F.", "lastName": "Requier", "creatorType": "author" },
+          { "firstName": "O.", "lastName": "Rollin", "creatorType": "author" },
+          { "firstName": "J.-F.", "lastName": "Odoux", "creatorType": "author" },
+          { "firstName": "P.", "lastName": "Aupinel", "creatorType": "author" },
+          { "firstName": "J.", "lastName": "Aptel", "creatorType": "author" },
+          { "firstName": "S.", "lastName": "Tchamitchian", "creatorType": "author" },
+          { "firstName": "A.", "lastName": "Decourtye", "creatorType": "author" }
+        ],
+        "notes": [],
+        "tags": [],
+        "publicationTitle": "Science",
+        "volume": "336",
+        "issue": "6079",
+        "ISSN": "0036-8075, 1095-9203",
+        "date": "2012-03-29",
+        "pages": "348-350",
+        "DOI": "10.1126/science.1215039",
+        "url": "http://www.sciencemag.org/content/336/6079/348.short",
+        "title": "A Common Pesticide Decreases Foraging Success and Survival in Honey Bees",
+        "libraryCatalog": "CrossRef",
+        "accessDate": "CURRENT_TIMESTAMP"
+      }
+    ]
+</code></pre>
+
+<p>There are several useful standardized identifiers here - DOI, URL, and ISSN.</p>
+
+<p>So, continuing with our example from above, I&#8217;ll next start the Zotero
+translation server and identify the pages:</p>
+
+<pre><code>[engine] ~/dev/zotero/translation-server/build/run_translation-server.sh &amp;
+         zotero(3)(+0000000): HTTP server listening on *:1969
+
+[engine] rails runner "ParallelIdentifier.new(Page.unidentified).run"
+</code></pre>
+
+<p>The engine issues calls to the translation-server and records new <code>Identifier</code>s.
+Now, the <code>Page</code> entries we previously crawled:</p>
+
+<pre><code>[#&lt;Page id: 7531, url: "http://dx.doi.org/10.1126/science.1215039", ... &gt;,
+ #&lt;Page id: 7532, url: "http://pubget.com/doi/10.1126/science.1215039", ... &gt;,
+ #&lt;Page id: 7533, url: "http://dx.doi.org/10.1126/science.1215025", ... &gt;,
+ #&lt;Page id: 7534, url: "http://pubget.com/doi/10.1126/science.1215025", ... &gt;]
+</code></pre>
+
+<p>have corresponding <code>Identifier</code> records:</p>
+
+<pre><code>[#&lt;Identifier id: 1819, page_id: 7531, body: "DOI:10.1126/science.1215039" ...&gt;,
+ #&lt;Identifier id: 1820, page_id: 7531, body: "URL:http://www.sciencemag.org/content/336/6079/348" ...&gt;],
+ #&lt;Identifier id: 1821, page_id: 7533, body: "DOI:10.1126/science.1215025" ...&gt;,
+ #&lt;Identifier id: 1822, page_id: 7533, body: "URL:http://www.sciencemag.org/content/336/6079/351" ...&gt;,
+</code></pre>
+
+<p>Two of the four pages were identified (<code>7531</code> and <code>7533</code>), and both of those
+pages received two identifiers apiece.  This means that the Guardian <code>Discussion</code>
+actually referenced two different papers, not just the one we&#8217;re interested in.</p>
+
+<p>Now that there is a link between the paper in question and this discussion page,
+we are ready to visit the frontend.</p>
+
+<h2>Papernaut-frontend: importing libraries, finding discussions</h2>
+
+<p>The frontend works in two distinct phases: first, it helps you import papers
+from your reference manager.  Second, it shows you discussions for those papers.</p>
+
+<p>You can import your papers via the
+<a href="http://www.zotero.org/support/dev/server_api/read_api">Zotero API</a> or
+<a href="http://dev.mendeley.com/">Mendeley API</a> by giving Papernaut access to your
+libraries via OAuth.  This happens with
+<a href="https://github.com/jasonm/omniauth-zotero"><code>omniauth-zotero</code></a> and
+<a href="https://github.com/fractaloop/omniauth-mendeley"><code>omniauth-mendeley</code></a>
+libraries, followed by the
+<a href="https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/lib/zotero_client.rb"><code>ZoteroClient</code></a> and
+<a href="https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/lib/mendeley_client.rb"><code>MendeleyClient</code></a>
+classes.</p>
+
+<p>Alternatively, you can import papers from most reference management software by
+exporting and uploading a <a href="http://en.wikipedia.org/wiki/BibTeX"><code>.bibtex</code></a>
+file.  Papers and their identifiers are then extracted with the
+<a href="https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/app/models/bibtex_import.rb"><code>BibtexImport</code></a>
+class.</p>
+
+<p>Many papers will have multiple identifiers, and the frontend attempts to clean and validate
+your papers&#8217; identifiers as best it can in an attempt to find the best matches.</p>
+
+<p>Once your papers are loaded into the frontend, it
+<a href="https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/lib/discussion.rb">issues requests to the <code>papernaut-engine</code> query API</a>
+to find discussions that match papers in your library.</p>
+
+<p><img src="/assets/papernaut/diagram-frontend.png" alt="" /></p>
+
+<p>The interface between the frontend and the engine are <code>Identifier</code> strings,
+which take a type/value form:</p>
+
+<ul>
+<li><code>DOI:10.1038/nphys2376</code></li>
+<li><code>ISSN:1542-4065</code></li>
+<li><code>PMID:10659856</code></li>
+<li><code>URL:http://nar.oxfordjournals.org/content/40/D1/D742.full</code></li>
+</ul>
+
+
+<p>So, in our example video above, we authenticate via Zotero and authorize
+Papernaut&#8217;s API access via OAuth.  The frontend extracts our library of papers
+from Zotero and stores their <code>Identifier</code>s locally.  It issues requests to the
+engine&#8217;s query API for matching discussions, and displays those to the end
+user:</p>
+
+<p><img src="/assets/papernaut/frontend-screenshot.png" alt="" /></p>
+
+<h2>Deployment</h2>
+
+<p>In production, the Papernaut engine and frontend are deployed to
+<a href="https://heroku.com">Heroku</a>.  The translation-server is deployed to EC2.
+I spin it up and run the loaders periodically, to reduce hosting overhead.</p>
+
+<p>There is a <code>DEPLOY.md</code> file for both
+<a href="https://github.com/jasonm/papernaut-frontend/blob/master/DEPLOY.md">the frontend</a>
+and <a href="https://github.com/jasonm/papernaut-engine/blob/master/DEPLOY.md">the engine</a>
+that goes into further detail.</p>
+
+<h2>Next steps</h2>
+
+<p>I&#8217;m excited to see what kinds of results people get with Papernaut,
+but it&#8217;s still very early software.  I look forward to making a variety
+of improvements.</p>
+
+<p>I&#8217;d really like to add a bulk request API endpoint to the engine, so that the
+frontend can discover discussions in a single HTTP request, rather that one
+request per paper. That&#8217;s a big performance hit, and the user experience right
+now for large libraries is that the frontend just hangs for a while.</p>
+
+<p>On the engine side, I&#8217;d like to do a better job of culling false positives in
+the matching engine, and of contributing to Zotero&#8217;s translators to improve the
+match rate.  I think the primary issue there is that the translator-server
+actually only runs a subset of all the Zotero translators, as some declare that
+they only work inside a real browser context
+(<a href="http://www.zotero.org/support/dev/translators">see &#8220;browserSupport&#8221;</a>).</p>
+
+<p>I&#8217;d like to get a larger sample set of BibTeX files to try, as there are
+probably edge cases and assumptions in the importer waiting to be hit.</p>
+
+<p>I&#8217;d also like to background some of the tasks in the frontend&#8217;s import process;
+validating DOIs is a big one there.  Ideally, the whole library import would be
+backgrounded, and the user interface would be notified when the import is
+complete.</p>
+
+<p>Currently, some matches are missed because the engine and frontend have
+different identifiers for the same paper - say a DOI and a PMID.  I also have
+an experimental branch that cross-references papers with the
+<a href="http://help.crossref.org/#author_title_query">crossref.org API</a>,
+which yields more complete information.  Ideally that would happen in the engine.
+I&#8217;ve also seen some library management and import tools that use Google Scholar
+to improve matching and identification.</p>
+
+<p>After that, I&#8217;d like loaders to run semi-continuously instead of manually, and
+to have more robust infrastructure around paper identification.</p>
+
+<p>In the long term, it would be interesting to try and bring the discussion
+matching experience directly into reference managers.  This is one reason why
+I provide the engine query API separately from the frontend.</p>
+
+<h2>Conclusion</h2>
+
+<p>I&#8217;m most interested in hearing feedback from people.  Is this useful to you?
+If you use a reference manager,
+<a href="http://www.papernautapp.com">give Papernaut a spin</a>
+and <a href="mailto:jason.p.morrison@gmail.com">let me know</a> how it goes.</p>
+</div>
+  
+  
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2012/12/31/a-year-of-travel/">A Year of Travel</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2012-12-31T09:00:00-08:00" pubdate  data-updated="true" >Dec 31<span>st</span>, 2012</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On December 4, Lindsay and I returned to the US after a year of <a href="/2011/11/11/hitting-the-road/">traveling
+abroad</a>.  Lindsay diligently blogged our
+experiences and her photos at <a href="http://cadeparade.com">cadeparade.com</a>.</p>
+
+<p>We have spent December visiting family and friends.  On December 31, we
+fly to San Francisco to start the next chapter of our lives.</p>
+
+<h2>It&#8217;s adventure time all over again</h2>
+
+<p>Time to sift through apartments and carefully consider our work, to reacquaint
+ourselves with first world amenities and first world problems.  To reunite with
+family and friends, to fondly shuffle through our notes and photos, and to
+reflect on our travel experiences and put them into context.</p>
+
+<p>Also, to eat fajitas and burritos en masse, because let me tell you: Mexican
+and Tex-Mex food outside the Americas just is not the same.</p>
+
+<h2>The first half in photos</h2>
+
+<p><em>All photos are by <a href="http://cadeparade">Lindsay Cade</a>, and are from the first
+half of the year.</em></p>
+
+<p>During the first six months of December 2011 through May 2012, we traveled in
+India, Thailand, Laos, Vietname, Cambodia, and Burma (Myanmar).</p>
+
+<p>We traveled to places beautiful and remote:</p>
+
+<p><img src="http://farm9.staticflickr.com/8453/7936991528_886ea7ae7c_b.jpg" alt="" />
+<img src="http://farm9.staticflickr.com/8448/7936993184_be9e720c99_c.jpg" alt="" /></p>
+
+<p>Ate incredible foods:</p>
+
+<p><img src="http://farm8.staticflickr.com/7257/7768788654_e7b744e282_b.jpg" alt="" />
+<img src="http://farm8.staticflickr.com/7216/7215266698_43e7409e59_b.jpg" alt="" /></p>
+
+<p>And some not-so-incredible ones:</p>
+
+<p><img src="http://farm8.staticflickr.com/7199/6927499007_1732d60f76_b.jpg" alt="" /></p>
+
+<p>We enjoyed amazing sunsets:</p>
+
+<p><img src="http://farm8.staticflickr.com/7105/6981860512_18047acd9d_b.jpg" alt="" />
+<img src="http://farm6.staticflickr.com/5032/7078843175_0eb29b087c_c.jpg" alt="" /></p>
+
+<p>We ventured across deserts:</p>
+
+<p><img src="http://farm8.staticflickr.com/7203/6891841828_dc95fc8352_c.jpg" alt="" />
+<img src="http://farm8.staticflickr.com/7254/7031251719_51598ea65d_c.jpg" alt="" /></p>
+
+<p>into backwaters:</p>
+
+<p><img src="http://farm8.staticflickr.com/7208/6847221555_1d21839826_b.jpg" alt="" />
+<img src="http://farm8.staticflickr.com/7077/7050364455_1d44c6d27b_b.jpg" alt="" /></p>
+
+<p>through rivers and valleys:</p>
+
+<p><img src="http://farm9.staticflickr.com/8421/7741985230_becb4193c3_b.jpg" alt="" />
+<img src="http://farm8.staticflickr.com/7022/6784074323_212570b388_b.jpg" alt="" /></p>
+
+<p>We marvelled at constructions old and new:</p>
+
+<p><img src="http://farm8.staticflickr.com/7142/6640567045_49dc8ddc58_b.jpg" alt="" />
+<img src="http://farm8.staticflickr.com/7032/6634037347_a7c9c91e4c_b.jpg" alt="" />
+<img src="http://farm8.staticflickr.com/7071/7006734540_c688343639_b.jpg" alt="" /></p>
+
+<p>During the second six months of June through November, we traveled in the Czech
+Republic, Italy, Turkey, Germany, France, England, Thailand (again! we are
+quite fond of it), South Korea, Malaysia, and Hong Kong.  We ended the trip
+where we began, returning to India for a month.</p>
+
+<p>I cannot recommend this experience highly enough.  My sense of perspective and
+patience have been changed at a fundamental level.  At the same time, I&#8217;m very
+much ready for this return to the US, to be with friends and to focus on my
+career, to do good in this world of which I&#8217;ve now seen a tiny slice more.</p>
+</div>
+  
+  
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/11/11/hitting-the-road/">Hitting the Road!</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-11-11T09:00:00-08:00" pubdate  data-updated="true" >Nov 11<span>th</span>, 2011</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On November 28, my wife Lindsay and I are flying to India.  We have
+no return tickets, and little plan.  I&#8217;m leaving a <a href="http://thoughtbot.com">great job</a>;
+&#8220;professional ennui&#8221; is the furthest thing from my motivations.  What&#8217;s going on?!</p>
+
+<p><img src="/images/uploads/adventure-time.png" alt="Adventure Time!" /></p>
+
+<h2>It&#8217;s adventure time!</h2>
+
+<p>If there&#8217;s one common lesson I could distill from my collegiate and
+professional engagements, it would be the value of diverse experience, and the
+difficulty of <em>planning</em> to build that experience.  Sometimes you just gotta
+jump in learning&#8217;s way.</p>
+
+<p>We&#8217;re young, not tied down, and have seen like 0.0001% of the world.  So,
+earlier this year, after getting engaged, we decided: let&#8217;s hit the road!  Our
+plans are loose.  As of now, we:</p>
+
+<ul>
+<li>Have 1-way tickets to Delhi and 5-year visas to India.  Many countries in
+Asia have VOA (visa on arrival) for US citizens.</li>
+<li>Got our arms jabbed (immunizations).</li>
+<li>Are brandishing a fat sack of doxy and a veritable menagerie of antibiotics.</li>
+<li>Booked two days booked at a hotel to buffer our jetlag.</li>
+<li>Asked a friend-of-a-friend to find a short-term lease in Delhi.</li>
+<li>Are super frigging pumped.  I mean, come on!</li>
+</ul>
+
+
+<p>I&#8217;ll miss the crap out of my friends here in the US.  We&#8217;re flying around a bit
+to visit folks before heading overseas - San Fran tomorrow through Wednesday,
+then Buffalo, then Houston for Thanksgiving.</p>
+
+<p>Then, on November 28, IAH-ORD-DEL.</p>
+
+<h2>Closing thoughts</h2>
+
+<blockquote><p>Journeys are the midwives of thought. Few places are more conducive to internal
+conversations than a moving plane, ship or train. There is an almost quaint
+correlation between what is in front of our eyes and the thoughts we are able
+to have in our heads: large thoughts at times requiring large views, new
+thoughts new places. Introspective reflections which are liable to stall are
+helped along by the flow of the landscape. The mind may be reluctant to think
+properly when thinking is all it is supposed to do.</p>
+
+<p>If we find poetry in the service station and motel, if we are drawn to the
+airport or train carriage, it is perhaps because, in spite of their
+architectural compromises and discomforts, in spite of their garish colours and
+harsh lighting, we implicitly feel that these isolated places offer us a
+material setting for an alternative to the selfish ease, the habits and
+confinement of the ordinary, rooted world.</p></blockquote>
+
+<p>― Alain de Botton, The Art of Travel</p>
+</div>
+  
+  
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/10/24/backbone-js-video-q-and-a/">Backbone.js Video Q&amp;A</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-10-24T21:24:00-07:00" pubdate  data-updated="true" >Oct 24<span>th</span>, 2011</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On Friday, October 14th, I hosted a two hour live Q&amp;A chat for purchasers of the thoughtbot <a href="http://workshops.thoughtbot.com/backbone-js-on-rails">Backbone.js on Rails eBook</a>, which I am co-authoring. We invited people who have purchased the book to submit questions ahead of time, and then join me in chat for a discussion.</p>
+
+<p>I&#8217;m pleased that we are offering the recording and notes as a free resources. You can <a href="http://workshops.thoughtbot.com/pages/backbone-js-on-rails-qa-live-chat-1">download the Backbone.js on Rails live Q&amp;A chat audio and notes</a> over on the thoughtbot Workshops site.</p>
+</div>
+  
+  
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/09/25/backbone-js-on-rails-talk/">Backbone.js on Rails Talk</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-09-25T22:40:00-07:00" pubdate  data-updated="true" >Sep 25<span>th</span>, 2011</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><p>On Tuesday, September 20, I gave a talk at the
+<a href="http://nhruby.org/">New Hampshire Ruby Users Group</a> on Backbone.js on Rails.
+I&#8217;ll be giving a very similar talk on Tuesday, October 11 at
+<a href="http://bostonrb.org/presentations/backbonejs-and-rails">boston.rb</a> and a
+version more targeted to front-end developers on Wednesday, October 26 at the
+<a href="http://www.meetup.com/Boston-Frontend-Developers/">Boston Front End Developers meetup</a></p>
+
+<p>I have posted the <a href="http://jayunit.net/backbone-js-on-rails-talk/">Backbone.js on Rails slides</a>
+online, and the <a href="https://github.com/jasonm/backbone-js-on-rails-talk/tree/gh-pages">slide source is on my GitHub</a>.</p>
+
+<p>As an aside, I&#8217;m using <a href="https://github.com/adamzap/landslide">landslide</a> for the
+slides - I love the resulting HTML and interface, though I&#8217;ve heard great things
+about <a href="http://imakewebthings.github.com/deck.js/">deck.js</a>.</p>
+
+<p>People found the resources sections useful. Many of the links are buried in the
+presenter notes, so I&#8217;ll repeat them here.  There are plenty more online, and
+I&#8217;m sure I&#8217;m missing some content.  Please link to any of your favorites in the
+comments, and I&#8217;ll add them.</p>
+
+<h3>Testing</h3>
+
+<ul>
+<li>Isolation test with <a href="http://pivotal.github.com/jasmine/">Jasmine</a>:
+
+<ul>
+<li>Spy/stub/mock, even your HTTP, with <a href="http://sinonjs.org/">sinon.js</a></li>
+<li>If you&#8217;re looking for factory_girl.js, it&#8217;s called <a href="https://github.com/bkeepers/rosie">Rosie</a></li>
+<li><a href="https://github.com/netzpirat/guard-jasmine">guard-jasmine</a> autotest your Jasmine with headless webkit (<a href="http://www.phantomjs.org/">phantomjs</a>)</li>
+<li>Write in CoffeeScript and use the 3.1 asset pipeline with <a href="https://github.com/bradphelan/jasminerice">jasminerice</a></li>
+<li>Get started with James Newbery&#8217;s excellent blog posts on <a href="http://tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">testing Backbone with Jasmine</a></li>
+<li>Check out his <a href="https://github.com/froots/backbone-jasmine-examples">examples on GitHub</a></li>
+</ul>
+</li>
+<li>Integration test with:
+
+<ul>
+<li><a href="https://github.com/thoughtbot/capybara-webkit">capybara-webkit</a> for fast, headless, accurate WebKit testing</li>
+<li>Selenium for other browsers, or if capybara-webkit has issues.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Push synchronization</h3>
+
+<ul>
+<li>Rails <code>Model#save</code> cascades to clients: <a href="https://github.com/jasonm/backbone_sync-rails">backbone_sync-rails</a> over pubsub bus <a href="http://faye.jcoglan.com/">Faye</a></li>
+<li>Work-in-progress <a href="http://en.wikipedia.org/wiki/Software_transactional_memory">Software transactional memory</a> sync: <a href="https://github.com/codeparty/racer">https://github.com/codeparty/racer</a>
+
+<ul>
+<li>Future plans: <a href="http://code.google.com/p/google-diff-match-patch/">diff-match-patch</a>, <a href="http://en.wikipedia.org/wiki/Operational_transformation">Operational transform</a></li>
+</ul>
+</li>
+<li><a href="http://nowjs.org/">Now.js</a></li>
+<li><a href="https://github.com/substack/dnode">Substack DNode</a></li>
+<li><a href="http://substance.io/michael/data-js">Data.js</a>: Data Manipulation and Graph Persistence for Node.js and the Browser.  Can ride now.js transport.
+
+<ul>
+<li>substance.io, above, is written with Backbone.js, and is open source <a href="https://github.com/michael/substance">https://github.com/michael/substance</a></li>
+</ul>
+</li>
+<li><a href="http://andyet.net/blog/2011/feb/15/re-using-backbonejs-models-on-the-server-with-node/">Backbone on the server with node.js</a>&#8230; with DNode or NowJS (?!)</li>
+</ul>
+
+
+<h3>Get started with Backbone</h3>
+
+<ul>
+<li><a href="http://documentcloud.github.com/backbone/#examples-todos">Todo App example</a></li>
+<li><a href="https://github.com/froots/backbone-jasmine-examples/tree/master/public/javascripts">James Newbery&#8217;s jasmine examples</a></li>
+</ul>
+
+
+<h3>Further reading: Books on JavaScript</h3>
+
+<ul>
+<li><a href="http://shop.oreilly.com/product/9780596517748.do">JavaScript: The Good Parts</a> by Douglas Crockford</li>
+<li><a href="http://shop.oreilly.com/product/0636920018421.do">JavaScript Web Applications</a> by Alex MacCaw (Spine.js author)</li>
+<li><a href="http://tddjs.com/">Test-Driven JavaScript Development</a> by Christian Johansen</li>
+<li><a href="http://shop.oreilly.com/product/9780596806767.do">JavaScript Patterns</a> by Stoyan Stefanov</li>
+<li><a href="http://shop.oreilly.com/product/9780596805531.do">JavaScript: The Definitive Guide</a> by David Flanagan</li>
+</ul>
+
+
+<h3>Further reading: Online resources</h3>
+
+<ul>
+<li><a href="http://documentcloud.github.com/backbone/">Official Backbone docs</a></li>
+<li><a href="http://documentcloud.github.com/backbone/docs/backbone.html">Annotated source code</a></li>
+<li><a href="http://documentcloud.github.com/underscore/">Underscore docs</a> and <a href="http://documentcloud.github.com/underscore/docs/underscore.html">source</a></li>
+<li><a href="https://groups.google.com/group/backbonejs">Backbone Google Group</a></li>
+<li><a href="http://workshops.thoughtbot.com/backbone-js-on-rails?utm_source=jm-talk">Backbone on Rails eBook</a></li>
+<li><a href="http://peepcode.com/products/backbone-js">Peepcode episodes on Backbone</a></li>
+</ul>
+
+</div>
+  
+  
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/09/25/notes-from-the-mit-startup-bootcamp-2011/">Notes From the MIT Startup Bootcamp 2011</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-09-25T11:42:00-07:00" pubdate  data-updated="true" >Sep 25<span>th</span>, 2011</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><p style="background-color: #ffa; padding: 1em; border: 1px solid #cc9;">If you&#8217;d like to talk with other people who
+made it to this event, check out the
+<a href="http://news.ycombinator.com/item?id=3036926">Hacker News discussion thread</a>.</p>
+
+
+<p>Yesterday, September 24 2011, I had the pleasure of attending MIT&#8217;s 2011
+<a href="http://startupbootcamp.mit.edu/">Startup Bootcamp</a>. In its third year, Startup
+Bootcamp brought an inspiring and thoughful collection of speakers who have had
+a variety of startup successes.</p>
+
+<p>The event hashtag <a href="http://twitter.com/#!/search/%23sb2011">#sb2011</a> is a stream
+of reactions and pull-quotes from the event - mixed here and there with
+excited anticipation for
+<a href="http://twitter.com/SunburnFestival">a dance festival in Goa</a>.</p>
+
+<p>Ten speakers presented a variety of viewpoints, insight, and food for thought.</p>
+
+<p>It was a mixed bag - yes, there was unnecessary focus on
+<a href="http://www.startuplessonslearned.com/2009/12/why-vanity-metrics-are-dangerous.html">vanity metrics</a>
+and the rah-rah of
+<a href="http://justinvincent.com/page/1392/entreporn-the-fallacy-that-wastes-your-life">startup theater</a>.
+Breathless celebration of hockeysticking uniques and of flying around to court
+VCs makes for good TechCrunch articles.  Like it or not, that&#8217;s an inculcated
+part of startup culture.</p>
+
+<p>But if you get past the Hollywooding and the Silicon Valley adulation, there
+were gems of solid advice, grounded in experience, on hiring (Paul English of
+Kayak), data-driven product development (Naveen Selvadurai of foursquare),
+optimizing your life for personal growth (Drew Houston of Dropbox), identifying
+underlying social and technological shifts that enable new products (Charlie
+Cheever of Quora, Patrick Collison of Stripe), negotiation (Alex Polvi of
+Cloudkick), the importance of on-the-ground and unscalable product development
+tactics early on (Nathan Blecharczyk of Airbnb), earning and answering to the
+responsibility of finding your own way in the world (Anthony Volodkin of
+Hype Machine) and how important it is to empower yourself in perhaps the largest
+disruptive theme of our time by learning to code (Patrick Collison of Stripe).</p>
+
+<h3><a href="http://paulenglish.com/">Paul English</a>, CTO and co-founder of <a href="http://www.kayak.com/team">Kayak</a>.</h3>
+
+<blockquote><p>Recruit a diversity of success.</p></blockquote>
+
+<p>Paul spoke on three kinds of recruiting: companies recruiting new hires,
+companies recruiting investors, and job-seekers recruiting companies.</p>
+
+<p>When you&#8217;re recruiting, look for success, regardless of the kind.  In fact, look
+for a diversity of success. Paul once hired an olympic rower, and a chess
+grandmaster, and couldn&#8217;t be happier with these decisions.  Find people who
+operate at the top levels of excellence.</p>
+
+<p>Some companies have a &#8220;no assholes&#8221; rule - at Kayak, they have a policy of &#8220;no
+neutrals&#8221;.  Like Charlie Cheever, who later discussed the importance of hiring
+people you have high-bandwidth communication with, Paul encouraged building a
+team of people who are fully engaged: &#8220;intense and in-your-face - in a good way.&#8221;</p>
+
+<h3><a href="http://blog.leahculver.com/about.html">Leah Culver</a>, CEO and co-founder of <a href="https://convore.com/">Convore</a></h3>
+
+<blockquote><p>Show up, say yes.</p></blockquote>
+
+<p>Leah told an lighthearted and likeable story of her journey from big state
+school CS major to Silicon Valley startup founder.  Full of serendipity and
+luck, she shared stories of driving a UHaul from her native Minnesota out to the
+Bay Area (picked not primarily for its burgeoning tech scene, but for how much
+better the weather is), getting started with Instructables, and bumping into
+Pownce co-founders Kevin Rose and Daniel Burka at a party.</p>
+
+<blockquote><p>Have a good story to tell the press - you don&#8217;t have to tell people the ugly,
+dirty truth.</p></blockquote>
+
+<p>Another of Leah&#8217;s pieces of advice was a common thread through the talks - that
+of consistent applied effort.  &#8220;Show up,&#8221; she said - in places with a critical
+mass of startup people, such as Silicon Valley - and &#8220;say yes&#8221; to opporunities
+that come your way.</p>
+
+<h3><a href="http://asuth.com">Andrew Sutherland</a>, founder of <a href="http://quizlet.com/">Quizlet</a></h3>
+
+<blockquote><p>I didn&#8217;t just rush it on my parents that I was leaving MIT. It took two whole weeks.</p></blockquote>
+
+<p>Andrew shared his story of inspiration for an online learning tool.  When he
+hacked together a prototype to help study for a French III class in high school
+and subsequently aced the test, he knew he was onto something.</p>
+
+<p>Andrew discouraged market research - &#8220;If I had googled for online flash cards, I
+would have found other sites, that were not as good, and I wouldn&#8217;t have made
+Quizlet.  Now, we&#8217;re 10x the [volume] of our next competitor.&#8221;</p>
+
+<p>This phrasing
+<a href="http://twitter.com/#!/BobbieC/status/117616203874316288">raised some contention</a>.
+I would reframe his advice as: focus on your own products rather than on the
+competition, and don&#8217;t be discouraged by incumbent players; rather, recognize
+them as a validation of the market space, and proceed to out-execute them.</p>
+
+<h3><a href="http://naveenium.com/">Naveen Selvadurai</a> co-founder of <a href="http://foursquare.com">foursquare</a></h3>
+
+<blockquote><p>At first, go with your hunch.  Later, with data.</p></blockquote>
+
+<p>Naveen worked for Lucent and Sun in college.  This was important - it was
+real-world learning.  Seeing engineering culture, doing code reviews, shipping
+real products.  Sun had an open culture of learning where you can dive into
+other products.  &#8220;How&#8217;d they build Solaris?  File systems?&#8221;  Just sign up for
+the mailing list.</p>
+
+<p>Naveen shared seven pieces of distilled advice:</p>
+
+<ol>
+<li>Keep good company.</li>
+<li>Make something that people want.</li>
+<li>Build around an atomic action.</li>
+<li>Seek mentors early.</li>
+<li>At first, go with your hunch.  Later, with data.</li>
+<li>Balance unknowns with knowns.</li>
+<li>Always be recruiting.</li>
+</ol>
+
+
+<p>On the last point Naveen shared the four stages of foursquare&#8217;s hiring strategy:</p>
+
+<ol>
+<li>Hire friends</li>
+<li>Hire friends of friends</li>
+<li>Use an external agency (but they didn&#8217;t find this valuable)</li>
+<li>Hire an internal fulltime recruiter.</li>
+</ol>
+
+
+<blockquote><p>It needs to be someone&#8217;s job to think about recruiting, seven days a week.
+Additionally, as a founder, you must always be recruiting.</p></blockquote>
+
+<h3><a href="http://twitter.com/#!/ccheever">Charlie Cheever</a>, founder of <a href="http://www.quora.com/">Quora</a></h3>
+
+<blockquote><p>Work with people you have really high-bandwidth communication with.
+Understand how the other person is thinking.</p></blockquote>
+
+<p>Charlie shared great advice on early-stage tactics.  Start with few users (Quora
+started with fewer than fifty) and a low-cost MVP.  Foster the community by
+hand, be high-touch and, if your business builds on user-generated content, be
+prepared at the beginning to build a lot of it by yourself.  See how the
+experiment goes, and then take the learning from that experience and apply it to
+your MVP.</p>
+
+<p>He shared the importance of collecting metrics early on. With Quora, they
+actually stored the entire webpage for every visit for every customer, so that
+they could go back later, having identified trends or formulated hypotheses, and
+see the site as their users saw it.</p>
+
+<p>They noticed a set of high-engagement users, looked at these users&#8217; expereinces,
+and found that they had all used Facebook connect.  Running with this, the team
+spent time focusing on improving their social experience.</p>
+
+<p>Charlie also left the audience with good food for though:</p>
+
+<blockquote><p>What wave enables your product?  Why is now the right time to build it?</p></blockquote>
+
+<p>For foursquare, it was GPS-enabled mobile phones.  For Quora, it was that
+&#8220;normal&#8221; people were comfortable sharing things online, and that the web was
+turning into a mess; with Google turning up more content farm results, people
+were moving onto safe harbors of organized information like IMDB and Wikipedia.
+The timing was right.</p>
+
+<h3><a href="http://twitter.com/#!/drewhouston">Drew Houston</a>, co-founder of <a href="http://dropbox.com">Dropbox</a></h3>
+
+<blockquote><p>Get out of your comfort zone.  Learn a little about a lot.</p></blockquote>
+
+<p>&#8220;Everything big starts small&#8221; - Drew&#8217;s original perception of startups was that
+of Tolkien&#8217;s Mount Doom.  His original strategy to build a successful startup
+was to be overwhelmingly prepared - nab an MIT CS degree, get a few years&#8217;
+exerpience working for small companies and big companies alike, come back for a
+PhD, maybe an MBA.</p>
+
+<p>He then related a story from Dropbox&#8217;s origins: Drew had just settled into his
+seat on a Chinatown bus from Boston, in which he could usually get in several
+hours of undisturbed work.  He popped open his laptop, and searched his pockets
+for his ever-present USB thumb drive.  &#8220;Shit.&#8221;  Realization set in just as he
+visualized, in his mind&#8217;s eye, the thumb drive sitting on his desk at home.
+&#8220;Like any good engineer with a problem to solve, I opened my editor.&#8221; Drew then
+wrote the first lines of what would eventually become Dropbox.  Today, his
+company has a multi-billion dollar valuation and &#8220;stores more files than Twitter
+stores tweets.&#8221;</p>
+
+<p>Drew exhorted the audience to learn about a broad variety of topics: sales,
+marketing, finance, accounting, product design, psychology, influence,
+negotiation, organizational design, management and leadership, business
+strategy.  Buy books (&#8220;today we have this amazing thing, Amazon&#8221;), dip in, find
+mentors, and surround yourself with smart people.</p>
+
+<p>Wrapping up, Drew shared his advice for success:</p>
+
+<ul>
+<li>Take on more than you&#8217;re &#8220;ready for.&#8221;</li>
+<li>Maximize how much you learn per unit time.</li>
+<li>Stack the odds in your favor. Surround yourself with great people; you are the
+average of your five closest friends.</li>
+<li>The fastest way to learn about startups is to join one.</li>
+<li>Starting a company is one of the best ways for engingeers to change the world.</li>
+</ul>
+
+
+<h3><a href="http://alex.polvi.net/">Alex Polvi</a>, founder of <a href="https://www.cloudkick.com/">Cloudkick</a></h3>
+
+<blockquote><p>No matter what number they offer, pause, count to 10 in your head, and then act as disappointed as possible.</p></blockquote>
+
+<p>Alex spoke on negotiation, specifically about his experience of his company
+Cloudkick being acquired by Rackspace.</p>
+
+<ul>
+<li>If a VP of Corp Dev says &#8220;strategic&#8221; to you, they are talking about
+acquisition.</li>
+<li>Acquisitions are a bit like romantic relationships: you often get the most
+attention when you&#8217;re looking for it the least.  Once you are involved with one
+party, others can sense it. You somehow become more desirable.</li>
+<li>Once you have a term sheet from one prospective buyer, you have great
+leverage.  When others call you up, you can very quickly get to hard numbers.</li>
+</ul>
+
+
+<blockquote><p>The best negotiation position is one of truth.  Build something of value that
+people want, and your position is irrefutable.</p></blockquote>
+
+<p>Alex also discussed the importance of taking care of your team, and the people
+around you.  Upon acquisition, he fully accelerated all employees&#8217; options -
+whether they had been with Cloudkick for four years or four weeks, they were all
+fully vested and could share in the company&#8217;s success.  It was important that
+the acquiring party, Rackspace was on board with this - and they were.
+Rackspace wanted the new team members to stick around not because they were
+waiting to vest, but because they wanted to be there.</p>
+
+<h3><a href="http://fascinated.fm/">Anthony Volodkin</a>, founder of <a href="http://hypem.com">Hype Machine</a></h3>
+
+<blockquote><p>Venture Capital?  You do not need anyone&#8217;s permission to make stuff.</p></blockquote>
+
+<p>Anthony shared the perspective that VC or angel investment can be very
+important, but it&#8217;s not for everyone.  &#8220;I don&#8217;t want to shut something off
+because the math doesn&#8217;t work.  For people to not remember it.  That would make
+me sad.&#8221;</p>
+
+<p>Anthony&#8217;s vision was a question: while people with cool friends can get
+interesting music recommendations from that network, what about people without
+cool friends?  He knew that there was great taste and insight being shared by
+music bloggers online, and sought to aggregate and distill it.  &#8220;I didn&#8217;t want
+to miss anything.&#8221;</p>
+
+<p>(If music startups are your thing, Anthony couldn&#8217;t recommend highly enough
+<a href="http://www.slideshare.net/daltoncaldwell/startupschool3">Dalton Caldwell&#8217;s talk from Startup School 3 on music startups</a>.)</p>
+
+<blockquote><p>Find your own way.</p></blockquote>
+
+<p>He started Hype Machine from his dorm room.  He didn&#8217;t take investor money.
+This gave Anthony and his team the freedom to run the company as they pleased.</p>
+
+<p>&#8220;We wanted to travel,&#8221; he said - so they packed their bags and hung out in
+Berlin for a month.  It was cheaper than they would have thought, &#8220;about six
+thousand dollars,&#8221; and incredibly fun.  But if they&#8217;d had VC money?  &#8220;No way,&#8221;
+Anthony imagined an advisor&#8217;s response, &#8220;we thought you were, you know, going to
+be working sixteen hour days.  Now you want to go to Berlin and <em>maybe work</em>?&#8221;</p>
+
+<blockquote><p>YCombinator?  TechStars?  Just fucking make something.</p></blockquote>
+
+<p>Anthony exhorted: it&#8217;s okay to have a different process.  Don&#8217;t discount
+investment and the accompanying advisors, but don&#8217;t go blindly down that most
+celebrated path. With a different process, it&#8217;s easier to stand out, to be
+differentiated.  You can always get money if you are making something great.</p>
+
+<h3><a href="https://twitter.com/#!/nathanblec">Nathan Blecharczyk</a> of <a href="http://airbnb.com">Airbnb</a></h3>
+
+<blockquote><p>You have to have a vision, you have to be able to execute that vision.</p></blockquote>
+
+<p>Nathan shared a 2008 pitch deck for Airbnb (then AirBed&amp;Breakfast) - the
+first time this deck had ever seen the light of day.
+Tiffany Kosolcharoen posted <a href="http://tiffanyk.com/post/10611384492/honored-nathanblec-shared-original-airbnb">photos of the slides on her blog</a>.</p>
+
+<p>He highlighted its strengths - it had a problem statement, and had a bottom-up
+business projection by analogy to CouchSurfing and Craigslist.  He was also
+quick to point out its weaknesses - it involved hand-wavy notions of unlikely
+major player partnerships, and touted top down projections (&#8220;If we can capture
+2% of the $1.9B travel booking market&#8230; imagine!&#8221;) that are quick to raise
+doubt from savvy adviors or investors.</p>
+
+<p>The company was accepted into Y Combinator&#8217;s Winter 2009 class.  YC companies
+are supposed to be heads-down; but at Paul Graham&#8217;s behest, the cofounders
+zeroed in their market focus to just New York and hopped redeyes back and forth
+every few weeks.  They met with their initial supply-side renteres in bars, and
+chatted about how things were going.  As the team refined the product and
+identified sticking points, they could be on the ground to help optimize
+listings.  They&#8217;d go with people into their homes and take high-quality photos.
+They found that the initial asking rates were a little too high, so they asked
+their listers (after a few drinks) to lower their prices.  Things clicked, and
+soon they had handled $250,000 in bookings of which they collected 10%.</p>
+
+<p>Fast-forward to the YC W09 Demo Day, and although at that point Airbnb has
+already accepted Sequoia investment, they had prepared a Demo Day deck.  Gone
+was the hand-wavy top-down projection and partnership hopefulness, replaced with
+a quarter million dollars of demonstrable traction, a tight initial market
+focus, and a tight, clear problem statement.</p>
+
+<p>Like many of the speakers, Nathan stressed the importance of finding quality
+mentors.</p>
+
+<h3><a href="http://collison.ie/">Patrick Collison</a> co-founder of <a href="http://stripe.com">Stripe</a></h3>
+
+<blockquote><p>It is impossible to motivate great people by something that is merely going to be profitable.</p></blockquote>
+
+<p>Patrick&#8217;s talk was an excellent finish to the day.  He delivered an essay full of engaging stories  - I sincerely hope it will be posted online in full.</p>
+
+<p>Patrick&#8217;s story was of his trip from hardcore Lisp academic to startup founder.  Along the way, he developed one of the first iPhone apps, an <a href="http://collison.ie/wikipedia-iphone/index-new">offline Wikipedia</a>, before the SDK and App Store, by debugging ARM assmebly. He shared the touching experience of getting emails form users whose lives he had changed; from bringing the world&#8217;s knowledge to villages in rural Peru and Ghana to delivering the freedom to browse Wikipedia without overisght to people behind the Great Firewall of China.  At nineteen, he co-founded and sold an online action tool, and is currently working on a new payment startup, Stripe.</p>
+
+<blockquote><p>The anthropological story of the last twenty years is that software is taking over the world. Even if you&#8217;re a traveling violinist, you should learn how to program.  Do all you can to ensure code is not a foreign language.</p></blockquote>
+</div>
+  
+  
+
+
+  </article>
+
+
+  <article>
+    
+  <header>
+    
+      <h1 class="entry-title"><a href="/2011/09/05/hello-octopress-hello-blog/">Hello, Octopress. Hello, Blog.</a></h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-09-05T20:18:00-07:00" pubdate  data-updated="true" >Sep 5<span>th</span>, 2011</time></p>
+    
+  </header>
+
+
+  <div class="entry-content"><h2>On writing</h2>
+
+<p>I&#8217;ve written sporadically here for several years about programming and language theory, synthetic biology, amateur biology, running user groups and barcamps, multitouch and immersive interactions.</p>
+
+<p>I&#8217;ve imported my old posts from WordPress into Octopress.  That was &#8211; oh wait, I was about to write about that experience before I even began.  I was going to say how buttercream-frosting-smooth it was, and that&#8217;s probably because I have a lot of confidence in exactly that, mostly due to their <a href="http://octopress.org/">well-coiffed htmls</a>.  Update!  Turns out they&#8217;re <a href="https://github.com/mojombo/jekyll/wiki/blog-migrations">Jekyll migrations</a> instead.  Still easy-peasy.</p>
+
+<p>I&#8217;ve <a href="http://www.google.com/search?q=site:robots.thoughtbot.com+jasonmorrisontb">written more frequently and recently over on the thoughtbot blog</a>, on development-related topics from from <a href="http://robots.thoughtbot.com/post/189637456/tiniest-of-tips">little tips</a> to <a href="http://robots.thoughtbot.com/post/2597579897/use-deadweight-and-your-integration-suite-to">medium-size tips</a> to <a href="http://robots.thoughtbot.com/post/486653439/hopping-in-the-cloud">architecture deep-dives</a>, from <a href="http://robots.thoughtbot.com/post/7766484768/backbone-js-on-rails-a-new-dynamic-ebook">product announcements</a> to <a href="http://robots.thoughtbot.com/post/159805334/make-your-test-suite-uncomfortably-fast">high-performance bears</a>.</p>
+
+<p>I&#8217;ll be traveling extensively over the next year, and will be writing about that, too.  But that&#8217;s a different post.</p>
+
+<h2>On tools</h2>
+
+<p>I wrote most of my previous posts in Mephisto, which was kind of janky after a white, and then switched to WordPress, which is totally not Ruby, and more or less means I have to run a VPS and make sure I don&#8217;t get <a href="http://www.ludicroussoftware.com/blog/2011/08/02/switching-to-octopress/">chainsawed by spammers</a>.   Also, I&#8217;m interested in switching to a toolset more near and dear to my heart. <a href="http://octopress.org/">Octopress</a> fits the bill.</p>
+
+<p>This also means I can write using vim and git, like a champ.</p>
+</div>
+  
+  
+
+
+  </article>
+
+<nav role="pagination">
+  <div>
+    
+      <a class="prev" href="/blog/page/2/">&larr; Older</a>
+    
+    <a href="/blog/archives">Blog Archives</a>
+    
+  </div>
+</nav>
+
+<script type="text/javascript">
+    var disqus_shortname = 'jayunit';
+    (function () {
+      var s = document.createElement('script'); s.async = true;
+      s.type = 'text/javascript';
+      s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+      (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+</div>
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2014/03/02/reading-list-february-2014/">Reading List: February 2014</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/01/11/redstorm/">RedStorm: Distributed Computation in Ruby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/01/09/clahub-easy-contributor-agreements-on-github/">CLAHub: Easy contributor agreements on GitHub</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/">Papernaut: Exploring online discussion of academic papers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/12/31/a-year-of-travel/">A year of travel</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Github Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jasonm">@jasonm</a> on Github
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jasonm',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jayunit", 10, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jayunit" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @jayunit</a>
+  
+</section>
+
+
+
+
+  
+</aside>
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2014 - Jason Morrison -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6754843-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

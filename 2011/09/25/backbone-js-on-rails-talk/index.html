@@ -1,0 +1,367 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Backbone.js on Rails talk - Jason Morrison</title>
+  <meta name="author" content="Jason Morrison">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://jasonm.github.com/2011/09/25/backbone-js-on-rails-talk/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jason Morrison" type="application/atom+xml"/>
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Jason Morrison</a></h1>
+  
+    <h2>Make stuff.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:jasonm.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About Me</a></li>
+  <li><a href="http://twitter.com/jayunit">Twitter</a></li>
+  <li><a href="http://github.com/jasonm">GitHub</a></li>
+  <li><a href="mailto:jason.p.morrison@gmail.com">Email</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">Backbone.js on Rails Talk</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-09-25T22:40:00-07:00" pubdate  data-updated="true" >Sep 25<span>th</span>, 2011</time></p>
+    
+  </header>
+
+
+<div class="entry-content"><p>On Tuesday, September 20, I gave a talk at the
+<a href="http://nhruby.org/">New Hampshire Ruby Users Group</a> on Backbone.js on Rails.
+I&#8217;ll be giving a very similar talk on Tuesday, October 11 at
+<a href="http://bostonrb.org/presentations/backbonejs-and-rails">boston.rb</a> and a
+version more targeted to front-end developers on Wednesday, October 26 at the
+<a href="http://www.meetup.com/Boston-Frontend-Developers/">Boston Front End Developers meetup</a></p>
+
+<p>I have posted the <a href="http://jayunit.net/backbone-js-on-rails-talk/">Backbone.js on Rails slides</a>
+online, and the <a href="https://github.com/jasonm/backbone-js-on-rails-talk/tree/gh-pages">slide source is on my GitHub</a>.</p>
+
+<p>As an aside, I&#8217;m using <a href="https://github.com/adamzap/landslide">landslide</a> for the
+slides - I love the resulting HTML and interface, though I&#8217;ve heard great things
+about <a href="http://imakewebthings.github.com/deck.js/">deck.js</a>.</p>
+
+<p>People found the resources sections useful. Many of the links are buried in the
+presenter notes, so I&#8217;ll repeat them here.  There are plenty more online, and
+I&#8217;m sure I&#8217;m missing some content.  Please link to any of your favorites in the
+comments, and I&#8217;ll add them.</p>
+
+<h3>Testing</h3>
+
+<ul>
+<li>Isolation test with <a href="http://pivotal.github.com/jasmine/">Jasmine</a>:
+
+<ul>
+<li>Spy/stub/mock, even your HTTP, with <a href="http://sinonjs.org/">sinon.js</a></li>
+<li>If you&#8217;re looking for factory_girl.js, it&#8217;s called <a href="https://github.com/bkeepers/rosie">Rosie</a></li>
+<li><a href="https://github.com/netzpirat/guard-jasmine">guard-jasmine</a> autotest your Jasmine with headless webkit (<a href="http://www.phantomjs.org/">phantomjs</a>)</li>
+<li>Write in CoffeeScript and use the 3.1 asset pipeline with <a href="https://github.com/bradphelan/jasminerice">jasminerice</a></li>
+<li>Get started with James Newbery&#8217;s excellent blog posts on <a href="http://tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html">testing Backbone with Jasmine</a></li>
+<li>Check out his <a href="https://github.com/froots/backbone-jasmine-examples">examples on GitHub</a></li>
+</ul>
+</li>
+<li>Integration test with:
+
+<ul>
+<li><a href="https://github.com/thoughtbot/capybara-webkit">capybara-webkit</a> for fast, headless, accurate WebKit testing</li>
+<li>Selenium for other browsers, or if capybara-webkit has issues.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Push synchronization</h3>
+
+<ul>
+<li>Rails <code>Model#save</code> cascades to clients: <a href="https://github.com/jasonm/backbone_sync-rails">backbone_sync-rails</a> over pubsub bus <a href="http://faye.jcoglan.com/">Faye</a></li>
+<li>Work-in-progress <a href="http://en.wikipedia.org/wiki/Software_transactional_memory">Software transactional memory</a> sync: <a href="https://github.com/codeparty/racer">https://github.com/codeparty/racer</a>
+
+<ul>
+<li>Future plans: <a href="http://code.google.com/p/google-diff-match-patch/">diff-match-patch</a>, <a href="http://en.wikipedia.org/wiki/Operational_transformation">Operational transform</a></li>
+</ul>
+</li>
+<li><a href="http://nowjs.org/">Now.js</a></li>
+<li><a href="https://github.com/substack/dnode">Substack DNode</a></li>
+<li><a href="http://substance.io/michael/data-js">Data.js</a>: Data Manipulation and Graph Persistence for Node.js and the Browser.  Can ride now.js transport.
+
+<ul>
+<li>substance.io, above, is written with Backbone.js, and is open source <a href="https://github.com/michael/substance">https://github.com/michael/substance</a></li>
+</ul>
+</li>
+<li><a href="http://andyet.net/blog/2011/feb/15/re-using-backbonejs-models-on-the-server-with-node/">Backbone on the server with node.js</a>&#8230; with DNode or NowJS (?!)</li>
+</ul>
+
+
+<h3>Get started with Backbone</h3>
+
+<ul>
+<li><a href="http://documentcloud.github.com/backbone/#examples-todos">Todo App example</a></li>
+<li><a href="https://github.com/froots/backbone-jasmine-examples/tree/master/public/javascripts">James Newbery&#8217;s jasmine examples</a></li>
+</ul>
+
+
+<h3>Further reading: Books on JavaScript</h3>
+
+<ul>
+<li><a href="http://shop.oreilly.com/product/9780596517748.do">JavaScript: The Good Parts</a> by Douglas Crockford</li>
+<li><a href="http://shop.oreilly.com/product/0636920018421.do">JavaScript Web Applications</a> by Alex MacCaw (Spine.js author)</li>
+<li><a href="http://tddjs.com/">Test-Driven JavaScript Development</a> by Christian Johansen</li>
+<li><a href="http://shop.oreilly.com/product/9780596806767.do">JavaScript Patterns</a> by Stoyan Stefanov</li>
+<li><a href="http://shop.oreilly.com/product/9780596805531.do">JavaScript: The Definitive Guide</a> by David Flanagan</li>
+</ul>
+
+
+<h3>Further reading: Online resources</h3>
+
+<ul>
+<li><a href="http://documentcloud.github.com/backbone/">Official Backbone docs</a></li>
+<li><a href="http://documentcloud.github.com/backbone/docs/backbone.html">Annotated source code</a></li>
+<li><a href="http://documentcloud.github.com/underscore/">Underscore docs</a> and <a href="http://documentcloud.github.com/underscore/docs/underscore.html">source</a></li>
+<li><a href="https://groups.google.com/group/backbonejs">Backbone Google Group</a></li>
+<li><a href="http://workshops.thoughtbot.com/backbone-js-on-rails?utm_source=jm-talk">Backbone on Rails eBook</a></li>
+<li><a href="http://peepcode.com/products/backbone-js">Peepcode episodes on Backbone</a></li>
+</ul>
+
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Morrison</span></span>
+
+      
+
+
+
+
+
+  
+
+
+
+<time datetime="2011-09-25T22:40:00-07:00" pubdate  data-updated="true" >Sep 25<span>th</span>, 2011</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jasonm.github.com/2011/09/25/backbone-js-on-rails-talk/" data-via="jayunit" data-counturl="http://jasonm.github.com/2011/09/25/backbone-js-on-rails-talk/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'jayunit';
+  var disqus_identifier = 'http://jasonm.github.com/2011/09/25/backbone-js-on-rails-talk/';
+  var disqus_url = 'http://jasonm.github.com/2011/09/25/backbone-js-on-rails-talk/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2014/03/02/reading-list-february-2014/">Reading List: February 2014</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/01/11/redstorm/">RedStorm: Distributed Computation in Ruby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/01/09/clahub-easy-contributor-agreements-on-github/">CLAHub: Easy contributor agreements on GitHub</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/">Papernaut: Exploring online discussion of academic papers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/12/31/a-year-of-travel/">A year of travel</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Github Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jasonm">@jasonm</a> on Github
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jasonm',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jayunit", 10, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jayunit" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @jayunit</a>
+  
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2014 - Jason Morrison -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6754843-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>

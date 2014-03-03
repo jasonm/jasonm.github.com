@@ -1,0 +1,1551 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title>Jason Morrison</title>
+  <link href="http://jasonm.github.com/atom.xml" rel="self"/>
+  <link href="http://jasonm.github.com/"/>
+  <updated>2014-03-02T22:45:12-08:00</updated>
+  <id>http://jasonm.github.com/</id>
+  <author>
+    <name>Jason Morrison</name>
+    
+  </author>
+
+  
+  <entry>
+    <title>Reading List: February 2014</title>
+    <link href="http://jasonm.github.com/2014/03/02/reading-list-february-2014/"/>
+    <updated>2014-03-02T22:07:00-08:00</updated>
+    <id>http://jasonm.github.com/2014/03/02/reading-list-february-2014</id>
+    <content type="html">&lt;p&gt;I am maintaining a reading list:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://jayunit.net/reading-list&quot;&gt;http://jayunit.net/reading-list&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I'm choosing a theme per month, with several works on the theme.
+I'll try to collect notes at the end of each month about what I read and wrote,
+what I thought, and how I might revisit that theme in the future.&lt;/p&gt;
+
+&lt;p&gt;Take &quot;reading&quot; loosely - presentations and podcasts definitely count.&lt;/p&gt;
+
+&lt;h1&gt;What did I complete in February?&lt;/h1&gt;
+
+&lt;p&gt;My high level goals for February were to:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read about &lt;a href=&quot;https://www.meteor.com/&quot;&gt;Meteor&lt;/a&gt;,
+&lt;a href=&quot;http://www.haskell.org/haskellwiki/Functional_Reactive_Programming&quot;&gt;FRP&lt;/a&gt;,
+and &lt;a href=&quot;http://facebook.github.io/react/&quot;&gt;React&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Do some toy projects with these.&lt;/li&gt;
+&lt;li&gt;Skim a finance book.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Meteor&lt;/h2&gt;
+
+&lt;h3&gt;What did I read?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read the &lt;a href=&quot;http://book.discovermeteor.com&quot;&gt;Discover Meteor&lt;/a&gt; book.&lt;/li&gt;
+&lt;li&gt;Watched the &lt;a href=&quot;http://2012.realtimeconf.com/video/matt-debergalis&quot;&gt;RealtimeConf 2012 talk&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Listened to the &lt;a href=&quot;http://javascriptjabber.com/076-jsj-meteor-js-with-marcus-phillips-and-fred-zirdung/&quot;&gt;JavascriptJabber podcast episode on Meteor&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Understood more about Deps from the &lt;a href=&quot;http://www.slideshare.net/fitc_slideshare/meteor-reactivestyle&quot;&gt;Programming in the Reactive Style with Meteor JS slides&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Went to a &lt;a href=&quot;https://www.meteor.com/blog/2014/02/14/pete-hunt-talks-facebook-react&quot;&gt;Meteor Devshop talk&lt;/a&gt;
+about &lt;a href=&quot;http://facebook.github.io/react/&quot;&gt;React&lt;/a&gt; and &lt;a href=&quot;https://github.com/benjamn/react-meteor&quot;&gt;react-meteor&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Built a &lt;a href=&quot;https://github.com/jasonm/toy-meteor-chat&quot;&gt;toy chat app in Meteor&lt;/a&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Thoughts:&lt;/h3&gt;
+
+&lt;p&gt;Lots of interesting ideas, but I'm not sure I'll use Meteor.  Maybe I'll use
+parts (DDP).&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Isomorphic (same code for the client and server) is interesting.  I would have to
+build a large app to see demonstrated advantages, but can imagine.&lt;/li&gt;
+&lt;li&gt;Seems to work best when all used together, but no reason you couldn't
+extract e.g. DDP or Deps and use in an existing application.  (Right?)&lt;/li&gt;
+&lt;li&gt;There are three places to get packages -
+&lt;a href=&quot;http://docs.meteor.com/#usingpackages&quot;&gt;core&lt;/a&gt;,
+&lt;a href=&quot;https://atmosphere.meteor.com/&quot;&gt;Atmosphere&lt;/a&gt;, and,
+&lt;a href=&quot;http://meteorhacks.com/complete-npm-integration-for-meteor.html&quot;&gt;as of June 2013, NPM&lt;/a&gt;.
+It's nice that they bless a small set of core packages as a stdlib of sorts,
+although I don't understand the need for Atmosphere and NPM to be separate.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;The &lt;a href=&quot;http://docs.meteor.com/#deps&quot;&gt;Deps&lt;/a&gt; module, especially &lt;code&gt;Deps.autorun&lt;/code&gt;,
+is a particularly elegant approach to automatic dependency registration that
+avoids the need for static analysis.  The clever part relies
+JavaScript's single-threaded nature, and tracks the current computation
+as &lt;code&gt;Deps.currentComputation&lt;/code&gt;.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;At first I thought this could break down if you depend on a boolean
+expression &lt;code&gt;a() &amp;amp;&amp;amp; b()&lt;/code&gt;.  If &lt;code&gt;a()&lt;/code&gt; returns &lt;code&gt;false&lt;/code&gt;, the language
+short-circuits evaluation so that &lt;code&gt;b()&lt;/code&gt; is never invoked, so the
+dependency is not registered.  However, once &lt;code&gt;a()&lt;/code&gt; returns &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;b()&lt;/code&gt;
+will get run and the dependency is registered correctly.  There must
+be some shortcomings?  External data is a clear example, but that is
+covered by the more explicit &lt;code&gt;Deps.Dependency&lt;/code&gt; facilities.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Questions:&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;What effect does DDP and the use of a document storage model inform data
+modeling?  How would you build a system like DDP atop a relational model?
+One system I work on uses multiple steps of data mapping (SQL -&gt; Python
+objects -&gt; JSON -&gt; Backbone models and back).  This seems like unnecessary
+layers of complexity, and replicating a datastore into the client, like
+minimongo does, seems like a preferable situation in many cases.  How
+might you introduce DDP to an existing rich-client application without
+rewriting it in Meteor?&lt;/li&gt;
+&lt;li&gt;How do you build for reliability atop DDP and RPC?  (E.g. ensuring all
+RPC endpoints are idempotent.)  How does DDP navigate timeout/retry/backoff?
+See &lt;a href=&quot;http://awwx.ws&quot;&gt;Andrew Wilcox&lt;/a&gt;'s
+&lt;a href=&quot;https://github.com/awwx/meteor-offline-data&quot;&gt;meteor-offline-data&lt;/a&gt; work.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;How does operational transform (OT) fit in?
+Compare to the &lt;a href=&quot;https://github.com/codeparty/derby&quot;&gt;Derby&lt;/a&gt; framework and
+its &lt;a href=&quot;https://github.com/codeparty/racer&quot;&gt;Racer&lt;/a&gt; library, which uses
+&lt;a href=&quot;http://sharejs.org/&quot;&gt;ShareJS&lt;/a&gt; for OT:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;OT is one approach to conflict resolution.  I assume there are many.  What
+are the tradeoffs?&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;What other conflict resolution approaches exist?  Maybe some in
+the &lt;a href=&quot;http://thinkdistributed.io/blog/2013/08/28/causality.html&quot;&gt;thinkdistributed.io Causality episode&lt;/a&gt;.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;The correctness problems of OT led to introduction of transformationless post-OT schemes, such as WOOT, Logoot and Causal Trees (CT). &quot;Post-OT&quot; schemes decompose the document into atomic operations, but they workaround the need to transform operations by employing a combination of unique symbol identifiers, vector timestamps and/or tombstones.&lt;/p&gt;
+
+&lt;p&gt;http://en.wikipedia.org/wiki/Operational_transformation&lt;/p&gt;&lt;/blockquote&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;If you use OT, can you use tree-structured data?
+Is the scope of OT limited to a document?  Can you coordinate operations across
+documents?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;What would I study about this next?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How does the very new (documented February 27)
+&lt;a href=&quot;https://github.com/meteor/meteor/wiki/Using-Blaze&quot;&gt;Blaze rendering system&lt;/a&gt;
+compare to React?&lt;/li&gt;
+&lt;li&gt;How well does Meteor play with other libraries?  I recall seeing a
+&quot;modularized&quot; version of Meteor where some parts were available a la carte.
+What does it look like to involve something like Backbone for models?  React
+for DOM computation?&lt;/li&gt;
+&lt;li&gt;What is the multi-server story (for performance and for availability)?  I
+think that the &lt;a href=&quot;https://www.meteor.com/blog/2014/02/24/meteor-071-oplog-support-for-complex-queries-meteor-developer-accounts&quot;&gt;new oplog work&lt;/a&gt;
+is supposed to support this.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://trello.com/c/Gf6YxFp2/42-sql-support&quot;&gt;SQL bindings&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Functional Reactive Programming (FRP)&lt;/h2&gt;
+
+&lt;h3&gt;What did I read?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read &lt;a href=&quot;http://conal.net/fran/tutorial.htm&quot;&gt;Composing Reactive Animations&lt;/a&gt; as
+an introduction to the concepts.&lt;/li&gt;
+&lt;li&gt;Read &lt;a href=&quot;http://conal.net/papers/icfp97/icfp97.pdf&quot;&gt;Functional Reactive Animation&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read somewhat thoroughly.  General ideas of facts / behaviors over
+implementation is nice.  I learned about the idea of using integration
+to determine a value at a point in time rather than continual
+time-chunked evaluation, refreshed some of my Haskell notation,
+and thought about the general idea of declaring behaviors and letting
+the implementation handle optimizations and discretization.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Skimmed &lt;a href=&quot;http://conal.net/papers/push-pull-frp/push-pull-frp.pdf&quot;&gt;Push-Pull Functional Reactive Programming&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I started this, but got bogged down in notation and FP/Haskell concepts.  I
+should revisit this after reviewing Monads/Monoids/Applicatives in
+March, probably from learnyouahaskell.com.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Listened to the &lt;a href=&quot;http://javascriptjabber.com/061-jsj-functional-reactive-programming-with-juha-paananen-and-joe-fiorini/&quot;&gt;JavascriptJabber podcast episode on Functional Reactive Programming&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;There are a bunch more resources &lt;a href=&quot;https://github.com/jasonm/reading-list/wiki/2014-February&quot;&gt;in my 2014-February reading-list page&lt;/a&gt;
+that I collected but didn't get to.&lt;/p&gt;
+
+&lt;h3&gt;Thoughts:&lt;/h3&gt;
+
+&lt;p&gt;Seems like a solid theoretical underpinning for complex dataflow apps.&lt;/p&gt;
+
+&lt;p&gt;FRP concepts (behaviors) have similarities to promises - they represent an
+abstraction of a value.  Promises represent a future value.  Behaviors
+represent a value which may vary continuously over time, they are functions of
+time.&lt;/p&gt;
+
+&lt;p&gt;From reading the papers, I also learned a more general concept - that of a
+paper separately introducing formal semantics from a specific implementation.
+I haven't read enough CS papers to know how typical this is.&lt;/p&gt;
+
+&lt;p&gt;That reminds me of a &lt;a href=&quot;http://thinkdistributed.io&quot;&gt;thinkdistributed.io&lt;/a&gt;
+podcast on Raft (a consensus algorithm) which was designed for
+understandability, seemingly a novel goal in CS research.  The result is a
+large number of (attempted) implementations, because the theory was so
+approachable.  Does the Raft paper propose a formal semantics?  See in
+May/June.&lt;/p&gt;
+
+&lt;h3&gt;Questions:&lt;/h3&gt;
+
+&lt;p&gt;I'd like to try out https://github.com/baconjs/bacon.js and read about
+underlying ideas.&lt;/p&gt;
+
+&lt;h3&gt;If I were to study further/return to this, what would I look at?&lt;/h3&gt;
+
+&lt;p&gt;I didn't get to read too much about FRP.  I would like to try some of
+the JS implementations to build some small dataflow applications.
+I'd like to build some medium-sized React.js apps and compare that
+experience to the FRP libraries.&lt;/p&gt;
+
+&lt;h1&gt;React.js&lt;/h1&gt;
+
+&lt;h3&gt;What did I read?&lt;/h3&gt;
+
+&lt;p&gt;First, I read about React from other people:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read many of &lt;a href=&quot;http://swannodette.github.io/2013/12/17/the-future-of-javascript-mvcs/&quot;&gt;David Nolen's articles about Om and React&lt;/a&gt; (seriously just go read David's entire blog, it's the inspiration for so much of my reading this year)&lt;/li&gt;
+&lt;li&gt;Grasped a key idea in React with &lt;a href=&quot;http://www.lispcast.com/react-another-level-of-indirection&quot;&gt;Eric Normand's &quot;React: Another Level of Indirection&quot;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Finally got the big picture from &lt;a href=&quot;http://2013.jsconf.eu/speakers/pete-hunt-react-rethinking-best-practices.html&quot;&gt;Pete Hunt's &quot;React: Rethinking Best Practices&quot;&lt;/a&gt; talk&lt;/li&gt;
+&lt;li&gt;Read about React's &lt;a href=&quot;http://calendar.perfplanet.com/2013/diff/&quot;&gt;fast tree-diff algorithm&lt;/a&gt; which underpins its virtual DOM implementation&lt;/li&gt;
+&lt;li&gt;Read a (biased? :) comparison by Pete Hunt of &lt;a href=&quot;http://skulbuny.com/2013/10/31/react-vs-angular/&quot;&gt;React vs Angular&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Read about &lt;a href=&quot;http://joelburget.com/backbone-to-react/&quot;&gt;Khan Academy engineers' experience of adopting React&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Listened to &lt;a href=&quot;http://javascriptjabber.com/073-jsj-react-with-pete-hunt-and-jordan-walke/&quot;&gt;the JavascriptJabber podcasts episode on React&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Then I react the docs themselves:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Read the &lt;a href=&quot;http://facebook.github.io/react/docs/tutorial.html&quot;&gt;React tutorial&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Read the &lt;a href=&quot;http://facebook.github.io/react/docs/getting-started.html&quot;&gt;React guides&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;And aimed to get my hands dirty:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Reviewed my friend &lt;a href=&quot;http://brandontilley.com/2014/02/24/creating-chrome-extensions-with-react.html&quot;&gt;Brandon Tilley's article on Creating Chrome Extensions with React&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Went to a &lt;a href=&quot;https://www.meteor.com/blog/2014/02/14/pete-hunt-talks-facebook-react&quot;&gt;Meteor Devshop talk&lt;/a&gt;
+about &lt;a href=&quot;http://facebook.github.io/react/&quot;&gt;React&lt;/a&gt; and &lt;a href=&quot;https://github.com/benjamn/react-meteor&quot;&gt;react-meteor&lt;/a&gt;.&lt;/li&gt;
+&lt;li&gt;Wrote a &lt;a href=&quot;https://github.com/jasonm/toy-viewport-splitter&quot;&gt;negligible amount of code&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Thoughts:&lt;/h3&gt;
+
+&lt;p&gt;Looks good, I want to do more with it.&lt;/p&gt;
+
+&lt;p&gt;The design of React is very appealing; using functional composition, cohering
+templates with view logic, implementing synthetic DOM events atop delegation,
+and providing an &lt;a href=&quot;http://msdn.microsoft.com/en-us/library/windows/desktop/ff684178&quot;&gt;immediate mode atop the DOM's retained mode&lt;/a&gt;
+Not sure on the JSX syntax, but I think I'll like it as soon as I install
+&lt;a href=&quot;https://github.com/mxw/vim-jsx&quot;&gt;vim-jsx&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;If I were to study further/return to this, what would I look at?&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Build something more substantial with React&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/swannodette/om&quot;&gt;Om&lt;/a&gt;, a CLJS wrapper atop React enjoying
+advantages from immutable data structures and presumably other CLJS
+fanciness&lt;/li&gt;
+&lt;li&gt;What does &lt;a href=&quot;https://groups.google.com/forum/#!msg/clojure/XQ4wuUc0bCk/vpCxosZvbyMJ&quot;&gt;this discussion&lt;/a&gt; mean by &quot;UI as value&quot;?&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;People:&lt;/h3&gt;
+
+&lt;p&gt;https://twitter.com/sgrove
+https://twitter.com/floydophone
+https://twitter.com/swannodette&lt;/p&gt;
+
+&lt;h2&gt;Finance&lt;/h2&gt;
+
+&lt;p&gt;On my friend &lt;a href=&quot;https://twitter.com/100ideas&quot;&gt;Mac Cowell&lt;/a&gt;'s recommendation, I
+skimmed some of &lt;a href=&quot;http://www.amazon.com/Little-Still-Market-Books-Profits/dp/0470624159&quot;&gt;The Little Blue Book That Still Beats the Market&lt;/a&gt;.
+I maintain a healthy level of skepticism, but underneath the &quot;wow it's pure
+magic!&quot; skin appears to be a proxy for value investing that identifies
+underpriced companies.  Time will tell if broad dissemination of this
+valuation strategy will correct the underpricing, or if it holds.&lt;/p&gt;
+
+&lt;p&gt;I'd like to, as an exercise, build a software implementation of this strategy
+and backtest it.  I'd also like to understand if there is affordable
+historical market information that avoids
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Survivorship_bias&quot;&gt;survivorship bias&lt;/a&gt;, and to understand what
+other &lt;a href=&quot;http://seekingalpha.com/article/363901-the-perils-of-backtesting-technical-strategies&quot;&gt;backtesting blind spots&lt;/a&gt;
+I may have.&lt;/p&gt;
+
+&lt;p&gt;I'll follow this up (also on Mac's recommendation) with Graham and Zweig's
+&lt;a href=&quot;http://www.amazon.com/The-Intelligent-Investor-Definitive-Investing/dp/0060555661&quot;&gt;The Intelligent Investor&lt;/a&gt;,
+maybe in March or April.&lt;/p&gt;
+
+&lt;p&gt;Links from an hour-ish of searching about building trading simulations:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Data sources:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://stackoverflow.com/questions/5774218/algorithmic-trading-simulator-benchmark-data&quot;&gt;StackOverflow: &quot;algorithmic trading simulator/benchmark data&quot;&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://market-archive.appspot.com/&quot;&gt;Market Archive&lt;/a&gt; - no idea of
+trustworthiness&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://quant.caltech.edu/historical-stock-data.html&quot;&gt;Caltech Quantitative Finance Group&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Survivorship_bias&quot;&gt;Survivorship bias&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Tools:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.quantopian.com&quot;&gt;Quantopian&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.quantopian.com/posts/using-the-fetcher-with-quandl&quot;&gt;Can I use fundamental data in Quantopian?&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://gbeced.github.io/pyalgotrade/&quot;&gt;PyAlgoTrade&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://www.interactivebrokers.com/en/?f=tws&amp;amp;p1=papertrader&quot;&gt;Interactive Brokers' toolset&lt;/a&gt; - Quantopian is privately testing IB API integration, so that's promising&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h1&gt;Retrospective&lt;/h1&gt;
+
+&lt;p&gt;The pace for this month was quite high, but I enjoyed keeping up with it.
+I've found it helpful to schedule reading nights on my calendar to try
+and block some time off for paying attention.&lt;/p&gt;
+
+&lt;p&gt;I could not read some of the FRP papers for lack of understanding of
+some foundational functional programming concepts (applicatives, monoids),
+so I will read on those next month.&lt;/p&gt;
+
+&lt;p&gt;I wish I had done more hands-on programming with these new tools.&lt;/p&gt;
+
+&lt;p&gt;The part I have enjoyed the most is discussing these ideas with others.
+I'd like to try small reading groups or journal clubs around some of my
+future readings.&lt;/p&gt;
+
+&lt;p&gt;Next, onto &lt;a href=&quot;https://github.com/jasonm/reading-list/wiki/2014-March&quot;&gt;March reading: including Clojure, FP concepts, and core.async&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>RedStorm: Distributed Computation in Ruby</title>
+    <link href="http://jasonm.github.com/2013/01/11/redstorm/"/>
+    <updated>2013-01-11T17:43:00-08:00</updated>
+    <id>http://jasonm.github.com/2013/01/11/redstorm</id>
+    <content type="html">&lt;p&gt;On December 11, 2012 I gave a talk at &lt;a href=&quot;http://bostonrb.org&quot;&gt;Boston.rb&lt;/a&gt; about
+writing distributed realtime computations in Ruby using
+&lt;a href=&quot;https://github.com/nathanmarz/storm&quot;&gt;Storm&lt;/a&gt; by Nathan Marz and
+&lt;a href=&quot;https://github.com/colinsurprenant/redstorm&quot;&gt;RedStorm&lt;/a&gt; by Colin Surprenant.&lt;/p&gt;
+
+&lt;p&gt;There is a &lt;a href=&quot;http://bostonrb.org/presentations/redstorm-distributed-realtime-computation-in-ruby&quot;&gt;video of the talk on the Boston.rb website&lt;/a&gt;,
+and &lt;a href=&quot;http://jayunit.net/redstorm-talk&quot;&gt;the slides are posted online&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Basically, Storm provides a framework for building streaming/realtime
+computations (like log analysis, for example) and distributed RPC for running
+large adhoc computations on a cluster.  RedStorm is a JRuby-based adapter for
+writing these computations and assembling them into topologies (workflows) in
+Ruby.&lt;/p&gt;
+
+&lt;p&gt;Here are the recommended resources from my talk:&lt;/p&gt;
+
+&lt;h2&gt;Getting started&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://storm-project.net/&quot;&gt;storm&lt;/a&gt; is the main project.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/colinsurprenant/redstorm&quot;&gt;RedStorm&lt;/a&gt; is the JRuby adapter for Storm.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nathanmarz/storm-starter&quot;&gt;storm-starter&lt;/a&gt; is a collection of examples in Storm.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/colinsurprenant/redstorm/tree/master/examples&quot;&gt;redstorm examples&lt;/a&gt; is a similar collection in RedStorm.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Related software tools&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nathanmarz/storm-contrib&quot;&gt;storm-contrib&lt;/a&gt; provides integration with many third-party tools like communicating with queues, service buses, and databases.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nathanmarz/storm-deploy&quot;&gt;storm-deploy&lt;/a&gt; &quot;makes it dead-simple to deploy Storm clusters on AWS.&quot;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nathanmarz/storm-mesos&quot;&gt;storm-mesos&lt;/a&gt; provides integration with Apache Mesos for cluster resource management.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Documentation&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/nathanmarz/storm/wiki&quot;&gt;Storm wiki&lt;/a&gt; has about 40,000 words of excellent documentation.&lt;/li&gt;
+&lt;li&gt;The &lt;a href=&quot;https://groups.google.com/group/storm-user&quot;&gt;storm-user Google group&lt;/a&gt; will cover any questions that the docs don't.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Talks&lt;/h2&gt;
+
+&lt;p&gt;Two excellent talks by Storm author Nathan Marz:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;At the &lt;a href=&quot;http://phillyemergingtech.com/2012&quot;&gt;Philadelphia Emerging Technologies for the Enterprise&lt;/a&gt;, &lt;a href=&quot;http://vimeo.com/40972420&quot;&gt;&quot;Storm: Distributed and fault-tolerant realtime computation&quot;&lt;/a&gt; gives a more extended introduction to Storm.  April 2012.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;At &lt;a href=&quot;https://thestrangeloop.com/&quot;&gt;Strange Loop&lt;/a&gt;, &lt;a href=&quot;http://www.infoq.com/presentations/Complexity-Big-Data&quot;&gt;Runaway complexity in Big Data&lt;/a&gt; discussed &quot;Common sources of complexity in data systems and a design for a fundamentally better data system&quot;.  October 2012.&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Book&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://manning.com/marz/&quot;&gt;Big Data&lt;/a&gt; is an early access book by Nathan Marz which covers &quot;Principles and best practices of scalable realtime data systems&quot;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h2&gt;Other ESP/CEP resources&lt;/h2&gt;
+
+&lt;p&gt;Storm lives in a space that's often referred to as ESP (&quot;Event Stream Processing&quot;) or CEP (&quot;Complex Event Processing&quot;):&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://en.wikipedia.org/wiki/Event_stream_processing&quot;&gt;Wikipedia: Event Stream Processing&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://blog.sematext.com/2011/09/26/event-stream-processor-matrix/&quot;&gt;Event Stream Processor Matrix&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.quora.com/Complex-Event-Processing-CEP/Are-there-any-open-source-CEP-tools&quot;&gt;Quora: Are there any open-source CEP tools?&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.igvita.com/2011/05/27/streamsql-event-processing-with-esper/&quot;&gt;Ilya Grigorik's &quot;StreamSQL: Event Processing with Esper&quot;&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+  </entry>
+  
+  <entry>
+    <title>CLAHub: Easy contributor agreements on GitHub</title>
+    <link href="http://jasonm.github.com/2013/01/09/clahub-easy-contributor-agreements-on-github/"/>
+    <updated>2013-01-09T17:22:00-08:00</updated>
+    <id>http://jasonm.github.com/2013/01/09/clahub-easy-contributor-agreements-on-github</id>
+    <content type="html">&lt;p&gt;&lt;img class='right ' src='http://jasonm.github.com/assets/clahub/clipboard.png' width='150' height='150' alt='' title=''&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://clahub.herokuapp.com&quot;&gt;CLAHub&lt;/a&gt; is a small side project I cooked up a few
+months ago, and just got around to open-sourcing.  The goal is to remove the
+friction of &lt;a href=&quot;http://en.wikipedia.org/wiki/Contributor_License_Agreement&quot;&gt;Contributor License Agreements&lt;/a&gt;
+for contributors and maintainers alike.  It's not done yet, but I'm curious to
+hear what people think.&lt;/p&gt;
+
+&lt;h2&gt;What is it?&lt;/h2&gt;
+
+&lt;p&gt;The general idea with CLAs is this: contributors grant the maintainer a license
+to distribute the their code, and state that they're legally able to do so.  A
+fair number of projects have a CLA in place, including
+&lt;a href=&quot;http://jquery.github.com/cla.html&quot;&gt;jQuery&lt;/a&gt;,
+&lt;a href=&quot;http://nodejs.org/cla.html&quot;&gt;Node.js&lt;/a&gt;,
+&lt;a href=&quot;https://www.djangoproject.com/foundation/cla/&quot;&gt;Django&lt;/a&gt;, and
+&lt;a href=&quot;http://wiki.opscode.com/display/chef/How+to+Contribute&quot;&gt;Chef&lt;/a&gt;.  In the best
+cases the CLA is signed via electronic signature, like
+&lt;a href=&quot;http://nodejs.org/cla.html&quot;&gt;Node.js does with a Google Form&lt;/a&gt;.  In the worst
+cases you have to print, sign, and fax the agreement.  In all cases,
+maintainers are responsible for cross-referencing contributions and signatures
+to make sure all contributions have a corresponding signature.&lt;/p&gt;
+
+&lt;p&gt;With &lt;a href=&quot;http://clahub.herokuapp.com&quot;&gt;CLAHub&lt;/a&gt; and an open source project on GitHub
+you can:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Sign in with GitHub and create a CLA for your project.&lt;/li&gt;
+&lt;li&gt;Ask contributors to sign in with GitHub to electronically sign the CLA.&lt;/li&gt;
+&lt;li&gt;See on each pull request whether the contributors have all signed your CLA.
+This uses the handy &lt;a href=&quot;https://github.com/blog/1227-commit-status-api&quot;&gt;Commit Status API&lt;/a&gt;,
+similar to what CI tools do.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;&lt;a href=&quot;http://clahub.herokuapp.com/&quot;&gt;Here's the app&lt;/a&gt;.  There's a little slideshow on
+the frontpage to see how it works.  And &lt;a href=&quot;https://github.com/jasonm/clahub&quot;&gt;here's the source on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;Learn more about CLAs&lt;/h2&gt;
+
+&lt;p&gt;Here's some more background on CLAs:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://jacobian.org/writing/contributor-license-agreements/&quot;&gt;&lt;em&gt;Contributor License Agreements&lt;/em&gt;&lt;/a&gt; by Jacob Kaplan-Moss.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://www.groklaw.net/article.php?story=20110524120303815&quot;&gt;&lt;em&gt;A CLA By Any Other Name&lt;/em&gt;&lt;/a&gt; on Groklaw.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;Want to choose a CLA?  &lt;a href=&quot;http://www.harmonyagreements.org/&quot;&gt;Project Harmony&lt;/a&gt; is a web tool that helps you quickly select a CLA.&lt;/p&gt;
+
+&lt;h2&gt;Feedback&lt;/h2&gt;
+
+&lt;p&gt;There's more that needs to be done, but the core of the app works.
+The &lt;a href=&quot;https://github.com/jasonm/clahub/issues&quot;&gt;next steps are in GitHub issues&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Do you use a CLA for your project(s)?  Would this encourage you to add a CLA if
+you don't have one already?  (That's not really my goal - just to reduce
+friction where CLAs are already valuable.)  If you have a CLA, would you use
+something like this to reduce the barrier to entry and your overhead?  What
+kinds of features would be useful?&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Papernaut: Exploring online discussion of academic papers</title>
+    <link href="http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/"/>
+    <updated>2013-01-06T09:00:00-08:00</updated>
+    <id>http://jasonm.github.com/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers</id>
+    <content type="html">&lt;p&gt;&lt;img class='right ' src='http://jasonm.github.com/assets/papernaut/astronaut.png' width='150' height='150' alt='' title=''&gt;&lt;/p&gt;
+
+&lt;p&gt;If you regularly read scholarly papers, you likely use a
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Reference_management_software&quot;&gt;reference manager&lt;/a&gt; to
+maintain your personal library.  &lt;a href=&quot;http://www.papernautapp.com&quot;&gt;Papernaut&lt;/a&gt;
+connects to your library to find online coverage and discussion of your papers
+in blogs, forums, and mainstream media.  My hope is that these discussions can
+provide broader perspective on research and, in some cases, be the spark that
+starts a new collaboration.&lt;/p&gt;
+
+&lt;p&gt;Here's a very quick video demo. We start with a &lt;a href=&quot;http://zotero.org&quot;&gt;Zotero&lt;/a&gt;
+library that includes a paper from Science on the
+&lt;a href=&quot;http://www.sciencemag.org/content/336/6079/348.short&quot;&gt;effect of pesticides on honey bees&lt;/a&gt;.
+We then connect to Papernaut, and find several discussions and articles,
+including one in &lt;a href=&quot;http://www.guardian.co.uk/science/grrlscientist/2012/may/08/1&quot;&gt;The Guardian&lt;/a&gt;:&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;349&quot; src=&quot;http://www.youtube.com/embed/ACw3iLLsSXw?rel=0&quot; frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;
+
+
+&lt;p&gt;I've been working on Papernaut in my spare time for a few months, and I'm happy
+to say that it's now open source.  The project comes in two parts, and the
+source is on GitHub:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jasonm/papernaut-frontend&quot;&gt;Papernaut-frontend&lt;/a&gt; is the web frontend.&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/jasonm/papernaut-engine&quot;&gt;Papernaut-engine&lt;/a&gt; is the feed crawler and matching backend.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;If you are interested in how the application is put together, the rest of this
+article is a technical overview of the moving parts and how they interact.&lt;/p&gt;
+
+&lt;h2&gt;Overview: A simple example&lt;/h2&gt;
+
+&lt;p&gt;Let's walk through a simplified example.  Say I have only one paper in my
+reference manager -- that paper from earlier, about the effect of pesticides on
+honey bees:&lt;/p&gt;
+
+&lt;p&gt;Henry, M., Beguin, M., Requier, F., Rollin, O., Odoux, J., Aupinel, P., Aptel,
+J., Tchamitchian, S., &amp;amp; Decourtye, A. (2012).
+&lt;a href=&quot;http://www.sciencemag.org/content/336/6079/348.short&quot;&gt;A Common Pesticide Decreases Foraging Success and Survival in Honey Bees.&lt;/a&gt;
+&lt;em&gt;Science&lt;/em&gt;, 336 (6079), 348-350 DOI:&lt;a href=&quot;http://dx.doi.org/10.1126/science.1215039&quot;&gt;10.1126/science.1215039&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Let's also say that the engine is crawling content from only one source feed,
+&lt;a href=&quot;http://researchblogging.org&quot;&gt;ResearchBlogging.org&lt;/a&gt;.
+Among many other content items, that source feed contains a
+&lt;a href=&quot;https://researchblogging.org/post-search/list?advanced=true&amp;amp;post_title=&amp;amp;journal=&amp;amp;blog_blogger_name=GrrlScientist&amp;amp;tags=&amp;amp;tag_id=&amp;amp;search_text=&amp;amp;from_date=05%2F08%2F2012&amp;amp;to_date=05%2F08%2F2012&amp;amp;send=Search&quot;&gt;relevant entry&lt;/a&gt;,
+whose &lt;a href=&quot;http://www.guardian.co.uk/science/grrlscientist/2012/may/08/1&quot;&gt;content page is on The Guardian&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We'll look at how the engine crawls and indexes this source feed.  Then,
+we'll see how the frontend pulls the paper from my reference manager and
+asks the engine for relevant discussions.&lt;/p&gt;
+
+&lt;h2&gt;Papernaut-engine: Loading content and identifying papers&lt;/h2&gt;
+
+&lt;p&gt;The goal of the engine is to produce a collection of &lt;code&gt;Discussion&lt;/code&gt; records, each
+of which links to several &lt;code&gt;Identifier&lt;/code&gt; records, representing journal papers
+that are referenced from the &lt;code&gt;Discussion&lt;/code&gt;.  In our example, the &lt;code&gt;Discussion&lt;/code&gt; is
+the article in The Guardian, and the relevant &lt;code&gt;Identifier&lt;/code&gt; is
+&lt;code&gt;DOI:10.1126/science.1215039&lt;/code&gt;.  There are also intermediate objects, &lt;code&gt;Page&lt;/code&gt; and
+&lt;code&gt;Link&lt;/code&gt; which connect &lt;code&gt;Discussion&lt;/code&gt;s to &lt;code&gt;Identifier&lt;/code&gt;s.&lt;/p&gt;
+
+&lt;p&gt;The engine consists of two main parts: loaders (which are Ruby classes), and the
+query API (a Rails app).  For loading, it also depends on an external running instance
+of the &lt;a href=&quot;https://github.com/zotero/translation-server&quot;&gt;Zotero translation-server&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://jasonm.github.com/assets/papernaut/diagram-engine.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Loading content by crawling feeds&lt;/h3&gt;
+
+&lt;p&gt;The loaders load discussion candidates from feeds and archives, extract
+outbound links, and store these in the database.&lt;/p&gt;
+
+&lt;p&gt;In the first step, I invoke the &lt;a href=&quot;researchblogging.org&quot;&gt;ResearchBlogging.org&lt;/a&gt;
+loader to crawl and index the most recent 100 pages of their archives:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[engine] rails runner &quot;Loaders::ResearchbloggingWebLoader.new(100).load&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This will load a large number of &lt;code&gt;Discussion&lt;/code&gt; entries into the database, with
+zero or more &lt;code&gt;Page&lt;/code&gt; entries for each &lt;code&gt;Discussion&lt;/code&gt;, corresponding to outbound
+links.&lt;/p&gt;
+
+&lt;p&gt;At this point, the engine database contains the &lt;code&gt;Discussion&lt;/code&gt;:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;#&amp;lt;Discussion id: 3424,
+             url: &quot;http://www.guardian.co.uk/science/grrlscientist/2012/may/08/1&quot;,
+             title: &quot; Bee deaths linked to common pesticides | video | G...&quot;, ...&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;and the linked &lt;code&gt;Page&lt;/code&gt; entries:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[#&amp;lt;Page id: 7531, url: &quot;http://dx.doi.org/10.1126/science.1215039&quot;, ... &amp;gt;,
+ #&amp;lt;Page id: 7532, url: &quot;http://pubget.com/doi/10.1126/science.1215039&quot;, ... &amp;gt;,
+ #&amp;lt;Page id: 7533, url: &quot;http://dx.doi.org/10.1126/science.1215025&quot;, ... &amp;gt;,
+ #&amp;lt;Page id: 7534, url: &quot;http://pubget.com/doi/10.1126/science.1215025&quot;, ... &amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;Identifying papers via the Zotero translation-server&lt;/h3&gt;
+
+&lt;p&gt;The engine determines which outbound links (or &lt;code&gt;Page&lt;/code&gt;s) are academic papers by
+issuing calls to the
+&lt;a href=&quot;https://github.com/zotero/translation-server&quot;&gt;Zotero translation-server&lt;/a&gt; HTTP API.
+The translation-server is a third-party project from open-source reference
+manager &lt;a href=&quot;http://www.zotero.org/&quot;&gt;Zotero&lt;/a&gt;. It examines a given URL and, if
+that page contains an academic paper, it returns common publication identifiers such as
+&lt;a href=&quot;http://en.wikipedia.org/wiki/Digital_object_identifier&quot;&gt;DOI&lt;/a&gt; or
+&lt;a href=&quot;http://en.wikipedia.org/wiki/PubMed#PubMed_identifier&quot;&gt;PMID&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;The translation-server wraps the
+&lt;a href=&quot;https://github.com/zotero/translators&quot;&gt;Zotero translators&lt;/a&gt;,
+a set of JavaScript scripts that do the heavy lifting of parsing a webpage and
+attempting to identify it as one or more academic publications.  These
+translators are
+&lt;a href=&quot;https://github.com/zotero/translators/issues&quot;&gt;maintained by the community&lt;/a&gt;,
+keeping them fairly up-to-date with publishers.  The translation-server uses
+&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/XULRunner&quot;&gt;XULRunner&lt;/a&gt; to run these
+scripts in a Gecko environment, and makes them available through a simple HTTP
+API:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[~] ~/dev/zotero/translation-server/build/run_translation-server.sh &amp;amp;
+    zotero(3)(+0000000): HTTP server listening on *:1969
+
+[~] curl -d '{&quot;url&quot;:&quot;http://www.sciencemag.org/content/336/6079/348.short&quot;,&quot;sessionid&quot;:&quot;abc123&quot;}' \
+     --header &quot;Content-Type: application/json&quot; \
+     http://localhost:1969/web | jsonpp
+
+    [
+      {
+        &quot;itemType&quot;: &quot;journalArticle&quot;,
+        &quot;creators&quot;: [
+          { &quot;firstName&quot;: &quot;M.&quot;, &quot;lastName&quot;: &quot;Henry&quot;, &quot;creatorType&quot;: &quot;author&quot; },
+          { &quot;firstName&quot;: &quot;M.&quot;, &quot;lastName&quot;: &quot;Beguin&quot;, &quot;creatorType&quot;: &quot;author&quot; },
+          { &quot;firstName&quot;: &quot;F.&quot;, &quot;lastName&quot;: &quot;Requier&quot;, &quot;creatorType&quot;: &quot;author&quot; },
+          { &quot;firstName&quot;: &quot;O.&quot;, &quot;lastName&quot;: &quot;Rollin&quot;, &quot;creatorType&quot;: &quot;author&quot; },
+          { &quot;firstName&quot;: &quot;J.-F.&quot;, &quot;lastName&quot;: &quot;Odoux&quot;, &quot;creatorType&quot;: &quot;author&quot; },
+          { &quot;firstName&quot;: &quot;P.&quot;, &quot;lastName&quot;: &quot;Aupinel&quot;, &quot;creatorType&quot;: &quot;author&quot; },
+          { &quot;firstName&quot;: &quot;J.&quot;, &quot;lastName&quot;: &quot;Aptel&quot;, &quot;creatorType&quot;: &quot;author&quot; },
+          { &quot;firstName&quot;: &quot;S.&quot;, &quot;lastName&quot;: &quot;Tchamitchian&quot;, &quot;creatorType&quot;: &quot;author&quot; },
+          { &quot;firstName&quot;: &quot;A.&quot;, &quot;lastName&quot;: &quot;Decourtye&quot;, &quot;creatorType&quot;: &quot;author&quot; }
+        ],
+        &quot;notes&quot;: [],
+        &quot;tags&quot;: [],
+        &quot;publicationTitle&quot;: &quot;Science&quot;,
+        &quot;volume&quot;: &quot;336&quot;,
+        &quot;issue&quot;: &quot;6079&quot;,
+        &quot;ISSN&quot;: &quot;0036-8075, 1095-9203&quot;,
+        &quot;date&quot;: &quot;2012-03-29&quot;,
+        &quot;pages&quot;: &quot;348-350&quot;,
+        &quot;DOI&quot;: &quot;10.1126/science.1215039&quot;,
+        &quot;url&quot;: &quot;http://www.sciencemag.org/content/336/6079/348.short&quot;,
+        &quot;title&quot;: &quot;A Common Pesticide Decreases Foraging Success and Survival in Honey Bees&quot;,
+        &quot;libraryCatalog&quot;: &quot;CrossRef&quot;,
+        &quot;accessDate&quot;: &quot;CURRENT_TIMESTAMP&quot;
+      }
+    ]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;There are several useful standardized identifiers here - DOI, URL, and ISSN.&lt;/p&gt;
+
+&lt;p&gt;So, continuing with our example from above, I'll next start the Zotero
+translation server and identify the pages:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[engine] ~/dev/zotero/translation-server/build/run_translation-server.sh &amp;amp;
+         zotero(3)(+0000000): HTTP server listening on *:1969
+
+[engine] rails runner &quot;ParallelIdentifier.new(Page.unidentified).run&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The engine issues calls to the translation-server and records new &lt;code&gt;Identifier&lt;/code&gt;s.
+Now, the &lt;code&gt;Page&lt;/code&gt; entries we previously crawled:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[#&amp;lt;Page id: 7531, url: &quot;http://dx.doi.org/10.1126/science.1215039&quot;, ... &amp;gt;,
+ #&amp;lt;Page id: 7532, url: &quot;http://pubget.com/doi/10.1126/science.1215039&quot;, ... &amp;gt;,
+ #&amp;lt;Page id: 7533, url: &quot;http://dx.doi.org/10.1126/science.1215025&quot;, ... &amp;gt;,
+ #&amp;lt;Page id: 7534, url: &quot;http://pubget.com/doi/10.1126/science.1215025&quot;, ... &amp;gt;]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;have corresponding &lt;code&gt;Identifier&lt;/code&gt; records:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;[#&amp;lt;Identifier id: 1819, page_id: 7531, body: &quot;DOI:10.1126/science.1215039&quot; ...&amp;gt;,
+ #&amp;lt;Identifier id: 1820, page_id: 7531, body: &quot;URL:http://www.sciencemag.org/content/336/6079/348&quot; ...&amp;gt;],
+ #&amp;lt;Identifier id: 1821, page_id: 7533, body: &quot;DOI:10.1126/science.1215025&quot; ...&amp;gt;,
+ #&amp;lt;Identifier id: 1822, page_id: 7533, body: &quot;URL:http://www.sciencemag.org/content/336/6079/351&quot; ...&amp;gt;,
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Two of the four pages were identified (&lt;code&gt;7531&lt;/code&gt; and &lt;code&gt;7533&lt;/code&gt;), and both of those
+pages received two identifiers apiece.  This means that the Guardian &lt;code&gt;Discussion&lt;/code&gt;
+actually referenced two different papers, not just the one we're interested in.&lt;/p&gt;
+
+&lt;p&gt;Now that there is a link between the paper in question and this discussion page,
+we are ready to visit the frontend.&lt;/p&gt;
+
+&lt;h2&gt;Papernaut-frontend: importing libraries, finding discussions&lt;/h2&gt;
+
+&lt;p&gt;The frontend works in two distinct phases: first, it helps you import papers
+from your reference manager.  Second, it shows you discussions for those papers.&lt;/p&gt;
+
+&lt;p&gt;You can import your papers via the
+&lt;a href=&quot;http://www.zotero.org/support/dev/server_api/read_api&quot;&gt;Zotero API&lt;/a&gt; or
+&lt;a href=&quot;http://dev.mendeley.com/&quot;&gt;Mendeley API&lt;/a&gt; by giving Papernaut access to your
+libraries via OAuth.  This happens with
+&lt;a href=&quot;https://github.com/jasonm/omniauth-zotero&quot;&gt;&lt;code&gt;omniauth-zotero&lt;/code&gt;&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/fractaloop/omniauth-mendeley&quot;&gt;&lt;code&gt;omniauth-mendeley&lt;/code&gt;&lt;/a&gt;
+libraries, followed by the
+&lt;a href=&quot;https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/lib/zotero_client.rb&quot;&gt;&lt;code&gt;ZoteroClient&lt;/code&gt;&lt;/a&gt; and
+&lt;a href=&quot;https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/lib/mendeley_client.rb&quot;&gt;&lt;code&gt;MendeleyClient&lt;/code&gt;&lt;/a&gt;
+classes.&lt;/p&gt;
+
+&lt;p&gt;Alternatively, you can import papers from most reference management software by
+exporting and uploading a &lt;a href=&quot;http://en.wikipedia.org/wiki/BibTeX&quot;&gt;&lt;code&gt;.bibtex&lt;/code&gt;&lt;/a&gt;
+file.  Papers and their identifiers are then extracted with the
+&lt;a href=&quot;https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/app/models/bibtex_import.rb&quot;&gt;&lt;code&gt;BibtexImport&lt;/code&gt;&lt;/a&gt;
+class.&lt;/p&gt;
+
+&lt;p&gt;Many papers will have multiple identifiers, and the frontend attempts to clean and validate
+your papers' identifiers as best it can in an attempt to find the best matches.&lt;/p&gt;
+
+&lt;p&gt;Once your papers are loaded into the frontend, it
+&lt;a href=&quot;https://github.com/jasonm/papernaut-frontend/blob/2013-01-06/lib/discussion.rb&quot;&gt;issues requests to the &lt;code&gt;papernaut-engine&lt;/code&gt; query API&lt;/a&gt;
+to find discussions that match papers in your library.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://jasonm.github.com/assets/papernaut/diagram-frontend.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The interface between the frontend and the engine are &lt;code&gt;Identifier&lt;/code&gt; strings,
+which take a type/value form:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;DOI:10.1038/nphys2376&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;ISSN:1542-4065&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;PMID:10659856&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;URL:http://nar.oxfordjournals.org/content/40/D1/D742.full&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;So, in our example video above, we authenticate via Zotero and authorize
+Papernaut's API access via OAuth.  The frontend extracts our library of papers
+from Zotero and stores their &lt;code&gt;Identifier&lt;/code&gt;s locally.  It issues requests to the
+engine's query API for matching discussions, and displays those to the end
+user:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://jasonm.github.com/assets/papernaut/frontend-screenshot.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Deployment&lt;/h2&gt;
+
+&lt;p&gt;In production, the Papernaut engine and frontend are deployed to
+&lt;a href=&quot;https://heroku.com&quot;&gt;Heroku&lt;/a&gt;.  The translation-server is deployed to EC2.
+I spin it up and run the loaders periodically, to reduce hosting overhead.&lt;/p&gt;
+
+&lt;p&gt;There is a &lt;code&gt;DEPLOY.md&lt;/code&gt; file for both
+&lt;a href=&quot;https://github.com/jasonm/papernaut-frontend/blob/master/DEPLOY.md&quot;&gt;the frontend&lt;/a&gt;
+and &lt;a href=&quot;https://github.com/jasonm/papernaut-engine/blob/master/DEPLOY.md&quot;&gt;the engine&lt;/a&gt;
+that goes into further detail.&lt;/p&gt;
+
+&lt;h2&gt;Next steps&lt;/h2&gt;
+
+&lt;p&gt;I'm excited to see what kinds of results people get with Papernaut,
+but it's still very early software.  I look forward to making a variety
+of improvements.&lt;/p&gt;
+
+&lt;p&gt;I'd really like to add a bulk request API endpoint to the engine, so that the
+frontend can discover discussions in a single HTTP request, rather that one
+request per paper. That's a big performance hit, and the user experience right
+now for large libraries is that the frontend just hangs for a while.&lt;/p&gt;
+
+&lt;p&gt;On the engine side, I'd like to do a better job of culling false positives in
+the matching engine, and of contributing to Zotero's translators to improve the
+match rate.  I think the primary issue there is that the translator-server
+actually only runs a subset of all the Zotero translators, as some declare that
+they only work inside a real browser context
+(&lt;a href=&quot;http://www.zotero.org/support/dev/translators&quot;&gt;see &quot;browserSupport&quot;&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;I'd like to get a larger sample set of BibTeX files to try, as there are
+probably edge cases and assumptions in the importer waiting to be hit.&lt;/p&gt;
+
+&lt;p&gt;I'd also like to background some of the tasks in the frontend's import process;
+validating DOIs is a big one there.  Ideally, the whole library import would be
+backgrounded, and the user interface would be notified when the import is
+complete.&lt;/p&gt;
+
+&lt;p&gt;Currently, some matches are missed because the engine and frontend have
+different identifiers for the same paper - say a DOI and a PMID.  I also have
+an experimental branch that cross-references papers with the
+&lt;a href=&quot;http://help.crossref.org/#author_title_query&quot;&gt;crossref.org API&lt;/a&gt;,
+which yields more complete information.  Ideally that would happen in the engine.
+I've also seen some library management and import tools that use Google Scholar
+to improve matching and identification.&lt;/p&gt;
+
+&lt;p&gt;After that, I'd like loaders to run semi-continuously instead of manually, and
+to have more robust infrastructure around paper identification.&lt;/p&gt;
+
+&lt;p&gt;In the long term, it would be interesting to try and bring the discussion
+matching experience directly into reference managers.  This is one reason why
+I provide the engine query API separately from the frontend.&lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;I'm most interested in hearing feedback from people.  Is this useful to you?
+If you use a reference manager,
+&lt;a href=&quot;http://www.papernautapp.com&quot;&gt;give Papernaut a spin&lt;/a&gt;
+and &lt;a href=&quot;mailto:jason.p.morrison@gmail.com&quot;&gt;let me know&lt;/a&gt; how it goes.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>A year of travel</title>
+    <link href="http://jasonm.github.com/2012/12/31/a-year-of-travel/"/>
+    <updated>2012-12-31T09:00:00-08:00</updated>
+    <id>http://jasonm.github.com/2012/12/31/a-year-of-travel</id>
+    <content type="html">&lt;p&gt;On December 4, Lindsay and I returned to the US after a year of &lt;a href=&quot;http://jasonm.github.com/2011/11/11/hitting-the-road/&quot;&gt;traveling
+abroad&lt;/a&gt;.  Lindsay diligently blogged our
+experiences and her photos at &lt;a href=&quot;http://cadeparade.com&quot;&gt;cadeparade.com&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;We have spent December visiting family and friends.  On December 31, we
+fly to San Francisco to start the next chapter of our lives.&lt;/p&gt;
+
+&lt;h2&gt;It's adventure time all over again&lt;/h2&gt;
+
+&lt;p&gt;Time to sift through apartments and carefully consider our work, to reacquaint
+ourselves with first world amenities and first world problems.  To reunite with
+family and friends, to fondly shuffle through our notes and photos, and to
+reflect on our travel experiences and put them into context.&lt;/p&gt;
+
+&lt;p&gt;Also, to eat fajitas and burritos en masse, because let me tell you: Mexican
+and Tex-Mex food outside the Americas just is not the same.&lt;/p&gt;
+
+&lt;h2&gt;The first half in photos&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;All photos are by &lt;a href=&quot;http://cadeparade&quot;&gt;Lindsay Cade&lt;/a&gt;, and are from the first
+half of the year.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;During the first six months of December 2011 through May 2012, we traveled in
+India, Thailand, Laos, Vietname, Cambodia, and Burma (Myanmar).&lt;/p&gt;
+
+&lt;p&gt;We traveled to places beautiful and remote:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8453/7936991528_886ea7ae7c_b.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://farm9.staticflickr.com/8448/7936993184_be9e720c99_c.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Ate incredible foods:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7257/7768788654_e7b744e282_b.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://farm8.staticflickr.com/7216/7215266698_43e7409e59_b.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;And some not-so-incredible ones:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7199/6927499007_1732d60f76_b.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We enjoyed amazing sunsets:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7105/6981860512_18047acd9d_b.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://farm6.staticflickr.com/5032/7078843175_0eb29b087c_c.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We ventured across deserts:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7203/6891841828_dc95fc8352_c.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://farm8.staticflickr.com/7254/7031251719_51598ea65d_c.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;into backwaters:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7208/6847221555_1d21839826_b.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://farm8.staticflickr.com/7077/7050364455_1d44c6d27b_b.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;through rivers and valleys:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm9.staticflickr.com/8421/7741985230_becb4193c3_b.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://farm8.staticflickr.com/7022/6784074323_212570b388_b.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We marvelled at constructions old and new:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://farm8.staticflickr.com/7142/6640567045_49dc8ddc58_b.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://farm8.staticflickr.com/7032/6634037347_a7c9c91e4c_b.jpg&quot; alt=&quot;&quot; /&gt;
+&lt;img src=&quot;http://farm8.staticflickr.com/7071/7006734540_c688343639_b.jpg&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;During the second six months of June through November, we traveled in the Czech
+Republic, Italy, Turkey, Germany, France, England, Thailand (again! we are
+quite fond of it), South Korea, Malaysia, and Hong Kong.  We ended the trip
+where we began, returning to India for a month.&lt;/p&gt;
+
+&lt;p&gt;I cannot recommend this experience highly enough.  My sense of perspective and
+patience have been changed at a fundamental level.  At the same time, I'm very
+much ready for this return to the US, to be with friends and to focus on my
+career, to do good in this world of which I've now seen a tiny slice more.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Hitting the road!</title>
+    <link href="http://jasonm.github.com/2011/11/11/hitting-the-road/"/>
+    <updated>2011-11-11T09:00:00-08:00</updated>
+    <id>http://jasonm.github.com/2011/11/11/hitting-the-road</id>
+    <content type="html">&lt;p&gt;On November 28, my wife Lindsay and I are flying to India.  We have
+no return tickets, and little plan.  I'm leaving a &lt;a href=&quot;http://thoughtbot.com&quot;&gt;great job&lt;/a&gt;;
+&quot;professional ennui&quot; is the furthest thing from my motivations.  What's going on?!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://jasonm.github.com/images/uploads/adventure-time.png&quot; alt=&quot;Adventure Time!&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt;It's adventure time!&lt;/h2&gt;
+
+&lt;p&gt;If there's one common lesson I could distill from my collegiate and
+professional engagements, it would be the value of diverse experience, and the
+difficulty of &lt;em&gt;planning&lt;/em&gt; to build that experience.  Sometimes you just gotta
+jump in learning's way.&lt;/p&gt;
+
+&lt;p&gt;We're young, not tied down, and have seen like 0.0001% of the world.  So,
+earlier this year, after getting engaged, we decided: let's hit the road!  Our
+plans are loose.  As of now, we:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Have 1-way tickets to Delhi and 5-year visas to India.  Many countries in
+Asia have VOA (visa on arrival) for US citizens.&lt;/li&gt;
+&lt;li&gt;Got our arms jabbed (immunizations).&lt;/li&gt;
+&lt;li&gt;Are brandishing a fat sack of doxy and a veritable menagerie of antibiotics.&lt;/li&gt;
+&lt;li&gt;Booked two days booked at a hotel to buffer our jetlag.&lt;/li&gt;
+&lt;li&gt;Asked a friend-of-a-friend to find a short-term lease in Delhi.&lt;/li&gt;
+&lt;li&gt;Are super frigging pumped.  I mean, come on!&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p&gt;I'll miss the crap out of my friends here in the US.  We're flying around a bit
+to visit folks before heading overseas - San Fran tomorrow through Wednesday,
+then Buffalo, then Houston for Thanksgiving.&lt;/p&gt;
+
+&lt;p&gt;Then, on November 28, IAH-ORD-DEL.&lt;/p&gt;
+
+&lt;h2&gt;Closing thoughts&lt;/h2&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Journeys are the midwives of thought. Few places are more conducive to internal
+conversations than a moving plane, ship or train. There is an almost quaint
+correlation between what is in front of our eyes and the thoughts we are able
+to have in our heads: large thoughts at times requiring large views, new
+thoughts new places. Introspective reflections which are liable to stall are
+helped along by the flow of the landscape. The mind may be reluctant to think
+properly when thinking is all it is supposed to do.&lt;/p&gt;
+
+&lt;p&gt;If we find poetry in the service station and motel, if we are drawn to the
+airport or train carriage, it is perhaps because, in spite of their
+architectural compromises and discomforts, in spite of their garish colours and
+harsh lighting, we implicitly feel that these isolated places offer us a
+material setting for an alternative to the selfish ease, the habits and
+confinement of the ordinary, rooted world.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;― Alain de Botton, The Art of Travel&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Backbone.js video Q&amp;A</title>
+    <link href="http://jasonm.github.com/2011/10/24/backbone-js-video-q-and-a/"/>
+    <updated>2011-10-24T21:24:00-07:00</updated>
+    <id>http://jasonm.github.com/2011/10/24/backbone-js-video-q-and-a</id>
+    <content type="html">&lt;p&gt;On Friday, October 14th, I hosted a two hour live Q&amp;amp;A chat for purchasers of the thoughtbot &lt;a href=&quot;http://workshops.thoughtbot.com/backbone-js-on-rails&quot;&gt;Backbone.js on Rails eBook&lt;/a&gt;, which I am co-authoring. We invited people who have purchased the book to submit questions ahead of time, and then join me in chat for a discussion.&lt;/p&gt;
+
+&lt;p&gt;I'm pleased that we are offering the recording and notes as a free resources. You can &lt;a href=&quot;http://workshops.thoughtbot.com/pages/backbone-js-on-rails-qa-live-chat-1&quot;&gt;download the Backbone.js on Rails live Q&amp;amp;A chat audio and notes&lt;/a&gt; over on the thoughtbot Workshops site.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Backbone.js on Rails talk</title>
+    <link href="http://jasonm.github.com/2011/09/25/backbone-js-on-rails-talk/"/>
+    <updated>2011-09-25T22:40:00-07:00</updated>
+    <id>http://jasonm.github.com/2011/09/25/backbone-js-on-rails-talk</id>
+    <content type="html">&lt;p&gt;On Tuesday, September 20, I gave a talk at the
+&lt;a href=&quot;http://nhruby.org/&quot;&gt;New Hampshire Ruby Users Group&lt;/a&gt; on Backbone.js on Rails.
+I'll be giving a very similar talk on Tuesday, October 11 at
+&lt;a href=&quot;http://bostonrb.org/presentations/backbonejs-and-rails&quot;&gt;boston.rb&lt;/a&gt; and a
+version more targeted to front-end developers on Wednesday, October 26 at the
+&lt;a href=&quot;http://www.meetup.com/Boston-Frontend-Developers/&quot;&gt;Boston Front End Developers meetup&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;I have posted the &lt;a href=&quot;http://jayunit.net/backbone-js-on-rails-talk/&quot;&gt;Backbone.js on Rails slides&lt;/a&gt;
+online, and the &lt;a href=&quot;https://github.com/jasonm/backbone-js-on-rails-talk/tree/gh-pages&quot;&gt;slide source is on my GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;As an aside, I'm using &lt;a href=&quot;https://github.com/adamzap/landslide&quot;&gt;landslide&lt;/a&gt; for the
+slides - I love the resulting HTML and interface, though I've heard great things
+about &lt;a href=&quot;http://imakewebthings.github.com/deck.js/&quot;&gt;deck.js&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;People found the resources sections useful. Many of the links are buried in the
+presenter notes, so I'll repeat them here.  There are plenty more online, and
+I'm sure I'm missing some content.  Please link to any of your favorites in the
+comments, and I'll add them.&lt;/p&gt;
+
+&lt;h3&gt;Testing&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Isolation test with &lt;a href=&quot;http://pivotal.github.com/jasmine/&quot;&gt;Jasmine&lt;/a&gt;:
+
+&lt;ul&gt;
+&lt;li&gt;Spy/stub/mock, even your HTTP, with &lt;a href=&quot;http://sinonjs.org/&quot;&gt;sinon.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;If you're looking for factory_girl.js, it's called &lt;a href=&quot;https://github.com/bkeepers/rosie&quot;&gt;Rosie&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/netzpirat/guard-jasmine&quot;&gt;guard-jasmine&lt;/a&gt; autotest your Jasmine with headless webkit (&lt;a href=&quot;http://www.phantomjs.org/&quot;&gt;phantomjs&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;Write in CoffeeScript and use the 3.1 asset pipeline with &lt;a href=&quot;https://github.com/bradphelan/jasminerice&quot;&gt;jasminerice&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Get started with James Newbery's excellent blog posts on &lt;a href=&quot;http://tinnedfruit.com/2011/03/03/testing-backbone-apps-with-jasmine-sinon.html&quot;&gt;testing Backbone with Jasmine&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Check out his &lt;a href=&quot;https://github.com/froots/backbone-jasmine-examples&quot;&gt;examples on GitHub&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Integration test with:
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/thoughtbot/capybara-webkit&quot;&gt;capybara-webkit&lt;/a&gt; for fast, headless, accurate WebKit testing&lt;/li&gt;
+&lt;li&gt;Selenium for other browsers, or if capybara-webkit has issues.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Push synchronization&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Rails &lt;code&gt;Model#save&lt;/code&gt; cascades to clients: &lt;a href=&quot;https://github.com/jasonm/backbone_sync-rails&quot;&gt;backbone_sync-rails&lt;/a&gt; over pubsub bus &lt;a href=&quot;http://faye.jcoglan.com/&quot;&gt;Faye&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Work-in-progress &lt;a href=&quot;http://en.wikipedia.org/wiki/Software_transactional_memory&quot;&gt;Software transactional memory&lt;/a&gt; sync: &lt;a href=&quot;https://github.com/codeparty/racer&quot;&gt;https://github.com/codeparty/racer&lt;/a&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Future plans: &lt;a href=&quot;http://code.google.com/p/google-diff-match-patch/&quot;&gt;diff-match-patch&lt;/a&gt;, &lt;a href=&quot;http://en.wikipedia.org/wiki/Operational_transformation&quot;&gt;Operational transform&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://nowjs.org/&quot;&gt;Now.js&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/substack/dnode&quot;&gt;Substack DNode&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://substance.io/michael/data-js&quot;&gt;Data.js&lt;/a&gt;: Data Manipulation and Graph Persistence for Node.js and the Browser.  Can ride now.js transport.
+
+&lt;ul&gt;
+&lt;li&gt;substance.io, above, is written with Backbone.js, and is open source &lt;a href=&quot;https://github.com/michael/substance&quot;&gt;https://github.com/michael/substance&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://andyet.net/blog/2011/feb/15/re-using-backbonejs-models-on-the-server-with-node/&quot;&gt;Backbone on the server with node.js&lt;/a&gt;... with DNode or NowJS (?!)&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Get started with Backbone&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://documentcloud.github.com/backbone/#examples-todos&quot;&gt;Todo App example&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://github.com/froots/backbone-jasmine-examples/tree/master/public/javascripts&quot;&gt;James Newbery's jasmine examples&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Further reading: Books on JavaScript&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://shop.oreilly.com/product/9780596517748.do&quot;&gt;JavaScript: The Good Parts&lt;/a&gt; by Douglas Crockford&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://shop.oreilly.com/product/0636920018421.do&quot;&gt;JavaScript Web Applications&lt;/a&gt; by Alex MacCaw (Spine.js author)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://tddjs.com/&quot;&gt;Test-Driven JavaScript Development&lt;/a&gt; by Christian Johansen&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://shop.oreilly.com/product/9780596806767.do&quot;&gt;JavaScript Patterns&lt;/a&gt; by Stoyan Stefanov&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://shop.oreilly.com/product/9780596805531.do&quot;&gt;JavaScript: The Definitive Guide&lt;/a&gt; by David Flanagan&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;Further reading: Online resources&lt;/h3&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://documentcloud.github.com/backbone/&quot;&gt;Official Backbone docs&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://documentcloud.github.com/backbone/docs/backbone.html&quot;&gt;Annotated source code&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://documentcloud.github.com/underscore/&quot;&gt;Underscore docs&lt;/a&gt; and &lt;a href=&quot;http://documentcloud.github.com/underscore/docs/underscore.html&quot;&gt;source&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://groups.google.com/group/backbonejs&quot;&gt;Backbone Google Group&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://workshops.thoughtbot.com/backbone-js-on-rails?utm_source=jm-talk&quot;&gt;Backbone on Rails eBook&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://peepcode.com/products/backbone-js&quot;&gt;Peepcode episodes on Backbone&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+  </entry>
+  
+  <entry>
+    <title>Notes From the MIT Startup Bootcamp 2011</title>
+    <link href="http://jasonm.github.com/2011/09/25/notes-from-the-mit-startup-bootcamp-2011/"/>
+    <updated>2011-09-25T11:42:00-07:00</updated>
+    <id>http://jasonm.github.com/2011/09/25/notes-from-the-mit-startup-bootcamp-2011</id>
+    <content type="html">&lt;p style=&quot;background-color: #ffa; padding: 1em; border: 1px solid #cc9;&quot;&gt;If you'd like to talk with other people who
+made it to this event, check out the
+&lt;a href=&quot;http://news.ycombinator.com/item?id=3036926&quot;&gt;Hacker News discussion thread&lt;/a&gt;.&lt;/p&gt;
+
+
+&lt;p&gt;Yesterday, September 24 2011, I had the pleasure of attending MIT's 2011
+&lt;a href=&quot;http://startupbootcamp.mit.edu/&quot;&gt;Startup Bootcamp&lt;/a&gt;. In its third year, Startup
+Bootcamp brought an inspiring and thoughful collection of speakers who have had
+a variety of startup successes.&lt;/p&gt;
+
+&lt;p&gt;The event hashtag &lt;a href=&quot;http://twitter.com/#!/search/%23sb2011&quot;&gt;#sb2011&lt;/a&gt; is a stream
+of reactions and pull-quotes from the event - mixed here and there with
+excited anticipation for
+&lt;a href=&quot;http://twitter.com/SunburnFestival&quot;&gt;a dance festival in Goa&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Ten speakers presented a variety of viewpoints, insight, and food for thought.&lt;/p&gt;
+
+&lt;p&gt;It was a mixed bag - yes, there was unnecessary focus on
+&lt;a href=&quot;http://www.startuplessonslearned.com/2009/12/why-vanity-metrics-are-dangerous.html&quot;&gt;vanity metrics&lt;/a&gt;
+and the rah-rah of
+&lt;a href=&quot;http://justinvincent.com/page/1392/entreporn-the-fallacy-that-wastes-your-life&quot;&gt;startup theater&lt;/a&gt;.
+Breathless celebration of hockeysticking uniques and of flying around to court
+VCs makes for good TechCrunch articles.  Like it or not, that's an inculcated
+part of startup culture.&lt;/p&gt;
+
+&lt;p&gt;But if you get past the Hollywooding and the Silicon Valley adulation, there
+were gems of solid advice, grounded in experience, on hiring (Paul English of
+Kayak), data-driven product development (Naveen Selvadurai of foursquare),
+optimizing your life for personal growth (Drew Houston of Dropbox), identifying
+underlying social and technological shifts that enable new products (Charlie
+Cheever of Quora, Patrick Collison of Stripe), negotiation (Alex Polvi of
+Cloudkick), the importance of on-the-ground and unscalable product development
+tactics early on (Nathan Blecharczyk of Airbnb), earning and answering to the
+responsibility of finding your own way in the world (Anthony Volodkin of
+Hype Machine) and how important it is to empower yourself in perhaps the largest
+disruptive theme of our time by learning to code (Patrick Collison of Stripe).&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://paulenglish.com/&quot;&gt;Paul English&lt;/a&gt;, CTO and co-founder of &lt;a href=&quot;http://www.kayak.com/team&quot;&gt;Kayak&lt;/a&gt;.&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Recruit a diversity of success.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Paul spoke on three kinds of recruiting: companies recruiting new hires,
+companies recruiting investors, and job-seekers recruiting companies.&lt;/p&gt;
+
+&lt;p&gt;When you're recruiting, look for success, regardless of the kind.  In fact, look
+for a diversity of success. Paul once hired an olympic rower, and a chess
+grandmaster, and couldn't be happier with these decisions.  Find people who
+operate at the top levels of excellence.&lt;/p&gt;
+
+&lt;p&gt;Some companies have a &quot;no assholes&quot; rule - at Kayak, they have a policy of &quot;no
+neutrals&quot;.  Like Charlie Cheever, who later discussed the importance of hiring
+people you have high-bandwidth communication with, Paul encouraged building a
+team of people who are fully engaged: &quot;intense and in-your-face - in a good way.&quot;&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://blog.leahculver.com/about.html&quot;&gt;Leah Culver&lt;/a&gt;, CEO and co-founder of &lt;a href=&quot;https://convore.com/&quot;&gt;Convore&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Show up, say yes.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Leah told an lighthearted and likeable story of her journey from big state
+school CS major to Silicon Valley startup founder.  Full of serendipity and
+luck, she shared stories of driving a UHaul from her native Minnesota out to the
+Bay Area (picked not primarily for its burgeoning tech scene, but for how much
+better the weather is), getting started with Instructables, and bumping into
+Pownce co-founders Kevin Rose and Daniel Burka at a party.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Have a good story to tell the press - you don't have to tell people the ugly,
+dirty truth.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Another of Leah's pieces of advice was a common thread through the talks - that
+of consistent applied effort.  &quot;Show up,&quot; she said - in places with a critical
+mass of startup people, such as Silicon Valley - and &quot;say yes&quot; to opporunities
+that come your way.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://asuth.com&quot;&gt;Andrew Sutherland&lt;/a&gt;, founder of &lt;a href=&quot;http://quizlet.com/&quot;&gt;Quizlet&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;I didn't just rush it on my parents that I was leaving MIT. It took two whole weeks.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Andrew shared his story of inspiration for an online learning tool.  When he
+hacked together a prototype to help study for a French III class in high school
+and subsequently aced the test, he knew he was onto something.&lt;/p&gt;
+
+&lt;p&gt;Andrew discouraged market research - &quot;If I had googled for online flash cards, I
+would have found other sites, that were not as good, and I wouldn't have made
+Quizlet.  Now, we're 10x the [volume] of our next competitor.&quot;&lt;/p&gt;
+
+&lt;p&gt;This phrasing
+&lt;a href=&quot;http://twitter.com/#!/BobbieC/status/117616203874316288&quot;&gt;raised some contention&lt;/a&gt;.
+I would reframe his advice as: focus on your own products rather than on the
+competition, and don't be discouraged by incumbent players; rather, recognize
+them as a validation of the market space, and proceed to out-execute them.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://naveenium.com/&quot;&gt;Naveen Selvadurai&lt;/a&gt; co-founder of &lt;a href=&quot;http://foursquare.com&quot;&gt;foursquare&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;At first, go with your hunch.  Later, with data.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Naveen worked for Lucent and Sun in college.  This was important - it was
+real-world learning.  Seeing engineering culture, doing code reviews, shipping
+real products.  Sun had an open culture of learning where you can dive into
+other products.  &quot;How'd they build Solaris?  File systems?&quot;  Just sign up for
+the mailing list.&lt;/p&gt;
+
+&lt;p&gt;Naveen shared seven pieces of distilled advice:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Keep good company.&lt;/li&gt;
+&lt;li&gt;Make something that people want.&lt;/li&gt;
+&lt;li&gt;Build around an atomic action.&lt;/li&gt;
+&lt;li&gt;Seek mentors early.&lt;/li&gt;
+&lt;li&gt;At first, go with your hunch.  Later, with data.&lt;/li&gt;
+&lt;li&gt;Balance unknowns with knowns.&lt;/li&gt;
+&lt;li&gt;Always be recruiting.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;p&gt;On the last point Naveen shared the four stages of foursquare's hiring strategy:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Hire friends&lt;/li&gt;
+&lt;li&gt;Hire friends of friends&lt;/li&gt;
+&lt;li&gt;Use an external agency (but they didn't find this valuable)&lt;/li&gt;
+&lt;li&gt;Hire an internal fulltime recruiter.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;blockquote&gt;&lt;p&gt;It needs to be someone's job to think about recruiting, seven days a week.
+Additionally, as a founder, you must always be recruiting.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://twitter.com/#!/ccheever&quot;&gt;Charlie Cheever&lt;/a&gt;, founder of &lt;a href=&quot;http://www.quora.com/&quot;&gt;Quora&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Work with people you have really high-bandwidth communication with.
+Understand how the other person is thinking.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Charlie shared great advice on early-stage tactics.  Start with few users (Quora
+started with fewer than fifty) and a low-cost MVP.  Foster the community by
+hand, be high-touch and, if your business builds on user-generated content, be
+prepared at the beginning to build a lot of it by yourself.  See how the
+experiment goes, and then take the learning from that experience and apply it to
+your MVP.&lt;/p&gt;
+
+&lt;p&gt;He shared the importance of collecting metrics early on. With Quora, they
+actually stored the entire webpage for every visit for every customer, so that
+they could go back later, having identified trends or formulated hypotheses, and
+see the site as their users saw it.&lt;/p&gt;
+
+&lt;p&gt;They noticed a set of high-engagement users, looked at these users' expereinces,
+and found that they had all used Facebook connect.  Running with this, the team
+spent time focusing on improving their social experience.&lt;/p&gt;
+
+&lt;p&gt;Charlie also left the audience with good food for though:&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;What wave enables your product?  Why is now the right time to build it?&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;For foursquare, it was GPS-enabled mobile phones.  For Quora, it was that
+&quot;normal&quot; people were comfortable sharing things online, and that the web was
+turning into a mess; with Google turning up more content farm results, people
+were moving onto safe harbors of organized information like IMDB and Wikipedia.
+The timing was right.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://twitter.com/#!/drewhouston&quot;&gt;Drew Houston&lt;/a&gt;, co-founder of &lt;a href=&quot;http://dropbox.com&quot;&gt;Dropbox&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Get out of your comfort zone.  Learn a little about a lot.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;&quot;Everything big starts small&quot; - Drew's original perception of startups was that
+of Tolkien's Mount Doom.  His original strategy to build a successful startup
+was to be overwhelmingly prepared - nab an MIT CS degree, get a few years'
+exerpience working for small companies and big companies alike, come back for a
+PhD, maybe an MBA.&lt;/p&gt;
+
+&lt;p&gt;He then related a story from Dropbox's origins: Drew had just settled into his
+seat on a Chinatown bus from Boston, in which he could usually get in several
+hours of undisturbed work.  He popped open his laptop, and searched his pockets
+for his ever-present USB thumb drive.  &quot;Shit.&quot;  Realization set in just as he
+visualized, in his mind's eye, the thumb drive sitting on his desk at home.
+&quot;Like any good engineer with a problem to solve, I opened my editor.&quot; Drew then
+wrote the first lines of what would eventually become Dropbox.  Today, his
+company has a multi-billion dollar valuation and &quot;stores more files than Twitter
+stores tweets.&quot;&lt;/p&gt;
+
+&lt;p&gt;Drew exhorted the audience to learn about a broad variety of topics: sales,
+marketing, finance, accounting, product design, psychology, influence,
+negotiation, organizational design, management and leadership, business
+strategy.  Buy books (&quot;today we have this amazing thing, Amazon&quot;), dip in, find
+mentors, and surround yourself with smart people.&lt;/p&gt;
+
+&lt;p&gt;Wrapping up, Drew shared his advice for success:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Take on more than you're &quot;ready for.&quot;&lt;/li&gt;
+&lt;li&gt;Maximize how much you learn per unit time.&lt;/li&gt;
+&lt;li&gt;Stack the odds in your favor. Surround yourself with great people; you are the
+average of your five closest friends.&lt;/li&gt;
+&lt;li&gt;The fastest way to learn about startups is to join one.&lt;/li&gt;
+&lt;li&gt;Starting a company is one of the best ways for engingeers to change the world.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;h3&gt;&lt;a href=&quot;http://alex.polvi.net/&quot;&gt;Alex Polvi&lt;/a&gt;, founder of &lt;a href=&quot;https://www.cloudkick.com/&quot;&gt;Cloudkick&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;No matter what number they offer, pause, count to 10 in your head, and then act as disappointed as possible.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Alex spoke on negotiation, specifically about his experience of his company
+Cloudkick being acquired by Rackspace.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;If a VP of Corp Dev says &quot;strategic&quot; to you, they are talking about
+acquisition.&lt;/li&gt;
+&lt;li&gt;Acquisitions are a bit like romantic relationships: you often get the most
+attention when you're looking for it the least.  Once you are involved with one
+party, others can sense it. You somehow become more desirable.&lt;/li&gt;
+&lt;li&gt;Once you have a term sheet from one prospective buyer, you have great
+leverage.  When others call you up, you can very quickly get to hard numbers.&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;blockquote&gt;&lt;p&gt;The best negotiation position is one of truth.  Build something of value that
+people want, and your position is irrefutable.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Alex also discussed the importance of taking care of your team, and the people
+around you.  Upon acquisition, he fully accelerated all employees' options -
+whether they had been with Cloudkick for four years or four weeks, they were all
+fully vested and could share in the company's success.  It was important that
+the acquiring party, Rackspace was on board with this - and they were.
+Rackspace wanted the new team members to stick around not because they were
+waiting to vest, but because they wanted to be there.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://fascinated.fm/&quot;&gt;Anthony Volodkin&lt;/a&gt;, founder of &lt;a href=&quot;http://hypem.com&quot;&gt;Hype Machine&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Venture Capital?  You do not need anyone's permission to make stuff.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Anthony shared the perspective that VC or angel investment can be very
+important, but it's not for everyone.  &quot;I don't want to shut something off
+because the math doesn't work.  For people to not remember it.  That would make
+me sad.&quot;&lt;/p&gt;
+
+&lt;p&gt;Anthony's vision was a question: while people with cool friends can get
+interesting music recommendations from that network, what about people without
+cool friends?  He knew that there was great taste and insight being shared by
+music bloggers online, and sought to aggregate and distill it.  &quot;I didn't want
+to miss anything.&quot;&lt;/p&gt;
+
+&lt;p&gt;(If music startups are your thing, Anthony couldn't recommend highly enough
+&lt;a href=&quot;http://www.slideshare.net/daltoncaldwell/startupschool3&quot;&gt;Dalton Caldwell's talk from Startup School 3 on music startups&lt;/a&gt;.)&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;Find your own way.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;He started Hype Machine from his dorm room.  He didn't take investor money.
+This gave Anthony and his team the freedom to run the company as they pleased.&lt;/p&gt;
+
+&lt;p&gt;&quot;We wanted to travel,&quot; he said - so they packed their bags and hung out in
+Berlin for a month.  It was cheaper than they would have thought, &quot;about six
+thousand dollars,&quot; and incredibly fun.  But if they'd had VC money?  &quot;No way,&quot;
+Anthony imagined an advisor's response, &quot;we thought you were, you know, going to
+be working sixteen hour days.  Now you want to go to Berlin and &lt;em&gt;maybe work&lt;/em&gt;?&quot;&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;YCombinator?  TechStars?  Just fucking make something.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Anthony exhorted: it's okay to have a different process.  Don't discount
+investment and the accompanying advisors, but don't go blindly down that most
+celebrated path. With a different process, it's easier to stand out, to be
+differentiated.  You can always get money if you are making something great.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;https://twitter.com/#!/nathanblec&quot;&gt;Nathan Blecharczyk&lt;/a&gt; of &lt;a href=&quot;http://airbnb.com&quot;&gt;Airbnb&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;You have to have a vision, you have to be able to execute that vision.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Nathan shared a 2008 pitch deck for Airbnb (then AirBed&amp;amp;Breakfast) - the
+first time this deck had ever seen the light of day.
+Tiffany Kosolcharoen posted &lt;a href=&quot;http://tiffanyk.com/post/10611384492/honored-nathanblec-shared-original-airbnb&quot;&gt;photos of the slides on her blog&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;He highlighted its strengths - it had a problem statement, and had a bottom-up
+business projection by analogy to CouchSurfing and Craigslist.  He was also
+quick to point out its weaknesses - it involved hand-wavy notions of unlikely
+major player partnerships, and touted top down projections (&quot;If we can capture
+2% of the $1.9B travel booking market... imagine!&quot;) that are quick to raise
+doubt from savvy adviors or investors.&lt;/p&gt;
+
+&lt;p&gt;The company was accepted into Y Combinator's Winter 2009 class.  YC companies
+are supposed to be heads-down; but at Paul Graham's behest, the cofounders
+zeroed in their market focus to just New York and hopped redeyes back and forth
+every few weeks.  They met with their initial supply-side renteres in bars, and
+chatted about how things were going.  As the team refined the product and
+identified sticking points, they could be on the ground to help optimize
+listings.  They'd go with people into their homes and take high-quality photos.
+They found that the initial asking rates were a little too high, so they asked
+their listers (after a few drinks) to lower their prices.  Things clicked, and
+soon they had handled $250,000 in bookings of which they collected 10%.&lt;/p&gt;
+
+&lt;p&gt;Fast-forward to the YC W09 Demo Day, and although at that point Airbnb has
+already accepted Sequoia investment, they had prepared a Demo Day deck.  Gone
+was the hand-wavy top-down projection and partnership hopefulness, replaced with
+a quarter million dollars of demonstrable traction, a tight initial market
+focus, and a tight, clear problem statement.&lt;/p&gt;
+
+&lt;p&gt;Like many of the speakers, Nathan stressed the importance of finding quality
+mentors.&lt;/p&gt;
+
+&lt;h3&gt;&lt;a href=&quot;http://collison.ie/&quot;&gt;Patrick Collison&lt;/a&gt; co-founder of &lt;a href=&quot;http://stripe.com&quot;&gt;Stripe&lt;/a&gt;&lt;/h3&gt;
+
+&lt;blockquote&gt;&lt;p&gt;It is impossible to motivate great people by something that is merely going to be profitable.&lt;/p&gt;&lt;/blockquote&gt;
+
+&lt;p&gt;Patrick's talk was an excellent finish to the day.  He delivered an essay full of engaging stories  - I sincerely hope it will be posted online in full.&lt;/p&gt;
+
+&lt;p&gt;Patrick's story was of his trip from hardcore Lisp academic to startup founder.  Along the way, he developed one of the first iPhone apps, an &lt;a href=&quot;http://collison.ie/wikipedia-iphone/index-new&quot;&gt;offline Wikipedia&lt;/a&gt;, before the SDK and App Store, by debugging ARM assmebly. He shared the touching experience of getting emails form users whose lives he had changed; from bringing the world's knowledge to villages in rural Peru and Ghana to delivering the freedom to browse Wikipedia without overisght to people behind the Great Firewall of China.  At nineteen, he co-founded and sold an online action tool, and is currently working on a new payment startup, Stripe.&lt;/p&gt;
+
+&lt;blockquote&gt;&lt;p&gt;The anthropological story of the last twenty years is that software is taking over the world. Even if you're a traveling violinist, you should learn how to program.  Do all you can to ensure code is not a foreign language.&lt;/p&gt;&lt;/blockquote&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Hello, Octopress.  Hello, blog.</title>
+    <link href="http://jasonm.github.com/2011/09/05/hello-octopress-hello-blog/"/>
+    <updated>2011-09-05T20:18:00-07:00</updated>
+    <id>http://jasonm.github.com/2011/09/05/hello-octopress-hello-blog</id>
+    <content type="html">&lt;h2&gt;On writing&lt;/h2&gt;
+
+&lt;p&gt;I've written sporadically here for several years about programming and language theory, synthetic biology, amateur biology, running user groups and barcamps, multitouch and immersive interactions.&lt;/p&gt;
+
+&lt;p&gt;I've imported my old posts from WordPress into Octopress.  That was -- oh wait, I was about to write about that experience before I even began.  I was going to say how buttercream-frosting-smooth it was, and that's probably because I have a lot of confidence in exactly that, mostly due to their &lt;a href=&quot;http://octopress.org/&quot;&gt;well-coiffed htmls&lt;/a&gt;.  Update!  Turns out they're &lt;a href=&quot;https://github.com/mojombo/jekyll/wiki/blog-migrations&quot;&gt;Jekyll migrations&lt;/a&gt; instead.  Still easy-peasy.&lt;/p&gt;
+
+&lt;p&gt;I've &lt;a href=&quot;http://www.google.com/search?q=site:robots.thoughtbot.com+jasonmorrisontb&quot;&gt;written more frequently and recently over on the thoughtbot blog&lt;/a&gt;, on development-related topics from from &lt;a href=&quot;http://robots.thoughtbot.com/post/189637456/tiniest-of-tips&quot;&gt;little tips&lt;/a&gt; to &lt;a href=&quot;http://robots.thoughtbot.com/post/2597579897/use-deadweight-and-your-integration-suite-to&quot;&gt;medium-size tips&lt;/a&gt; to &lt;a href=&quot;http://robots.thoughtbot.com/post/486653439/hopping-in-the-cloud&quot;&gt;architecture deep-dives&lt;/a&gt;, from &lt;a href=&quot;http://robots.thoughtbot.com/post/7766484768/backbone-js-on-rails-a-new-dynamic-ebook&quot;&gt;product announcements&lt;/a&gt; to &lt;a href=&quot;http://robots.thoughtbot.com/post/159805334/make-your-test-suite-uncomfortably-fast&quot;&gt;high-performance bears&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I'll be traveling extensively over the next year, and will be writing about that, too.  But that's a different post.&lt;/p&gt;
+
+&lt;h2&gt;On tools&lt;/h2&gt;
+
+&lt;p&gt;I wrote most of my previous posts in Mephisto, which was kind of janky after a white, and then switched to WordPress, which is totally not Ruby, and more or less means I have to run a VPS and make sure I don't get &lt;a href=&quot;http://www.ludicroussoftware.com/blog/2011/08/02/switching-to-octopress/&quot;&gt;chainsawed by spammers&lt;/a&gt;.   Also, I'm interested in switching to a toolset more near and dear to my heart. &lt;a href=&quot;http://octopress.org/&quot;&gt;Octopress&lt;/a&gt; fits the bill.&lt;/p&gt;
+
+&lt;p&gt;This also means I can write using vim and git, like a champ.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>SmartLab shenanigans</title>
+    <link href="http://jasonm.github.com/2009/09/29/smartlab-shenanigans/"/>
+    <updated>2009-09-29T00:00:00-07:00</updated>
+    <id>http://jasonm.github.com/2009/09/29/smartlab-shenanigans</id>
+    <content type="html">&lt;p style=&quot;font-size: 19.5px; line-height: 28.5px;&quot;&gt;Whither lurk multitouch, tactile computing, and lab instrument hacking?  I've started to work on the &lt;a href=&quot;http://projectsmartlab.org/&quot;&gt;SmartLab project&lt;/a&gt; again.  You can see what I am up to on the &lt;a title=&quot;SmartLab tumblr&quot; href=&quot;http://smartlab.tumblr.com&quot;&gt;SmartLab tumblr&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>See you at RailsConf!</title>
+    <link href="http://jasonm.github.com/2009/05/06/railsconf-2009/"/>
+    <updated>2009-05-06T00:00:00-07:00</updated>
+    <id>http://jasonm.github.com/2009/05/06/railsconf-2009</id>
+    <content type="html">If you're going to RailsConf this week, let's grab some drinks and catch up!
+
+I'm looking forward to hanging out with &lt;a href=&quot;http://thoughtbot.com&quot;&gt;my awesome coworkers&lt;/a&gt;, my Ruby friends from all around, and giving a lightning talk on &lt;a href=&quot;http://bioweathermap.org&quot;&gt;the BioWeatherMap Initiative&lt;/a&gt; at the &lt;a href=&quot;http://activeresearch.org&quot;&gt;ActiveResearch&lt;/a&gt; &quot;Science on Rails&quot; evening (&lt;a href=&quot;http://en.oreilly.com/rails2009/public/schedule/detail/9023&quot;&gt;Tuesday at 7:30pm&lt;/a&gt;).
+
+&lt;strong&gt;Update: &lt;/strong&gt;I've uploaded my talk from ActiveResearch to SlideShare:  &quot;&lt;a href=&quot;http://www.slideshare.net/jmorrison/bioweathermap-at-active-research&quot;&gt;BioWeatherMap at ActiveResearch&lt;/a&gt;.&quot;
+</content>
+  </entry>
+  
+  <entry>
+    <title>DIYbio at CodeCon, BarCampBoston, Cambridge Science Festival, and Maker Revolution</title>
+    <link href="http://jasonm.github.com/2009/04/24/diybio-at-codecon-barcampboston-cambridge-science-festival-and-maker-revolution/"/>
+    <updated>2009-04-24T00:00:00-07:00</updated>
+    <id>http://jasonm.github.com/2009/04/24/diybio-at-codecon-barcampboston-cambridge-science-festival-and-maker-revolution</id>
+    <content type="html">In a whirlwind two weekends, I've given a &lt;a href=&quot;http://diybio.org&quot;&gt;DIYbio&lt;/a&gt; talk with Kay Aull and Mac Cowell at &lt;a href=&quot;http://codecon.org&quot;&gt;CodeCon 2009&lt;/a&gt; and will be at the &lt;a href=&quot;http://cambridgesciencefestival.org/&quot;&gt;Cambridge Science Festival&lt;/a&gt; (&lt;a href=&quot;http://diybio.org/2009/04/21/diybio-boston-at-cambridge-science-festival-this-saturday/&quot;&gt;details&lt;/a&gt;), &lt;a href=&quot;http://www.barcampboston.org&quot;&gt;BarCamp Boston 4&lt;/a&gt;, and &lt;a href=&quot;http://www.themakerrevolution.com/&quot;&gt;The Maker Revolution&lt;/a&gt; (Sunday at 1:00pm).
+
+CodeCon was a fantastic experience - San Francisco was enjoyable as always, and it was stimulating to be around so many incredibly bright folks.  Thanks again to Len, Bram, and all the organizers for putting it together and for hosting the BioHack! track.
+
+I hope to record the talk material with Kay and Mac, titled &quot;DIY Synthetic Biology: From Design to Construction with New Model Organisms,&quot; so that it is available online in the near future.
+</content>
+  </entry>
+  
+  <entry>
+    <title>Kitmakers class</title>
+    <link href="http://jasonm.github.com/2009/01/08/kitmakers-class/"/>
+    <updated>2009-01-08T00:00:00-08:00</updated>
+    <id>http://jasonm.github.com/2009/01/08/kitmakers-class</id>
+    <content type="html">Monday, Jan 5 2009: Tonight is the first night of &lt;a href=&quot;http://www.nublabs.org/&quot;&gt;nublabs&lt;/a&gt;' &lt;a href=&quot;http://nublabs.com/mailman/listinfo/kitmakers_nublabs.com&quot;&gt;Kitmakers course&lt;/a&gt;.  I'm excited to see how it goes!
+
+I'm primarily interested in building equipment for do-it-yourself biology, such as &lt;a href=&quot;http://openwetware.org/wiki/DIYbio:Notebook/Open_Gel_Box_2.0&quot;&gt;an inexpensive, high quality gel electrophoresis apparatus&lt;/a&gt;.
+
+-- cut to Thursday, Jan 8 --
+
+...and today was the second night.  There were notably fewer people tonight, but it rocked anyhow.  I learned how to use the Bridgeport mill to do basic manual milling and how to use the digital readout, turned some aluminum in a lathe, and watched an intro to MIG welding.
+
+Then, with &lt;a href=&quot;http://nublabs.org&quot;&gt;Alex&lt;/a&gt;'s help, I put together a variable DC power supply with a variac, bridge rectifier (three of them, actually - but only because we blew two), and a resistor+capacitor to smooth the resulting voltage.  Photos:
+
+&lt;div style=&quot;text-align: center;&quot;&gt;
+[caption id=&quot;attachment_65&quot; align=&quot;aligncenter&quot; width=&quot;300&quot; caption=&quot;Gel box power supply, variable from ~0-200VDC.  Variac is on the left; AC voltmeter, bridge rectifier and RC mounted to the board on the right.&quot;]&lt;a href=&quot;http://jayunit.net/wp-content/uploads/2009/01/img_0079.jpg&quot;&gt;&lt;img class=&quot;size-medium wp-image-65&quot; title=&quot;Gel box power supply, variable from ~0-200VDC.  Variac is on the left; AC voltmeter, bridge rectifier and RC mounted to the board on the right.&quot; src=&quot;http://jayunit.net/wp-content/uploads/2009/01/img_0079-300x225.jpg&quot; alt=&quot;Gel box power supply, variable from ~0-200VDC.  Variac is on the left; AC voltmeter, bridge rectifier and RC mounted to the board on the right.&quot; width=&quot;300&quot; height=&quot;225&quot; /&gt;&lt;/a&gt;[/caption]
+
+[caption id=&quot;attachment_64&quot; align=&quot;aligncenter&quot; width=&quot;225&quot; caption=&quot;Bridge rectifier plus RC with drain resistor for gel box power supply&quot;]&lt;a href=&quot;http://jayunit.net/wp-content/uploads/2009/01/img_0077.jpg&quot;&gt;&lt;img class=&quot;size-medium wp-image-64&quot; title=&quot;Bridge rectifier plus RC with drain resistor for gel box power supply&quot; src=&quot;http://jayunit.net/wp-content/uploads/2009/01/img_0077-225x300.jpg&quot; alt=&quot;Bridge rectifier plus RC with drain resistor for gel box power supply&quot; width=&quot;225&quot; height=&quot;300&quot; /&gt;&lt;/a&gt;[/caption]
+
+[caption id=&quot;attachment_66&quot; align=&quot;aligncenter&quot; width=&quot;225&quot; caption=&quot;Variable DC power supply, all snug in a shelf.  Goodnight!&quot;]&lt;a href=&quot;http://jayunit.net/wp-content/uploads/2009/01/img_0080.jpg&quot;&gt;&lt;img class=&quot;size-medium wp-image-66&quot; title=&quot;Variable DC power supply, all snug in a shelf.  Goodnight!&quot; src=&quot;http://jayunit.net/wp-content/uploads/2009/01/img_0080-225x300.jpg&quot; alt=&quot;Variable DC power supply, all snug in a shelf.  Goodnight!&quot; width=&quot;225&quot; height=&quot;300&quot; /&gt;&lt;/a&gt;[/caption]
+
+&lt;/div&gt;
+
+Next week I'd like to test the power output on an oscilloscope, and start working on building a &quot;draft&quot; of an enclosure.
+</content>
+  </entry>
+  
+  <entry>
+    <title>New Year update</title>
+    <link href="http://jasonm.github.com/2009/01/05/new-year-update/"/>
+    <updated>2009-01-05T00:00:00-08:00</updated>
+    <id>http://jasonm.github.com/2009/01/05/new-year-update</id>
+    <content type="html">Hey folks!  It's been a while (whew... 6 months?) since my last update here.  Here are a few things I've been up to, and what my plans over the next few months are:
+&lt;ol&gt;
+	&lt;li&gt;Built and delivered &lt;a href=&quot;http://thoughtbot.com&quot;&gt;awesome web applications with thoughtbot&lt;/a&gt;, and will help to roll out a &lt;a href=&quot;http://thoughtbot.com/training&quot;&gt;beginning Rails thoughtbot training course&lt;/a&gt; later this January.&lt;/li&gt;
+	&lt;li&gt;Attended RailsConf, RubyConf, the Lone Star Ruby Conference, and spoke at Boston.rb on &lt;a href=&quot;http://github.com/jasonm/talks/tree/master&quot;&gt;Clearance, a small auth plugin for Ruby web apps&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Started learning more biology in earnest by taking a &lt;a href=&quot;http://isites.harvard.edu/icb/icb.do?keyword=k38681&quot;&gt;cell- and micro-bio course at Harvard Extension&lt;/a&gt; and working with &lt;a href=&quot;http://diybio.org/&quot;&gt;DIYbio&lt;/a&gt;.  While the lecture is a very good one, as lectures go, I preferred the lab to the lecture and, as such, intend to do more hands-on learning in 2009.  A few projects I would like to undertake include:
+&lt;ol&gt;
+	&lt;li&gt;Working through &lt;a href=&quot;http://www.biotechinstitute.org/resources/shoestring_biotech.html&quot;&gt;Shoestring Biotechnology: Budget-Oriented High Quality Biotechnology Laboratories for Two-Year College and High School&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Working on at least one piece of equipment with DIYbio folks, such as &lt;a href=&quot;http://openwetware.org/wiki/DIYbio:Notebook/Open_Gel_Box_2.0&quot;&gt;Open Gel Box 2.0&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Participating in a DIYbio iGEM team.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+If you are interested in keeping tabs on what I'm up to, I'd suggest either my &lt;a href=&quot;http://twitter.com/jayunit&quot;&gt;twitter feed&lt;/a&gt; or the &lt;a href=&quot;http://groups.google.com/group/diybio&quot;&gt;DIYbio Google Group&lt;/a&gt;, as these are my highest-touch interactions these days.
+</content>
+  </entry>
+  
+  <entry>
+    <title>del.icio.us.tags</title>
+    <link href="http://jasonm.github.com/2008/06/19/delicioustags/"/>
+    <updated>2008-06-19T00:00:00-07:00</updated>
+    <id>http://jasonm.github.com/2008/06/19/delicioustags</id>
+    <content type="html">Tags from &lt;a href=&quot;http://del.icio.us/jasonpm&quot;&gt;del.icio.us/jasonpm&lt;/a&gt; via &lt;a href=&quot;http://wordle.net&quot;&gt;wordle.net&lt;/a&gt;:
+
+&lt;a href=&quot;http://jayunit.net/wp-content/uploads/2008/06/delicioustags.png&quot;&gt;&lt;img class=&quot;alignnone size-full wp-image-51&quot; title=&quot;delicioustags&quot; src=&quot;http://jayunit.net/wp-content/uploads/2008/06/delicioustags.png&quot; alt=&quot;&quot; width=&quot;500&quot; height=&quot;691&quot; /&gt;&lt;/a&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Jason joins thoughtbot!</title>
+    <link href="http://jasonm.github.com/2008/06/06/jason-joins-thoughtbot/"/>
+    <updated>2008-06-06T00:00:00-07:00</updated>
+    <id>http://jasonm.github.com/2008/06/06/jason-joins-thoughtbot</id>
+    <content type="html">&lt;p style=&quot;text-align: left;&quot;&gt;A little while back, I resigned from my position at &lt;a href=&quot;http://www.vistaprint.com&quot;&gt;VistaPrint&lt;/a&gt; to take a great opportunity at &lt;a href=&quot;http://thoughtbot.com&quot;&gt;thoughtbot, inc&lt;/a&gt; in downtown Boston.  I'll be starting with them on Monday, June 9, and am super excited to join their small and dynamic team.  Initially, I'll be working on &lt;a href=&quot;http://www.thoughtbot.com/projects&quot;&gt;tools for the Nature Publishing Group&lt;/a&gt; like &lt;a href=&quot;http://network.nature.com&quot;&gt;Nature Network&lt;/a&gt;.&lt;/p&gt;
+&lt;p style=&quot;text-align: left;&quot;&gt;I got to hang out with some of the team at &lt;a href=&quot;http://www.railsconf.com&quot;&gt;RailsConf&lt;/a&gt;, see some top-secret &lt;a href=&quot;http://teebot.thoughtbot.com/&quot;&gt;Tee-Bot&lt;/a&gt; designs, go on some exciting Portland excursions and adventures, and I might have even learned a little Ruby or Rails along the way.&lt;/p&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>DIYbio is alive!</title>
+    <link href="http://jasonm.github.com/2008/06/06/diybio-is-alive/"/>
+    <updated>2008-06-06T00:00:00-07:00</updated>
+    <id>http://jasonm.github.com/2008/06/06/diybio-is-alive</id>
+    <content type="html">&lt;blockquote&gt;&lt;a href=&quot;http://www.diybio.org/&quot;&gt;DIYbio&lt;/a&gt; is an organization for the ever expanding community of citizen scientists and DIY biological engineers that value openness &amp;amp; responsibility.  &lt;a href=&quot;http://www.diybio.org/&quot;&gt;DIYbio&lt;/a&gt; aims to be an &quot;Institution for the Amateur&quot; -- an umbrella organization that provides some of the same resources afforded by more traditional institutions like academia and industry, such as access to a community of experts, to technical literature and other resources, to responsible oversight for health and safety, and an interface between the community and the public at large.&lt;/blockquote&gt;
+Check out &lt;a href=&quot;http://www.diybio.org&quot;&gt;diybio.org&lt;/a&gt; and, if you're in the Boston area, drop by our meetup next week!  Read &lt;a href=&quot;http://blog.diybio.org/2008/05/dont-phage-me-bro.html&quot;&gt;Jason Bobe's summary of the first meeting at the DIYbio blog&lt;/a&gt;, and keep an eye on the &lt;a href=&quot;http://groups.google.com/group/diybio&quot;&gt;DIYbio mailing list&lt;/a&gt; for details.
+</content>
+  </entry>
+  
+  <entry>
+    <title>Mephisto to WordPress</title>
+    <link href="http://jasonm.github.com/2008/04/16/mephisto-to-wordpress/"/>
+    <updated>2008-04-16T00:00:00-07:00</updated>
+    <id>http://jasonm.github.com/2008/04/16/mephisto-to-wordpress</id>
+    <content type="html">An easy way to import a Mephisto blog into WordPress is by using a &lt;a href=&quot;http://schwuk.com/articles/2008/03/25/thy-will-be-done-m2wppy-is-released&quot;&gt;Python script for extracting a WordPress-friendly WXR file from Mephisto&lt;/a&gt; (which can be imported via the WordPress web admin interface), which eventually worked like a charm.  I had to modify it to use MySQL, and to look at a different date field for publication (my Mephisto install was returning Null in the field m2wp.py was looking at).
+&lt;ol&gt;
+	&lt;li&gt;Go grab &lt;a href=&quot;http://schwuk.com/articles/2008/03/25/thy-will-be-done-m2wppy-is-released&quot;&gt;m2wp.py&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;Download &lt;a href=&quot;http://wptest.jayunit.net/wp-content/uploads/2008/04/m2wp-mysql.diff&quot;&gt;m2wp-mysql.diff&lt;/a&gt;. (Update 6/6/08: fixed the missing trailing newline)&lt;/li&gt;
+	&lt;li&gt;Run &lt;code&gt;patch m2wp.py m2wp-mysql.py.diff -o m2wp-mysql.py&lt;/code&gt;.&lt;/li&gt;
+	&lt;li&gt;Now you can run &lt;code&gt;python m2wp.py -h&lt;/code&gt; and you're off and running!&lt;/li&gt;
+&lt;/ol&gt;
+A less effective method is to transform Mephisto's Atom feed into RSS, and import that into WordPress.  This is a pain, because the feed does not contain comments, but here is how I did it before I discovered &lt;code&gt;m2wp.py&lt;/code&gt;:
+&lt;ol&gt;
+	&lt;li&gt;Get the &lt;a href=&quot;http://sourceforge.net/projects/xmlstar/&quot;&gt;XMLStarlet command line XML toolkit&lt;/a&gt;.&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;wget http://atom.geekhood.net/atom2rss.xsl&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;wget http://mymephistoblog.com/feed/atom.xml&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;&lt;code&gt;xml tr atom2rss.xsl atom.xml &amp;gt; rss.xml&lt;/code&gt;&lt;/li&gt;
+	&lt;li&gt;Go to &lt;a href=&quot;http://mywordpressblog.com/wp-admin/admin.php?import=rss&quot;&gt;http://mywordpressblog.com/wp-admin/admin.php?import=rss&lt;/a&gt;&lt;/li&gt;
+	&lt;li&gt;Import your rss.xml&lt;/li&gt;
+	&lt;li&gt;Pull comments over by hand.&lt;/li&gt;
+&lt;/ol&gt;
+</content>
+  </entry>
+  
+  <entry>
+    <title>Biological Simulation Languages</title>
+    <link href="http://jasonm.github.com/2008/04/16/biological-simulation-languages/"/>
+    <updated>2008-04-16T00:00:00-07:00</updated>
+    <id>http://jasonm.github.com/2008/04/16/biological-simulation-languages</id>
+    <content type="html">&lt;p&gt;From the &quot;publishing old drafts for kicks&quot; department, some interesting notes on Biological Simulation Languages:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;http://lambda-the-ultimate.org/node/2447&quot;&gt;&lt;em&gt;SPim&lt;/em&gt;: Efficient, Correct Simulation of Biological Processes in the Stochastic Pi-calculus&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://lambda-the-ultimate.org/node/2671&quot;&gt;The little b language: shared models built from reusable parts&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;http://lucacardelli.name/BioComputing.htm&quot;&gt;BioComputing resources from Luca Cardelli&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+  </entry>
+  
+</feed>

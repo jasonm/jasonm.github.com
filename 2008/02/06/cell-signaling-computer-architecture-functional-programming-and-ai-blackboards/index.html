@@ -1,0 +1,318 @@
+
+<!DOCTYPE html>
+<!--[if IEMobile 7 ]><html class="no-js iem7"><![endif]-->
+<!--[if lt IE 9]><html class="no-js lte-ie8"><![endif]-->
+<!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <title>Cell signaling, computer architecture, functional programming, and AI blackboards - Jason Morrison</title>
+  <meta name="author" content="Jason Morrison">
+  
+
+  <!-- http://t.co/dKP3o1e -->
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+  <link rel="canonical" href="http://jasonm.github.com/2008/02/06/cell-signaling-computer-architecture-functional-programming-and-ai-blackboards/"/>
+  <link href="/favicon.png" rel="shortcut icon" />
+  <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
+  <script src="/javascripts/modernizr-2.0.js"></script>
+  <script src="http://s3.amazonaws.com/ender-js/jeesh.min.js"></script>
+  <script src="/javascripts/octopress.js" type="text/javascript"></script>
+  <link href="/atom.xml" rel="alternate" title="Jason Morrison" type="application/atom+xml"/>
+  <!--Fonts from Google's Web font directory at http://google.com/webfonts -->
+<link href='http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body  >
+  <header><hgroup>
+  <h1><a href="/">Jason Morrison</a></h1>
+  
+    <h2>Make stuff.</h2>
+  
+</hgroup>
+
+</header>
+  <nav role=navigation><ul role=subscription data-subscription="rss">
+  <li><a href="/atom.xml" rel="subscribe-rss" title="subscribe via RSS">RSS</a></li>
+  
+</ul>
+<form action="http://google.com/search" method="get">
+  <fieldset role="site-search">
+    <input type="hidden" name="q" value="site:jasonm.github.com" />
+    <input class="search" type="text" name="q" results="0" placeholder="Search"/>
+  </fieldset>
+</form>
+<ul role=main-navigation>
+  <li><a href="/">Blog</a></li>
+  <li><a href="/blog/archives">Archives</a></li>
+  <li><a href="/about">About Me</a></li>
+  <li><a href="http://twitter.com/jayunit">Twitter</a></li>
+  <li><a href="http://github.com/jasonm">GitHub</a></li>
+  <li><a href="mailto:jason.p.morrison@gmail.com">Email</a></li>
+</ul>
+
+</nav>
+  <div id="main">
+    <div id="content">
+      <div>
+<article class="hentry">
+  
+  <header>
+    
+      <h1 class="entry-title">Cell Signaling, Computer Architecture, Functional Programming, and AI Blackboards</h1>
+    
+    
+      <p class="meta">
+
+
+
+
+
+  
+
+
+
+<time datetime="2008-02-06T00:00:00-08:00" pubdate  data-updated="true" >Feb 6<span>th</span>, 2008</time></p>
+    
+  </header>
+
+
+<div class="entry-content"><p>While thinking about synthetic biology, I find it useful to identify analogues of biological systems in a discipline I am already familiar with, computer science.  This helps me better understand the new concept and can also raise questions about the new system that already have discussions around them in the CS world.  Of course, the fidelity of such metaphors is not 100%, so I have to take care to ground such discourses with actual biology, but it&#8217;s been great for brainstorming so far.</p>
+
+
+	<p>Here are a few such metaphors.</p>
+
+
+	<h3>Computer Architecture</h3>
+
+
+	<p>One challenge in building <a href="http://people.csail.mit.edu/tk/sa3.pdf">composable biological systems</a> for effective <a href="http://syntheticbiology.org/Abstraction_hierarchy.html">abstraction hierarchies</a> is cell signaling crosstalk.  One issue at play is a possible shortage of signal carriers; if you need ten different processes to occur at the same time and to act orthogonally, you will need ten signal carriers.  Much as CPUs have a finite number of registers and data buses have finite width, there are only so many standardized signal carriers that standardized parts currently accept.  Certainly, more carriers could be designed, but there may be ways around this.  In computer architecture, the register shortage can be addressed by temporarily saving register data into memory, and the bus issue can be addressed with a <a href="http://en.wikipedia.org/wiki/Time-division_multiplexing">stateful multiplexing approach</a>.  Perhaps stateful biological systems such as the <a href="http://en.wikipedia.org/wiki/Repressilator">repressilator</a> or a <a href="http://parts.mit.edu/igem07/index.php/Peking_Push-on-push-off">push-on push-off switch</a> have something to offer here.</p>
+
+
+	<h3>Functional Programming</h3>
+
+
+	<p>The other, more subtle, crosstalk issue is that of unintended side effects.  When considering engineered biological devices, there may be side effects outside of the well-characterized and intended inputs and outputs, so the abstractions leak &#8211; figuratively and literally.  These issues are also present in highly parallel computing environments when a shared resource such as a location in memory is operated upon by many processes.  One must take care to ensure that the processes cooperate to ensure that they do not tread upon one another.  There are many paradigms for approaching concurrent software, and it is becoming increasingly apparent that a system of threads, locks, and mutexes quickly gets difficult, if not impossible, to keep track of.  Interesting discussions of other approaches:</p>
+
+
+	<ul>
+	<li><a href="http://video.google.com/videoplay?docid=5442492239822665187">Software Transactional Memory</a> (video)</li>
+		<li><a href="http://research.microsoft.com/%7Esimonpj/papers/stm/beautiful.pdf">Beautiful Concurrency</a> (PDF) is also about <span class="caps">STM</span></li>
+		<li><a href="http://lamp.epfl.ch/~phaller/doc/haller07actorsunify.pdf">Actors that Unify Threads and Events</a> (PDF)</li>
+		<li><a href="http://lambda-the-ultimate.org/node/2269">Simon Peyton Jones&#8217; talk on nested data parallelism</a></li>
+		<li><a href="http://www.cs.princeton.edu/~dpw/popl/06/Tim-POPL.ppt">The Next Mainstream Programming Language: A Game Developer&#8217;s Perspective</a> (PPT), particularly pages 49-56</li>
+	</ul>
+
+
+	<p>A key element in many of these approaches to concurrency is a lack of shared state and, by association, lack of side effects.  Since intracellular signaling systems are inherently parallel,  two operations may only be reliably executed in tandem if they have minimal-to-no side effects (or, more realistically, minimal, orthogonal, well-characterized effects).  My point here is not to imply that there is a concurrent programming paradigm that can be transferred to synthetic biology to solve the side effect issue.  I mean to illustrate that, as we engineer larger systems, it will be crucial to minimize unknown side effects of synthetic biology constructs with high-quality characterization.</p>
+
+
+	<p>I realize that I am first suggesting stateful systems, immediately followed by a call for referential transparency (the property of being without formal side effects), often conflated with statelessness.  It&#8217;s important to remember that, taken as an abstract concept, referentially transparent (side-effect free) operations can maintain internal state, so long as that state does not leak out of the operation, be it a computation or intracellular signalling pathway.</p>
+
+
+	<p>Also, something on my <span class="caps">TODO</span> list is to check out cell-free systems, and consider their applicability to the crosstalk issue:</p>
+
+
+	<ul>
+	<li><a href="http://openwetware.org/wiki/IGEM:IMPERIAL/2007/CFS">Imperial College&#8217;s iGEM 2007 work on Cell-Free Systems</a></li>
+		<li><a href="http://www.nature.com/msb/journal/v2/n1/full/msb4100099.html">Construction of an in vitro bistable circuit from synthetic transcriptional switches</a></li>
+	</ul>
+
+
+	<h3>AI Blackboards</h3>
+
+
+	<p>Lastly, it also occurred to me that <a href="http://en.wikipedia.org/wiki/Signal_transduction">intracellular signaling systems</a> are similar to the artificial intelligence <a href="http://en.wikipedia.org/wiki/Blackboard_system">blackboard architecture</a> and, as such, it could be useful as a thought model.  I&#8217;ve not pursues this idea very much, although it appears that some folks have made the same connection in the context of modeling: <a href="http://arxiv.org/abs/cs.MA/0211029">Modelling intracellular signalling networks using behaviour-based systems and the blackboard architecture</a>.</p>
+</div>
+
+
+  <footer>
+    <p class="meta">
+      
+  
+
+<span class="byline author vcard">Posted by <span class="fn">Jason Morrison</span></span>
+
+      
+
+
+
+
+
+  
+
+
+
+<time datetime="2008-02-06T00:00:00-08:00" pubdate  data-updated="true" >Feb 6<span>th</span>, 2008</time>
+      
+
+
+    </p>
+    
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://jasonm.github.com/2008/02/06/cell-signaling-computer-architecture-functional-programming-and-ai-blackboards/" data-via="jayunit" data-counturl="http://jasonm.github.com/2008/02/06/cell-signaling-computer-architecture-functional-programming-and-ai-blackboards/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="medium"></div>
+  
+</div>
+
+    
+  </footer>
+</article>
+
+  <section>
+    <h1>Comments</h1>
+    <div id="disqus_thread"><div id="disqus_thread"></div>
+<script type="text/javascript">
+  var disqus_shortname = 'jayunit';
+  var disqus_identifier = 'http://jasonm.github.com/2008/02/06/cell-signaling-computer-architecture-functional-programming-and-ai-blackboards/';
+  var disqus_url = 'http://jasonm.github.com/2008/02/06/cell-signaling-computer-architecture-functional-programming-and-ai-blackboards/';
+  //var disqus_developer = 1;
+  (function() {
+    var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+    dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+  </section>
+
+</div>
+
+<aside role=sidebar>
+  
+    <section>
+  <h1>Recent Posts</h1>
+  <ul id="recent_posts">
+    
+      <li class="post">
+        <a href="/2014/03/02/reading-list-february-2014/">Reading List: February 2014</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/01/11/redstorm/">RedStorm: Distributed Computation in Ruby</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/01/09/clahub-easy-contributor-agreements-on-github/">CLAHub: Easy contributor agreements on GitHub</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2013/01/06/papernaut-exploring-online-discussion-of-academic-papers/">Papernaut: Exploring online discussion of academic papers</a>
+      </li>
+    
+      <li class="post">
+        <a href="/2012/12/31/a-year-of-travel/">A year of travel</a>
+      </li>
+    
+  </ul>
+</section>
+
+<section>
+  <h1>Github Repos</h1>
+  <ul id="gh_repos">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  
+  <a href="https://github.com/jasonm">@jasonm</a> on Github
+  
+  <script type="text/javascript">
+    $.domReady(function(){
+        if (!window.jXHR){
+            var jxhr = document.createElement('script');
+            jxhr.type = 'text/javascript';
+            jxhr.src = '/javascripts/libs/jXHR.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(jxhr, s);
+        }
+
+        github.showRepos({
+            user: 'jasonm',
+            count: 10,
+            skip_forks: true,
+            target: '#gh_repos'
+        });
+    });
+  </script>
+  <script src="/javascripts/github.js" type="text/javascript"> </script>
+</section>
+
+
+<section>
+  <h1>Latest Tweets</h1>
+  <ul id="tweets">
+    <li class="loading">Status updating&#8230;</li>
+  </ul>
+  <script type="text/javascript">
+    $.domReady(function(){
+      getTwitterFeed("jayunit", 10, false);
+    });
+  </script>
+  <script src="/javascripts/twitter.js" type="text/javascript"> </script>
+  
+    <a href="http://twitter.com/jayunit" class="twitter-follow-button" data-width="208px" data-show-count="false">Follow @jayunit</a>
+  
+</section>
+
+
+
+
+  
+</aside>
+
+
+    </div>
+  </div>
+  <footer><p>
+  Copyright &copy; 2014 - Jason Morrison -
+  <span class="credit">Powered by <a href="http://octopress.org">Octopress</a></span>
+</p>
+
+</footer>
+  
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-6754843-1']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function() {
+      var script = document.createElement('script'); script.type = 'text/javascript'; script.async = true;
+      script.src = 'https://apis.google.com/js/plusone.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(script, s);
+    })();
+  </script>
+
+
+  
+  <script type="text/javascript">
+    (function(){
+      var twitterWidgets = document.createElement('script');
+      twitterWidgets.type = 'text/javascript';
+      twitterWidgets.async = true;
+      twitterWidgets.src = 'http://platform.twitter.com/widgets.js';
+      document.getElementsByTagName('head')[0].appendChild(twitterWidgets);
+    })();
+  </script>
+
+
+</body>
+</html>
